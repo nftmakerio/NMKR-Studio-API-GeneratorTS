@@ -1,0 +1,4 @@
+node_modules
+/nmkr-studio-api/dist
+.env
+.DS_Store
