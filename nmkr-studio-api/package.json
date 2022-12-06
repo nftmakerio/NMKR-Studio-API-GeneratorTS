@@ -23,7 +23,10 @@
   "dependencies": {
     "axios": "^1.2.0"
   },
- 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nftmakerio/NMKRApi/tree/main/nmkr-studio-api"
+  },
   "devDependencies": {
     "@types/node": "^10.9.4",
     "dotenv": "^16.0.3",
