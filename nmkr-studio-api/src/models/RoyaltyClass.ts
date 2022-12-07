@@ -3,8 +3,7 @@
 /* eslint-disable */
 
 export type RoyaltyClass = {
-    percentage?: number;
-    address?: string | null;
-    pkh?: string | null;
+  percentage?: number;
+  address?: string | null;
+  pkh?: string | null;
 };
-

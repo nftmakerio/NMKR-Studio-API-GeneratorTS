@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type MetadataPlaceholderClass = {
-    name?: string | null;
-    value?: string | null;
+  name?: string | null;
+  value?: string | null;
 };
-

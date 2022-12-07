@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 export enum AuctionHistoryStates {
-    SELLER = 'seller',
-    BUYER = 'buyer',
-    OUTBID = 'outbid',
-    INVALID = 'invalid',
-    EXPIRED = 'expired',
+  SELLER = 'seller',
+  BUYER = 'buyer',
+  OUTBID = 'outbid',
+  INVALID = 'invalid',
+  EXPIRED = 'expired',
 }

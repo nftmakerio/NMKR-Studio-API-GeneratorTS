@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export enum ResultStates {
-    OK = 'Ok',
-    ERROR = 'Error',
+  OK = 'Ok',
+  ERROR = 'Error',
 }

@@ -3,6 +3,5 @@
 /* eslint-disable */
 
 export type DirectSaleParameterClass = {
-    priceInLovelace?: number;
+  priceInLovelace?: number;
 };
-

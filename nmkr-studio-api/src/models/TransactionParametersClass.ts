@@ -3,9 +3,8 @@
 /* eslint-disable */
 
 export type TransactionParametersClass = {
-    tokencount?: number;
-    policyId?: string | null;
-    tokenname?: string | null;
-    tokennameHex?: string | null;
+  tokencount?: number;
+  policyId?: string | null;
+  tokenname?: string | null;
+  tokennameHex?: string | null;
 };
-

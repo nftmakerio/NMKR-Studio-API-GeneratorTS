@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export enum PaymentTransactionNotificationTypes {
-    WEBHOOK = 'webhook',
-    EMAIL = 'email',
+  WEBHOOK = 'webhook',
+  EMAIL = 'email',
 }

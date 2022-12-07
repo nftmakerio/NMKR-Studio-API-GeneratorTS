@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export enum PricelistDiscountTypes {
-    WALLETCONTAINSMINOFPOLICYID = 'walletcontainsminofpolicyid',
-    WHITLISTEDADDRESSES = 'whitlistedaddresses',
-    STAKEONPOOL = 'stakeonpool',
+  WALLETCONTAINSMINOFPOLICYID = 'walletcontainsminofpolicyid',
+  WHITLISTEDADDRESSES = 'whitlistedaddresses',
+  STAKEONPOOL = 'stakeonpool',
 }

@@ -5,18 +5,17 @@
 import type { Tokens } from './Tokens';
 
 export type GetPaymentAddressResultClass = {
-    paymentAddress?: string | null;
-    paymentAddressId?: number;
-    expires?: string;
-    readonly adaToSend?: string | null;
-    debug?: string | null;
-    priceInEur?: number;
-    priceInUsd?: number;
-    priceInJpy?: number;
-    priceInBtc?: number;
-    effectivedate?: string;
-    priceInLovelace?: number;
-    additionalPriceInTokens?: Array<Tokens> | null;
-    sendbackToUser?: number;
+  paymentAddress?: string | null;
+  paymentAddressId?: number;
+  expires?: string;
+  readonly adaToSend?: string | null;
+  debug?: string | null;
+  priceInEur?: number;
+  priceInUsd?: number;
+  priceInJpy?: number;
+  priceInBtc?: number;
+  effectivedate?: string;
+  priceInLovelace?: number;
+  additionalPriceInTokens?: Array<Tokens> | null;
+  sendbackToUser?: number;
 };
-

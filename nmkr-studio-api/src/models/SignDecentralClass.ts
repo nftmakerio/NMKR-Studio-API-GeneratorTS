@@ -5,6 +5,5 @@
 import type { TransactionAddressClass } from './TransactionAddressClass';
 
 export type SignDecentralClass = {
-    buyer?: TransactionAddressClass;
+  buyer?: TransactionAddressClass;
 };
-

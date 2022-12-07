@@ -3,6 +3,5 @@
 /* eslint-disable */
 
 export type UploadMetadataClass = {
-    metadata?: string | null;
+  metadata?: string | null;
 };
-

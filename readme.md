@@ -2,13 +2,13 @@
 ## Goal
 This repository aims to provide a way to quickly generate the latest typescript API client to use with [NMKR Studio](https://www.nmkr.io/studio)
 ## Usage 
-In this folder you will find a `package.json` file with two commands `generate-local` to generate a client defined by the API definition from the `swagger.json` file. This can be useful if you want to test new API endpoints or one which still is in development. Addditionally the `generate-latest` command which will pull the latest available swagger file from [https://studio-api.nmkr.io/swagger/v2/swagger.json](https://studio-api.nmkr.io/swagger/v2/swagger.json)
+In this folder you will find a `package.json` file with two commands `generate-local` to generate a client defined by the API definition from the `swagger.json` file. This can be useful if you want to test new API endpoints or one which still is in development. Additionally, the `generate-latest` command which will pull the latest available swagger file from [https://studio-api.nmkr.io/swagger/v2/swagger.json](https://studio-api.nmkr.io/swagger/v2/swagger.json)
 
 TLDR;
 - `npm run generate-local` from local swagger.json file
 - `npm run generate-latest` from latest published version on the web
 
-Afterwards you will find under `/nmkr-studio-api/src` the generated typescript files. To build them navigate to `cd /nmkr-studio-api` in the terminal and run
+Afterwards, you will find under `/nmkr-studio-api/src` the generated typescript files. To build them, navigate to `cd /nmkr-studio-api` in the terminal and run
 - `npm run test`
 - `npm run lint`
 - `npm run format`
