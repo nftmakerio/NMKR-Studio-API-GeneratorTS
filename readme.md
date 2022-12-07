@@ -29,6 +29,7 @@ In case you have access rights to the NPM-Account you can, after testing, deploy
 - [x] Basic testing setup
 - [ ] Further testing (100% coverage?)
 - [ ] Further documentation and usage examples
+- [ ] Automatic updates after Swagger changes
 - [ ] Automatic deploy pipeline to simplify PRs
 
 

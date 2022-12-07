@@ -16,4 +16,10 @@ Basic example usage
     projects.forEach((project)=>console.log(project.projectname));
 ````
 
-Note:  You can overwrite the `BASE` parameter if you want to change the default URL to preprod (WARNING the API might be slightly diffrent and this package is up-to-date with the production version only)
+Note:  You can overwrite the `BASE` URL parameter in `new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN",BASE:"https://studio-api.preprod.nmkr.io"}` if you want to change the default URL to preprod (WARNING the API might be slightly diffrent and this package is up-to-date with the production version only)
+
+## Roadmap
+- [x] Initial typesafe client
+- [ ] More examples and documentation
+- [ ] Add min/max values and minLength/maxLength to fields
+- [ ] Add better descriptions for fields, results and errors
