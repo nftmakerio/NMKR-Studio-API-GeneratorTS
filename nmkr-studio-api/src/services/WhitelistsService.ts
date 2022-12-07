@@ -12,12 +12,16 @@ export class WhitelistsService {
   /**
    * Gets all entries of a projects whitelist
    * With this call you can retrieve all entries of a whitelist of a project (if the project has one)
-   * @param projectuid
-   * @param authorization
    * @returns GetWhitelistEntriesClass Returns the complete whitelist and how much are already sold
    * @throws ApiError
    */
-  public getV2ManageWhitelist(projectuid: string, authorization?: string): CancelablePromise<GetWhitelistEntriesClass> {
+  public getV2ManageWhitelist({
+    projectuid,
+    authorization,
+  }: {
+    projectuid: string;
+    authorization?: string;
+  }): CancelablePromise<GetWhitelistEntriesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ManageWhitelist/{projectuid}',
@@ -38,19 +42,20 @@ export class WhitelistsService {
   /**
    * Adds an entry to a projects whitelist
    * With this call you can add an entry to a whitelist of a project (if the project has one)
-   * @param projectuid
-   * @param address
-   * @param countofnfts
-   * @param authorization
    * @returns any Returns when the address was added to the whitelist
    * @throws ApiError
    */
-  public postV2ManageWhitelist(
-    projectuid: string,
-    address: string,
-    countofnfts: number,
-    authorization?: string,
-  ): CancelablePromise<any> {
+  public postV2ManageWhitelist({
+    projectuid,
+    address,
+    countofnfts,
+    authorization,
+  }: {
+    projectuid: string;
+    address: string;
+    countofnfts: number;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ManageWhitelist/{projectuid}/{address}/{countofnfts}',
@@ -73,13 +78,18 @@ export class WhitelistsService {
   /**
    * Deletes an entry from a projects whitelist
    * With this call you can delete an entry from a whitelist of a project (if the project has one)
-   * @param projectuid
-   * @param address
-   * @param authorization
    * @returns any Returns, when the address was successfully deleted from the list
    * @throws ApiError
    */
-  public deleteV2ManageWhitelist(projectuid: string, address: string, authorization?: string): CancelablePromise<any> {
+  public deleteV2ManageWhitelist({
+    projectuid,
+    address,
+    authorization,
+  }: {
+    projectuid: string;
+    address: string;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'DELETE',
       url: '/v2/ManageWhitelist/{projectuid}/{address}',

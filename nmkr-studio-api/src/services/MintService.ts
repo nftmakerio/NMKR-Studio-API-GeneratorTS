@@ -12,19 +12,20 @@ export class MintService {
   /**
    * Mints random Nfts and sends it to an Address
    * When you call this API, random NFTs will be selected, minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
-   * @param projectuid
-   * @param countnft
-   * @param receiveraddress
-   * @param authorization
    * @returns MintAndSendResultClass Returns the Nft Class
    * @throws ApiError
    */
-  public getV2MintAndSendRandom(
-    projectuid: string,
-    countnft: number,
-    receiveraddress: string,
-    authorization?: string,
-  ): CancelablePromise<MintAndSendResultClass> {
+  public getV2MintAndSendRandom({
+    projectuid,
+    countnft,
+    receiveraddress,
+    authorization,
+  }: {
+    projectuid: string;
+    countnft: number;
+    receiveraddress: string;
+    authorization?: string;
+  }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/MintAndSendRandom/{projectuid}/{countnft}/{receiveraddress}',
@@ -50,21 +51,22 @@ export class MintService {
   /**
    * Mints a specific Nft and sends it to an Address
    * When you call this API, a specific NFT will be minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
-   * @param projectuid
-   * @param nftuid
-   * @param tokencount
-   * @param receiveraddress
-   * @param authorization
    * @returns MintAndSendResultClass Returns the Nft Class
    * @throws ApiError
    */
-  public getV2MintAndSendSpecific(
-    projectuid: string,
-    nftuid: string,
-    tokencount: number,
-    receiveraddress: string,
-    authorization?: string,
-  ): CancelablePromise<MintAndSendResultClass> {
+  public getV2MintAndSendSpecific({
+    projectuid,
+    nftuid,
+    tokencount,
+    receiveraddress,
+    authorization,
+  }: {
+    projectuid: string;
+    nftuid: string;
+    tokencount: number;
+    receiveraddress: string;
+    authorization?: string;
+  }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/MintAndSendSpecific/{projectuid}/{nftuid}/{tokencount}/{receiveraddress}',
@@ -91,19 +93,20 @@ export class MintService {
   /**
    * Mints the royalty token
    * When you call this API, the royalty token for this project will be minted and send to a burning address. You have to specify the address for the royalties and the percentage of royalties. You need mint credits in your account. Only one royalty token can be minted for each project
-   * @param projectuid
-   * @param royaltyaddress
-   * @param percentage
-   * @param authorization
    * @returns any The royaltytoken was created successfully
    * @throws ApiError
    */
-  public getV2MintRoyaltyToken(
-    projectuid: string,
-    royaltyaddress: string,
-    percentage: number,
-    authorization?: string,
-  ): CancelablePromise<any> {
+  public getV2MintRoyaltyToken({
+    projectuid,
+    royaltyaddress,
+    percentage,
+    authorization,
+  }: {
+    projectuid: string;
+    royaltyaddress: string;
+    percentage: number;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/MintRoyaltyToken/{projectuid}/{royaltyaddress}/{percentage}',
@@ -129,13 +132,18 @@ export class MintService {
   /**
    * ReMints a specific Nft and sends it to a burn address
    * When you call this API, you can update metadata of an already sold nft. The nft will be minted and send to a burning address
-   * @param projectuid
-   * @param nftuid
-   * @param authorization
    * @returns any Remint is scheduled
    * @throws ApiError
    */
-  public getV2RemintAndBurn(projectuid: string, nftuid: string, authorization?: string): CancelablePromise<any> {
+  public getV2RemintAndBurn({
+    projectuid,
+    nftuid,
+    authorization,
+  }: {
+    projectuid: string;
+    nftuid: string;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/RemintAndBurn/{projectuid}/{nftuid}',

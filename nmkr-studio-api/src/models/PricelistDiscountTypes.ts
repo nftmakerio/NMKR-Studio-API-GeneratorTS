@@ -2,8 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export enum PricelistDiscountTypes {
-  WALLETCONTAINSMINOFPOLICYID = 'walletcontainsminofpolicyid',
-  WHITLISTEDADDRESSES = 'whitlistedaddresses',
-  STAKEONPOOL = 'stakeonpool',
-}
+export type PricelistDiscountTypes = 'walletcontainsminofpolicyid' | 'whitlistedaddresses' | 'stakeonpool';

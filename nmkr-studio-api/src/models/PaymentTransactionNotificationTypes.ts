@@ -2,7 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export enum PaymentTransactionNotificationTypes {
-  WEBHOOK = 'webhook',
-  EMAIL = 'email',
-}
+export type PaymentTransactionNotificationTypes = 'webhook' | 'email';

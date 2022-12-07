@@ -14,17 +14,18 @@ export class AddressReservationSaleService {
   /**
    * Cancels a address reservation (project uid)
    * When you call this API, the reservation of all nfts dedicated to this address will released to free state. This function can be called, when a user closes his browser or when he hit on a "Cancel Reservation" Button
-   * @param projectuid
-   * @param paymentaddress
-   * @param authorization
    * @returns any Cancellation was successful
    * @throws ApiError
    */
-  public getV2CancelAddressReservation(
-    projectuid: string,
-    paymentaddress: string,
-    authorization?: string,
-  ): CancelablePromise<any> {
+  public getV2CancelAddressReservation({
+    projectuid,
+    paymentaddress,
+    authorization,
+  }: {
+    projectuid: string;
+    paymentaddress: string;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/CancelAddressReservation/{projectuid}/{paymentaddress}',
@@ -49,17 +50,18 @@ export class AddressReservationSaleService {
    *
    * IMPORTANT:
    * This function uses an internal cache. All results will be cached for 10 seconds. You do not need to call this function more than once in 10 seconds, because the results will be the same.
-   * @param projectuid
-   * @param address
-   * @param authorization
    * @returns CheckAddressResultClass Returns the Apiresultclass with the information about the address incl. the assigned NFTs
    * @throws ApiError
    */
-  public getV2CheckAddress(
-    projectuid: string,
-    address: string,
-    authorization?: string,
-  ): CancelablePromise<CheckAddressResultClass> {
+  public getV2CheckAddress({
+    projectuid,
+    address,
+    authorization,
+  }: {
+    projectuid: string;
+    address: string;
+    authorization?: string;
+  }): CancelablePromise<CheckAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/CheckAddress/{projectuid}/{address}',
@@ -83,17 +85,18 @@ export class AddressReservationSaleService {
    *
    * IMPORTANT:
    * This function uses an internal cache. All results will be cached for 10 seconds. You do not need to call this function more than once in 10 seconds, because the results will be the same.
-   * @param projectuid
-   * @param customproperty
-   * @param authorization
    * @returns CheckAddressResultClass Returns the Apiresultclass with the information about the address incl. the assigned NFTs
    * @throws ApiError
    */
-  public getV2CheckAddressWithCustomproperty(
-    projectuid: string,
-    customproperty: string,
-    authorization?: string,
-  ): CancelablePromise<CheckAddressResultClass> {
+  public getV2CheckAddressWithCustomproperty({
+    projectuid,
+    customproperty,
+    authorization,
+  }: {
+    projectuid: string;
+    customproperty: string;
+    authorization?: string;
+  }): CancelablePromise<CheckAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/CheckAddressWithCustomproperty/{projectuid}/{customproperty}',
@@ -119,25 +122,32 @@ export class AddressReservationSaleService {
    * IMPORTANT:
    * Please notice, that the call is limited to 300 addressreservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
    * Please do not implement this function on your start page. And please prevent the call of this function from bots with a captcha.
-   * @param projectuid
-   * @param countnft
-   * @param lovelace
-   * @param customeripaddress
-   * @param authorization
-   * @param referer (Optional) A referer code
-   * @param customproperty (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
    */
-  public getV2GetPaymentAddressForRandomNftSale(
-    projectuid: string,
-    countnft: number,
-    lovelace: number,
-    customeripaddress: string,
-    authorization?: string,
-    referer?: string,
-    customproperty?: string,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public getV2GetPaymentAddressForRandomNftSale({
+    projectuid,
+    countnft,
+    lovelace,
+    customeripaddress,
+    authorization,
+    referer,
+    customproperty,
+  }: {
+    projectuid: string;
+    countnft: number;
+    lovelace: number;
+    customeripaddress: string;
+    authorization?: string;
+    /**
+     * (Optional) A referer code
+     */
+    referer?: string;
+    /**
+     * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
+     */
+    customproperty?: string;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{lovelace}/{customeripaddress}',
@@ -172,23 +182,30 @@ export class AddressReservationSaleService {
    * IMPORTANT:
    * Please notice, that the call is limited to 300 addressreservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
    * Please do not implement this function on your start page. And please prevent the call of this function from bots with a captcha.
-   * @param projectuid
-   * @param countnft
-   * @param customeripaddress
-   * @param authorization
-   * @param referer (Optional) A referer code
-   * @param customproperty (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
    */
-  public getV2GetPaymentAddressForRandomNftSale1(
-    projectuid: string,
-    countnft: number,
-    customeripaddress: string,
-    authorization?: string,
-    referer?: string,
-    customproperty?: string,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public getV2GetPaymentAddressForRandomNftSale1({
+    projectuid,
+    countnft,
+    customeripaddress,
+    authorization,
+    referer,
+    customproperty,
+  }: {
+    projectuid: string;
+    countnft: number;
+    customeripaddress: string;
+    authorization?: string;
+    /**
+     * (Optional) A referer code
+     */
+    referer?: string;
+    /**
+     * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
+     */
+    customproperty?: string;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{customeripaddress}',
@@ -222,25 +239,32 @@ export class AddressReservationSaleService {
    * IMPORTANT:
    * Please notice, that the call is limited to 300 addressreservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
    * Please do not implement this function on your start page. And please prevent the call of this function from bots with a captcha.
-   * @param nftuid
-   * @param tokencount
-   * @param lovelace
-   * @param customeripaddress
-   * @param authorization
-   * @param referer (Optional) A referer code
-   * @param customproperty (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
    */
-  public getV2GetPaymentAddressForSpecificNftSale(
-    nftuid: string,
-    tokencount: number,
-    lovelace: number,
-    customeripaddress: string,
-    authorization?: string,
-    referer?: string,
-    customproperty?: string,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public getV2GetPaymentAddressForSpecificNftSale({
+    nftuid,
+    tokencount,
+    lovelace,
+    customeripaddress,
+    authorization,
+    referer,
+    customproperty,
+  }: {
+    nftuid: string;
+    tokencount: number;
+    lovelace: number;
+    customeripaddress: string;
+    authorization?: string;
+    /**
+     * (Optional) A referer code
+     */
+    referer?: string;
+    /**
+     * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
+     */
+    customproperty?: string;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{lovelace}/{customeripaddress}',
@@ -276,23 +300,30 @@ export class AddressReservationSaleService {
    * IMPORTANT:
    * Please notice, that the call is limited to 300 addressreservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
    * Please do not implement this function on your start page. And please prevent the call of this function from bots with a captcha.
-   * @param nftuid
-   * @param tokencount
-   * @param customeripaddress
-   * @param authorization
-   * @param referer (Optional) A referer code
-   * @param customproperty (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
    */
-  public getV2GetPaymentAddressForSpecificNftSale1(
-    nftuid: string,
-    tokencount: number,
-    customeripaddress: string,
-    authorization?: string,
-    referer?: string,
-    customproperty?: string,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public getV2GetPaymentAddressForSpecificNftSale1({
+    nftuid,
+    tokencount,
+    customeripaddress,
+    authorization,
+    referer,
+    customproperty,
+  }: {
+    nftuid: string;
+    tokencount: number;
+    customeripaddress: string;
+    authorization?: string;
+    /**
+     * (Optional) A referer code
+     */
+    referer?: string;
+    /**
+     * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
+     */
+    customproperty?: string;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{customeripaddress}',
@@ -323,21 +354,28 @@ export class AddressReservationSaleService {
    * Returns an address for a multiple specific nfts sale (no random distribution) (project id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
    * If the buyer has send the amount of ada, the nfts will be minted and send to his senderaddress and the nfts state changes to sold.
-   * @param customeripaddress
-   * @param authorization
-   * @param referer (Optional) A referer code
-   * @param customproperty (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
-   * @param requestBody
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
    */
-  public postV2GetPaymentAddressForSpecificNftSale(
-    customeripaddress: string,
-    authorization?: string,
-    referer?: string,
-    customproperty?: string,
-    requestBody?: ReserveMultipleNftsClassV2,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public postV2GetPaymentAddressForSpecificNftSale({
+    customeripaddress,
+    authorization,
+    referer,
+    customproperty,
+    requestBody,
+  }: {
+    customeripaddress: string;
+    authorization?: string;
+    /**
+     * (Optional) A referer code
+     */
+    referer?: string;
+    /**
+     * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
+     */
+    customproperty?: string;
+    requestBody?: ReserveMultipleNftsClassV2;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/GetPaymentAddressForSpecificNftSale/{customeripaddress}',

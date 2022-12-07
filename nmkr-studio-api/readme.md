@@ -10,7 +10,7 @@ Basic example usage
     const client=new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN"})
 
     //load all currently listed projects for this account
-    const projects=await client.projects.getV2ListProjects();
+    const projects=await client.projects.getV2ListProjects({});
 
     //print all project names to console
     projects.forEach((project)=>console.log(project.projectname));

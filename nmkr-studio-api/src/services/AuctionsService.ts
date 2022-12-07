@@ -11,15 +11,16 @@ export class AuctionsService {
 
   /**
    * Returns the state - and the last bids of a auction project
-   * @param auctionuid
-   * @param authorization
    * @returns GetAuctionStateResultClass Returns an array of the GetAuctionStateResultClass
    * @throws ApiError
    */
-  public getV2GetAuctionState(
-    auctionuid: string,
-    authorization?: string,
-  ): CancelablePromise<Array<GetAuctionStateResultClass>> {
+  public getV2GetAuctionState({
+    auctionuid,
+    authorization,
+  }: {
+    auctionuid: string;
+    authorization?: string;
+  }): CancelablePromise<Array<GetAuctionStateResultClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAuctionState/{auctionuid}',

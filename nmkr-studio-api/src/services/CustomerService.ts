@@ -13,12 +13,16 @@ export class CustomerService {
   /**
    * Adds a payout wallet to your account
    * With this call you can add a payout wallet in your account. You have to confirm the wallet by clicking the link in the email
-   * @param walletaddress
-   * @param authorization
    * @returns ApiErrorResultClass Returns the Apiresultclass with the information about the address
    * @throws ApiError
    */
-  public getV2AddPayoutWallet(walletaddress: string, authorization?: string): CancelablePromise<ApiErrorResultClass> {
+  public getV2AddPayoutWallet({
+    walletaddress,
+    authorization,
+  }: {
+    walletaddress: string;
+    authorization?: string;
+  }): CancelablePromise<ApiErrorResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/AddPayoutWallet/{walletaddress}',
@@ -38,11 +42,14 @@ export class CustomerService {
 
   /**
    * Returns all payout wallets in your account
-   * @param authorization
    * @returns GetPayoutWalletsResultClass Returns the GetPayoutWalletsResultClass
    * @throws ApiError
    */
-  public getV2GetPayoutWallets(authorization?: string): CancelablePromise<Array<GetPayoutWalletsResultClass>> {
+  public getV2GetPayoutWallets({
+    authorization,
+  }: {
+    authorization?: string;
+  }): CancelablePromise<Array<GetPayoutWalletsResultClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPayoutWallets',

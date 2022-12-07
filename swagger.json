@@ -498,7 +498,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -641,7 +641,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -863,7 +863,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -992,7 +992,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1784,7 +1784,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2618,7 +2618,7 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           },
           {
@@ -2737,7 +2737,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2806,7 +2806,7 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int32"
+              "format": "int64"
             }
           },
           {
@@ -2916,7 +2916,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3124,7 +3124,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3323,7 +3323,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3524,7 +3524,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4183,7 +4183,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4237,15 +4237,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "validationname",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "default": ""
-            }
           }
         ],
         "responses": {
@@ -4290,7 +4281,7 @@
             }
           },
           "429": {
-            "description": "Client Error",
+            "description": "Too Many Requests",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8430,7 +8421,8 @@
           "customProperties": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "nullable": true
           },
@@ -8491,6 +8483,10 @@
             "nullable": true
           },
           "tokennamePrefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "twitterHandle": {
             "type": "string",
             "nullable": true
           },
@@ -9503,6 +9499,10 @@
           },
           "disableSpecificSales": {
             "type": "boolean"
+          },
+          "twitterHandle": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -9566,50 +9566,9 @@
         },
         "additionalProperties": false
       },
-      "PaymentgatewayParametersClass": {
-        "type": "object",
-        "properties": {
-          "mintNfts": {
-            "$ref": "#/components/schemas/MintNftsClass"
-          },
-          "priceInLovelace": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PaymentgatewayResultsClass": {
-        "type": "object",
-        "properties": {
-          "priceInLovelace": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "fee": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "minUtxo": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          },
-          "mintNfts": {
-            "$ref": "#/components/schemas/MintNftsResultClass"
-          },
-          "additionalPriceInTokens": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Tokens"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
+      "PaymentTransactionNotificationTypes": {
+        "enum": ["webhook", "email"],
+        "type": "string"
       },
       "PaymentTransactionNotificationsClass": {
         "type": "object",
@@ -9628,10 +9587,6 @@
         },
         "additionalProperties": false
       },
-      "PaymentTransactionNotificationTypes": {
-        "enum": ["webhook", "email"],
-        "type": "string"
-      },
       "PaymentTransactionResultClass": {
         "type": "object",
         "properties": {
@@ -9649,7 +9604,8 @@
           "customProperties": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "nullable": true
           },
@@ -9729,40 +9685,6 @@
         },
         "additionalProperties": false
       },
-      "PaymentTransactionsMintAndSendResultClass": {
-        "type": "object",
-        "properties": {
-          "state": {
-            "$ref": "#/components/schemas/MintAndSendSubstates"
-          },
-          "transactionId": {
-            "type": "string",
-            "nullable": true
-          },
-          "executed": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "receiverAddress": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PaymentTransactionsStates": {
-        "enum": [
-          "active",
-          "expired",
-          "finished",
-          "prepared",
-          "error",
-          "canceled",
-          "rejected"
-        ],
-        "type": "string"
-      },
       "PaymentTransactionSubStateResultClass": {
         "type": "object",
         "properties": {
@@ -9811,6 +9733,89 @@
         ],
         "type": "string"
       },
+      "PaymentTransactionsMintAndSendResultClass": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "$ref": "#/components/schemas/MintAndSendSubstates"
+          },
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "executed": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "receiverAddress": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentTransactionsStates": {
+        "enum": [
+          "active",
+          "expired",
+          "finished",
+          "prepared",
+          "error",
+          "canceled",
+          "rejected"
+        ],
+        "type": "string"
+      },
+      "PaymentgatewayParametersClass": {
+        "type": "object",
+        "properties": {
+          "mintNfts": {
+            "$ref": "#/components/schemas/MintNftsClass"
+          },
+          "priceInLovelace": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentgatewayResultsClass": {
+        "type": "object",
+        "properties": {
+          "priceInLovelace": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fee": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "minUtxo": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "mintNfts": {
+            "$ref": "#/components/schemas/MintNftsResultClass"
+          },
+          "additionalPriceInTokens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tokens"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayoutWalletState": {
+        "enum": ["Active", "NotActive", "Blocked", "ConfirmationExpired"],
+        "type": "string"
+      },
       "PayoutWalletsClassV2": {
         "type": "object",
         "properties": {
@@ -9830,10 +9835,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "PayoutWalletState": {
-        "enum": ["Active", "NotActive", "Blocked", "ConfirmationExpired"],
-        "type": "string"
       },
       "PolicyClass": {
         "type": "object",
@@ -10016,38 +10017,6 @@
         },
         "additionalProperties": false
       },
-      "ReservedNftsClassV2": {
-        "type": "object",
-        "properties": {
-          "nftUid": {
-            "type": "string",
-            "nullable": true
-          },
-          "tokencount": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "tokennameHex": {
-            "type": "string",
-            "nullable": true
-          },
-          "policyId": {
-            "type": "string",
-            "nullable": true
-          },
-          "nftId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "lovelace": {
-            "type": "integer",
-            "format": "int64",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ReserveMultipleNftsClassV2": {
         "type": "object",
         "properties": {
@@ -10086,6 +10055,38 @@
         },
         "additionalProperties": false
       },
+      "ReservedNftsClassV2": {
+        "type": "object",
+        "properties": {
+          "nftUid": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokencount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tokennameHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "policyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "nftId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "lovelace": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ResultStates": {
         "enum": ["Ok", "Error"],
         "type": "string"
@@ -10107,6 +10108,20 @@
           }
         },
         "additionalProperties": false
+      },
+      "SaleConditionsTypes": {
+        "enum": [
+          "walletcontainspolicyid",
+          "walletdoescontainmaxpolicyid",
+          "walletdoesnotcontainpolicyid",
+          "walletcontainsminpolicyid",
+          "walletmustcontainminofpolicyid",
+          "whitlistedaddresses",
+          "blacklistedaddresses",
+          "stakeonpool",
+          "countedwhitelistedaddresses"
+        ],
+        "type": "string"
       },
       "SaleconditionsClassV2": {
         "type": "object",
@@ -10170,20 +10185,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "SaleConditionsTypes": {
-        "enum": [
-          "walletcontainspolicyid",
-          "walletdoescontainmaxpolicyid",
-          "walletdoesnotcontainpolicyid",
-          "walletcontainsminpolicyid",
-          "walletmustcontainminofpolicyid",
-          "whitlistedaddresses",
-          "blacklistedaddresses",
-          "stakeonpool",
-          "countedwhitelistedaddresses"
-        ],
-        "type": "string"
       },
       "SellerClass": {
         "type": "object",
@@ -10346,6 +10347,10 @@
             "nullable": true
           },
           "tokenname": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokennameHex": {
             "type": "string",
             "nullable": true
           }

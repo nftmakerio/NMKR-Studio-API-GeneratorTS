@@ -2,9 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export enum PayoutWalletState {
-  ACTIVE = 'Active',
-  NOT_ACTIVE = 'NotActive',
-  BLOCKED = 'Blocked',
-  CONFIRMATION_EXPIRED = 'ConfirmationExpired',
-}
+export type PayoutWalletState = 'Active' | 'NotActive' | 'Blocked' | 'ConfirmationExpired';

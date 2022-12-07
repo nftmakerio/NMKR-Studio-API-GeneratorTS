@@ -20,15 +20,16 @@ export class PaymenttransactionsService {
 
   /**
    * Creates a payment transaction
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Returns the PaymentTransactionResultClass Class
    * @throws ApiError
    */
-  public postV2CreatePaymentTransaction(
-    authorization?: string,
-    requestBody?: CreatePaymentTransactionClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2CreatePaymentTransaction({
+    authorization,
+    requestBody,
+  }: {
+    authorization?: string;
+    requestBody?: CreatePaymentTransactionClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/CreatePaymentTransaction',
@@ -47,15 +48,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionGetTransactionState(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public getV2ProceedPaymentTransactionGetTransactionState({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/GetTransactionState',
@@ -75,15 +77,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns GetPaymentAddressResultClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionGetPaymentAddress(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<GetPaymentAddressResultClass> {
+  public getV2ProceedPaymentTransactionGetPaymentAddress({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/GetPaymentAddress',
@@ -103,17 +106,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionSignDecentralPayment(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: SignDecentralClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionSignDecentralPayment({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: SignDecentralClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/SignDecentralPayment',
@@ -136,15 +140,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns CheckAddressResultClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionCheckPaymentAddress(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<CheckAddressResultClass> {
+  public getV2ProceedPaymentTransactionCheckPaymentAddress({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<CheckAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/CheckPaymentAddress',
@@ -164,17 +169,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionCancelTransaction(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: BuyerClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionCancelTransaction({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: BuyerClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/CancelTransaction',
@@ -196,15 +202,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns any Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionCancelTransaction(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<any> {
+  public getV2ProceedPaymentTransactionCancelTransaction({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/CancelTransaction',
@@ -224,15 +231,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns PricelistClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionGetPriceListForProject(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<Array<PricelistClass>> {
+  public getV2ProceedPaymentTransactionGetPriceListForProject({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<Array<PricelistClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/GetPriceListForProject',
@@ -252,17 +260,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionLockNft(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: SellerClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionLockNft({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: SellerClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/LockNft',
@@ -285,17 +294,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionSubmitTransaction(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: SubmitTransactionClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionSubmitTransaction({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: SubmitTransactionClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/SubmitTransaction',
@@ -319,17 +329,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionBetOnAuction(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: BuyerClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionBetOnAuction({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: BuyerClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/BetOnAuction',
@@ -351,17 +362,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionBuyDirectsale(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: BuyerClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionBuyDirectsale({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: BuyerClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/BuyDirectsale',
@@ -384,15 +396,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionEndTransaction(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public getV2ProceedPaymentTransactionEndTransaction({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/EndTransaction',
@@ -413,15 +426,16 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public getV2ProceedPaymentTransactionReservePaymentgatewayMintAndSendNft(
-    paymenttransactionuid: string,
-    authorization?: string,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public getV2ProceedPaymentTransactionReservePaymentgatewayMintAndSendNft({
+    paymenttransactionuid,
+    authorization,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/ReservePaymentgatewayMintAndSendNft',
@@ -442,17 +456,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionMintAndSendPaymentgatewayNft(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: MintAndSendReceiverClass,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionMintAndSendPaymentgatewayNft({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: MintAndSendReceiverClass;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/MintAndSendPaymentgatewayNft',
@@ -474,17 +489,18 @@ export class PaymenttransactionsService {
   }
 
   /**
-   * @param paymenttransactionuid
-   * @param authorization
-   * @param requestBody
    * @returns PaymentTransactionResultClass Success
    * @throws ApiError
    */
-  public postV2ProceedPaymentTransactionUpdateCustomProperties(
-    paymenttransactionuid: string,
-    authorization?: string,
-    requestBody?: Record<string, string>,
-  ): CancelablePromise<PaymentTransactionResultClass> {
+  public postV2ProceedPaymentTransactionUpdateCustomProperties({
+    paymenttransactionuid,
+    authorization,
+    requestBody,
+  }: {
+    paymenttransactionuid: string;
+    authorization?: string;
+    requestBody?: Record<string, string>;
+  }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/ProceedPaymentTransaction/{paymenttransactionuid}/UpdateCustomProperties',

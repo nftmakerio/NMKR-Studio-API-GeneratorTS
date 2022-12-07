@@ -2,12 +2,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export enum PaymentTransactionsStates {
-  ACTIVE = 'active',
-  EXPIRED = 'expired',
-  FINISHED = 'finished',
-  PREPARED = 'prepared',
-  ERROR = 'error',
-  CANCELED = 'canceled',
-  REJECTED = 'rejected',
-}
+export type PaymentTransactionsStates =
+  | 'active'
+  | 'expired'
+  | 'finished'
+  | 'prepared'
+  | 'error'
+  | 'canceled'
+  | 'rejected';

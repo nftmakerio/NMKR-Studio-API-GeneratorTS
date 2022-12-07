@@ -5,6 +5,7 @@ This repository aims to provide a way to quickly generate the latest typescript 
 In this folder you will find a `package.json` file with two commands `generate-local` to generate a client defined by the API definition from the `swagger.json` file. This can be useful if you want to test new API endpoints or one which still is in development. Additionally, the `generate-latest` command which will pull the latest available swagger file from [https://studio-api.nmkr.io/swagger/v2/swagger.json](https://studio-api.nmkr.io/swagger/v2/swagger.json)
 
 TLDR;
+- `npm install openapi-typescript-codegen --save-dev` to install the generator
 - `npm run generate-local` from local swagger.json file
 - `npm run generate-latest` from latest published version on the web
 
