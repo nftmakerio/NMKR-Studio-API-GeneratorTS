@@ -6,6 +6,8 @@ It aims to simplify the development experience when building cNFT and Cardano bl
 
 Basic example usage
 ````
+    import { NMKRClient } from "nmkr-studio-api";
+
     //Create and initialize the client
     const client=new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN"})
 
@@ -14,6 +16,26 @@ Basic example usage
 
     //print all project names to console
     projects.forEach((project)=>console.log(project.projectname));
+
+    //create a new project
+    const newProject = await client.projects.postV2CreateProject({
+      requestBody: {
+        description: 'MyTestProject is only for testing',
+        projectname: 'MyTestProject',
+        policyExpires: false,
+        addressExpiretime: 40,
+        maxNftSupply: 1,
+        enableFiat: false,
+        enableDecentralPayments: false,
+        enableCrossSaleOnPaymentgateway: true,
+        activatePayinAddress: true,
+        payoutWalletaddress: 'addr1ThisIsOurTeamsWallet',
+      },
+    });
+
+
+    //delete the created project
+    const deltedProject = await client.projects.getV2DeleteProject({ projectuid: newProject.uid! });
 ````
 
 Note:  You can overwrite the `BASE` URL parameter in `new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN",BASE:"https://studio-api.preprod.nmkr.io"}` if you want to change the default URL to preprod (WARNING the API might be slightly diffrent and this package is up-to-date with the production version only)
