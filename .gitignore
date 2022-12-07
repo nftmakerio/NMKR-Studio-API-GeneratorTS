@@ -2,3 +2,4 @@ node_modules
 /nmkr-studio-api/dist
 .env
 .DS_Store
+nmkr-studio-api/package-lock.json
