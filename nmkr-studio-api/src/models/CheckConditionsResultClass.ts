@@ -5,10 +5,9 @@
 import type { FrankenAddressProtectionClass } from './FrankenAddressProtectionClass';
 
 export type CheckConditionsResultClass = {
-    conditionsMet?: boolean;
-    rejectReason?: string | null;
-    rejectParameter?: string | null;
-    sendBackAddress?: FrankenAddressProtectionClass;
-    blocked?: boolean;
+  conditionsMet?: boolean;
+  rejectReason?: string | null;
+  rejectParameter?: string | null;
+  sendBackAddress?: FrankenAddressProtectionClass;
+  blocked?: boolean;
 };
-

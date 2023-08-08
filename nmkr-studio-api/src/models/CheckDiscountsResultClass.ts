@@ -3,6 +3,5 @@
 /* eslint-disable */
 
 export type CheckDiscountsResultClass = {
-    discountInPercent?: number;
+  discountInPercent?: number;
 };
-

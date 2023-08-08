@@ -3,6 +3,5 @@
 /* eslint-disable */
 
 export type MintAndSendReceiverClass = {
-    receiverAddress?: string | null;
+  receiverAddress?: string | null;
 };
-

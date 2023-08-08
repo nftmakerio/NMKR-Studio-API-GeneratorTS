@@ -5,7 +5,6 @@
 import type { ReservedNftsClassV2 } from './ReservedNftsClassV2';
 
 export type MintNftsResultClass = {
-    countNfts?: number | null;
-    reserveNfts?: Array<ReservedNftsClassV2> | null;
+  countNfts?: number | null;
+  reserveNfts?: Array<ReservedNftsClassV2> | null;
 };
-

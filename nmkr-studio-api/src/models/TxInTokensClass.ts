@@ -3,11 +3,10 @@
 /* eslint-disable */
 
 export type TxInTokensClass = {
-    policyId?: string | null;
-    tokenname?: string | null;
-    tokennameHex?: string | null;
-    quantity?: number;
-    readonly tokenHex?: string | null;
-    readonly token?: string | null;
+  policyId?: string | null;
+  tokenname?: string | null;
+  tokennameHex?: string | null;
+  quantity?: number;
+  readonly tokenHex?: string | null;
+  readonly token?: string | null;
 };
-

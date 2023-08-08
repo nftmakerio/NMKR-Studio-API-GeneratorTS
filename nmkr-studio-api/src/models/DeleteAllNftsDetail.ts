@@ -3,8 +3,7 @@
 /* eslint-disable */
 
 export type DeleteAllNftsDetail = {
-    nftUid?: string | null;
-    nftName?: string | null;
-    errorMessage?: string | null;
+  nftUid?: string | null;
+  nftName?: string | null;
+  errorMessage?: string | null;
 };
-

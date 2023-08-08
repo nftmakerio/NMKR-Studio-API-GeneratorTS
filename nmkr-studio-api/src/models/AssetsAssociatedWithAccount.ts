@@ -3,8 +3,7 @@
 /* eslint-disable */
 
 export type AssetsAssociatedWithAccount = {
-    unit?: string | null;
-    quantity?: number | null;
-    fingerprint?: string | null;
+  unit?: string | null;
+  quantity?: number | null;
+  fingerprint?: string | null;
 };
-

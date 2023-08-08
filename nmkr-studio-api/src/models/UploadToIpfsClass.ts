@@ -3,9 +3,8 @@
 /* eslint-disable */
 
 export type UploadToIpfsClass = {
-    mimetype?: string | null;
-    fileFromBase64?: string | null;
-    fileFromsUrl?: string | null;
-    name?: string | null;
+  mimetype?: string | null;
+  fileFromBase64?: string | null;
+  fileFromsUrl?: string | null;
+  name?: string | null;
 };
-

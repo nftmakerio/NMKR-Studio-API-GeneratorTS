@@ -3,10 +3,9 @@
 /* eslint-disable */
 
 export type SoldNftsOrTokensFromWhitelist = {
-    usedaddress?: string | null;
-    originatoraddress?: string | null;
-    transactionid?: string | null;
-    created?: string;
-    countnft?: number;
+  usedaddress?: string | null;
+  originatoraddress?: string | null;
+  transactionid?: string | null;
+  created?: string;
+  countnft?: number;
 };
-

@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type CreateRoyaltyTokenIfNotExistsClass = {
-    percentage?: number;
-    address?: string | null;
+  percentage?: number;
+  address?: string | null;
 };
-

@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type CountedWhitelistAddressesClass = {
-    address?: string | null;
-    maxCount?: number;
+  address?: string | null;
+  maxCount?: number;
 };
-

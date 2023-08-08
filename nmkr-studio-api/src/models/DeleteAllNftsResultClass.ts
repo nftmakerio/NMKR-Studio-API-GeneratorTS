@@ -5,8 +5,7 @@
 import type { DeleteAllNftsDetail } from './DeleteAllNftsDetail';
 
 export type DeleteAllNftsResultClass = {
-    successfullyDeleted?: number;
-    readonly notDeleted?: number;
-    errorDetails?: Array<DeleteAllNftsDetail> | null;
+  successfullyDeleted?: number;
+  readonly notDeleted?: number;
+  errorDetails?: Array<DeleteAllNftsDetail> | null;
 };
-
