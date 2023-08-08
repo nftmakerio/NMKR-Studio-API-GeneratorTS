@@ -5,11 +5,12 @@
 import type { TxInTokensClass } from './TxInTokensClass';
 
 export type TxInClass = {
-  txHash?: string | null;
-  txId?: number;
-  lovelace?: number;
-  tokens?: Array<TxInTokensClass> | null;
-  readonly txHashId?: string | null;
-  txTimestamp?: string | null;
-  readonly tokenSum?: number;
+    txHash?: string | null;
+    txId?: number;
+    lovelace?: number;
+    tokens?: Array<TxInTokensClass> | null;
+    readonly txHashId?: string | null;
+    txTimestamp?: string | null;
+    readonly tokenSum?: number;
 };
+

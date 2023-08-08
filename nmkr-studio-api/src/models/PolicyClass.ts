@@ -3,8 +3,9 @@
 /* eslint-disable */
 
 export type PolicyClass = {
-  policyId?: string | null;
-  privateVerifykey?: string | null;
-  privateSigningkey?: string | null;
-  policyScript?: string | null;
+    policyId?: string | null;
+    privateVerifykey?: string | null;
+    privateSigningkey?: string | null;
+    policyScript?: string | null;
 };
+

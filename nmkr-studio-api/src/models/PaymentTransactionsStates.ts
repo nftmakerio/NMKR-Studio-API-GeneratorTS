@@ -2,11 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type PaymentTransactionsStates =
-  | 'active'
-  | 'expired'
-  | 'finished'
-  | 'prepared'
-  | 'error'
-  | 'canceled'
-  | 'rejected';
+export type PaymentTransactionsStates = 'active' | 'expired' | 'finished' | 'prepared' | 'error' | 'canceled' | 'rejected';

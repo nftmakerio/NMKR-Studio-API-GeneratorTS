@@ -3,7 +3,8 @@
 /* eslint-disable */
 
 export type FrankenAddressProtectionClass = {
-  address?: string | null;
-  originatorAddress?: string | null;
-  stakeAddress?: string | null;
+    address?: string | null;
+    originatorAddress?: string | null;
+    stakeAddress?: string | null;
 };
+

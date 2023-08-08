@@ -6,6 +6,7 @@ import type { CreateRoyaltyTokenIfNotExistsClass } from './CreateRoyaltyTokenIfN
 import type { MintNftsClass } from './MintNftsClass';
 
 export type DecentralParametersClass = {
-  mintNfts?: MintNftsClass;
-  createRoyaltyTokenIfNotExists?: CreateRoyaltyTokenIfNotExistsClass;
+    mintNfts?: MintNftsClass;
+    createRoyaltyTokenIfNotExists?: CreateRoyaltyTokenIfNotExistsClass;
 };
+

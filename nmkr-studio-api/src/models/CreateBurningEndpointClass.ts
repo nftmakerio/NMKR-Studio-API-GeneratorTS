@@ -3,6 +3,7 @@
 /* eslint-disable */
 
 export type CreateBurningEndpointClass = {
-  address?: string | null;
-  validuntil?: string;
+    address?: string | null;
+    validuntil?: string;
 };
+

@@ -3,9 +3,10 @@
 /* eslint-disable */
 
 export type AdaRatesClass = {
-  usdRate?: number;
-  eurRate?: number;
-  jpyRate?: number;
-  btcRate?: number;
-  effectivedate?: string;
+    usdRate?: number;
+    eurRate?: number;
+    jpyRate?: number;
+    btcRate?: number;
+    effectivedate?: string;
 };
+

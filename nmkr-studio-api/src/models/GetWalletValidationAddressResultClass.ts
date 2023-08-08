@@ -3,8 +3,9 @@
 /* eslint-disable */
 
 export type GetWalletValidationAddressResultClass = {
-  validationUId?: string | null;
-  address?: string | null;
-  expires?: string;
-  lovelace?: number;
+    validationUId?: string | null;
+    address?: string | null;
+    expires?: string;
+    lovelace?: number;
 };
+

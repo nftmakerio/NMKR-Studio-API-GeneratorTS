@@ -3,7 +3,8 @@
 /* eslint-disable */
 
 export type WhitelistetedCountClass = {
-  address?: string | null;
-  countNft?: number;
-  stakeAddress?: string | null;
+    address?: string | null;
+    countNft?: number;
+    stakeAddress?: string | null;
 };
+

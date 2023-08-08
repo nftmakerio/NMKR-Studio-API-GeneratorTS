@@ -5,8 +5,9 @@
 import type { ResultStates } from './ResultStates';
 
 export type ApiErrorResultClass = {
-  resultState?: ResultStates;
-  errorMessage?: string | null;
-  errorCode?: number;
-  innerErrorMessage?: string | null;
+    resultState?: ResultStates;
+    errorMessage?: string | null;
+    errorCode?: number;
+    innerErrorMessage?: string | null;
 };
+

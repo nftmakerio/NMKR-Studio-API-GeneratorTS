@@ -5,6 +5,7 @@
 import type { PaymentTransactionSubstates } from './PaymentTransactionSubstates';
 
 export type PaymentTransactionSubStateResultClass = {
-  paymentTransactionSubstate?: PaymentTransactionSubstates;
-  lastTxHash?: string | null;
+    paymentTransactionSubstate?: PaymentTransactionSubstates;
+    lastTxHash?: string | null;
 };
+

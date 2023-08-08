@@ -5,5 +5,6 @@
 import type { TransactionAddressClass } from './TransactionAddressClass';
 
 export type SellerClass = {
-  seller?: TransactionAddressClass;
+    seller?: TransactionAddressClass;
 };
+

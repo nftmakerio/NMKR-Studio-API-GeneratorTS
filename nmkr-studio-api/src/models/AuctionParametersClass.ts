@@ -3,6 +3,7 @@
 /* eslint-disable */
 
 export type AuctionParametersClass = {
-  durationInSeconds?: number;
-  minBet?: number;
+    durationInSeconds?: number;
+    minBet?: number;
 };
+
