@@ -135,6 +135,9 @@ export class AddressReservationSaleService {
     referer,
     customproperty,
     optionalreceiveraddress,
+    optionalpriceintokenpolicyid,
+    optionalpriceintokenassetnameinhex,
+    optionalpriceintokencount,
     paymentMethod,
   }: {
     projectuid: string;
@@ -151,6 +154,9 @@ export class AddressReservationSaleService {
      */
     customproperty?: string;
     optionalreceiveraddress?: string;
+    optionalpriceintokenpolicyid?: string;
+    optionalpriceintokenassetnameinhex?: string;
+    optionalpriceintokencount?: number;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -169,6 +175,9 @@ export class AddressReservationSaleService {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
+        optionalpriceintokenpolicyid: optionalpriceintokenpolicyid,
+        optionalpriceintokenassetnameinhex: optionalpriceintokenassetnameinhex,
+        optionalpriceintokencount: optionalpriceintokencount,
         paymentMethod: paymentMethod,
       },
       errors: {
@@ -264,6 +273,9 @@ export class AddressReservationSaleService {
     referer,
     customproperty,
     optionalreceiveraddress,
+    optionalpriceintokenpolicyid,
+    optionalpriceintokenassetnameinhex,
+    optionalpriceintokencount,
     paymentMethod,
   }: {
     nftuid: string;
@@ -280,6 +292,9 @@ export class AddressReservationSaleService {
      */
     customproperty?: string;
     optionalreceiveraddress?: string;
+    optionalpriceintokenpolicyid?: string;
+    optionalpriceintokenassetnameinhex?: string;
+    optionalpriceintokencount?: number;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -298,6 +313,9 @@ export class AddressReservationSaleService {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
+        optionalpriceintokenpolicyid: optionalpriceintokenpolicyid,
+        optionalpriceintokenassetnameinhex: optionalpriceintokenassetnameinhex,
+        optionalpriceintokencount: optionalpriceintokencount,
         paymentMethod: paymentMethod,
       },
       errors: {

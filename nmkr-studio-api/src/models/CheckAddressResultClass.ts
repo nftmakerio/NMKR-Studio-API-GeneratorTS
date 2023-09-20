@@ -3,11 +3,13 @@
 /* eslint-disable */
 
 import type { NFT } from './NFT';
+import type { Tokens } from './Tokens';
 
 export type CheckAddressResultClass = {
   state?: string | null;
   lovelace?: number;
   hasToPay?: number;
+  additionalPriceInTokens?: Array<Tokens> | null;
   payDateTime?: string | null;
   expiresDateTime?: string | null;
   transaction?: string | null;
@@ -19,4 +21,5 @@ export type CheckAddressResultClass = {
   discount?: number | null;
   customProperty?: string | null;
   tokenReward?: number | null;
+  countNftsOrTokens?: number;
 };
