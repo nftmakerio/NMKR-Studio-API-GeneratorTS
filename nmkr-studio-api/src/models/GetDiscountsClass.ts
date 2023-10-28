@@ -14,4 +14,10 @@ export type GetDiscountsClass = {
   minOrMaxValue?: number | null;
   description?: string | null;
   discountInPercent?: number;
+  minValue1?: number | null;
+  minValue2?: number | null;
+  minValue3?: number | null;
+  minValue4?: number | null;
+  minValue5?: number | null;
+  operator?: string | null;
 };

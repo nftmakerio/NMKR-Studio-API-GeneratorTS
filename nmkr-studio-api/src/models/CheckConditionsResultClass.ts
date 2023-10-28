@@ -9,5 +9,4 @@ export type CheckConditionsResultClass = {
   rejectReason?: string | null;
   rejectParameter?: string | null;
   sendBackAddress?: FrankenAddressProtectionClass;
-  blocked?: boolean;
 };

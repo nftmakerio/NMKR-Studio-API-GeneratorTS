@@ -18,4 +18,5 @@ export type GetPaymentAddressResultClass = {
   priceInLovelace?: number;
   additionalPriceInTokens?: Array<Tokens> | null;
   sendbackToUser?: number;
+  revervationtype?: string | null;
 };

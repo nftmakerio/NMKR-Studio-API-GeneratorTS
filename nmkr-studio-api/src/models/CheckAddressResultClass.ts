@@ -22,4 +22,5 @@ export type CheckAddressResultClass = {
   customProperty?: string | null;
   tokenReward?: number | null;
   countNftsOrTokens?: number;
+  reservationType?: string | null;
 };

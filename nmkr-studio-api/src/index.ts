@@ -41,6 +41,7 @@ export type { DirectSaleOfferParameterClass } from './models/DirectSaleOfferPara
 export type { DirectSaleOfferResultsClass } from './models/DirectSaleOfferResultsClass';
 export type { DirectSaleParameterClass } from './models/DirectSaleParameterClass';
 export type { DirectSaleResultsClass } from './models/DirectSaleResultsClass';
+export type { DuplicateNftClass } from './models/DuplicateNftClass';
 export type { FrankenAddressProtectionClass } from './models/FrankenAddressProtectionClass';
 export type { GetAuctionStateResultClass } from './models/GetAuctionStateResultClass';
 export type { GetDiscountsClass } from './models/GetDiscountsClass';

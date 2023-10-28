@@ -9,4 +9,5 @@ export type TxInTokensClass = {
   quantity?: number;
   readonly tokenHex?: string | null;
   readonly token?: string | null;
+  readonly fingerprint?: string | null;
 };

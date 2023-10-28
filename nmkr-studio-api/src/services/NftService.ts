@@ -3,8 +3,10 @@
 /* eslint-disable */
 import type { ApiErrorResultClass } from '../models/ApiErrorResultClass';
 import type { DeleteAllNftsResultClass } from '../models/DeleteAllNftsResultClass';
+import type { DuplicateNftClass } from '../models/DuplicateNftClass';
 import type { NFT } from '../models/NFT';
 import type { NftDetailsClass } from '../models/NftDetailsClass';
+import type { NftProjectsDetails } from '../models/NftProjectsDetails';
 import type { UploadMetadataClass } from '../models/UploadMetadataClass';
 import type { UploadNftClassV2 } from '../models/UploadNftClassV2';
 import type { UploadNftResultClass } from '../models/UploadNftResultClass';
@@ -132,6 +134,39 @@ export class NftService {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The nft was not found`,
         406: `Not Acceptable`,
+      },
+    });
+  }
+
+  /**
+   * Duplicates a nft/token inside a project. If a token already exists, it will be skipped
+   * @returns NftProjectsDetails Duplicate was successful. Returns the NtProjectDetails Class
+   * @throws ApiError
+   */
+  public postV2DuplicateNft({
+    nftuid,
+    authorization,
+    requestBody,
+  }: {
+    nftuid: string;
+    authorization?: string;
+    requestBody?: DuplicateNftClass;
+  }): CancelablePromise<NftProjectsDetails> {
+    return this.httpRequest.request({
+      method: 'POST',
+      url: '/v2/DuplicateNft/{nftuid}',
+      path: {
+        nftuid: nftuid,
+      },
+      headers: {
+        authorization: authorization,
+      },
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `The nft was not found`,
+        406: `The nft is not valid`,
       },
     });
   }
