@@ -16,21 +16,12 @@ export class CustomerService {
    * @returns ApiErrorResultClass Returns the Apiresultclass with the information about the address
    * @throws ApiError
    */
-  public getV2AddPayoutWallet({
-    walletaddress,
-    authorization,
-  }: {
-    walletaddress: string;
-    authorization?: string;
-  }): CancelablePromise<ApiErrorResultClass> {
+  public getV2AddPayoutWallet({ walletaddress }: { walletaddress: string }): CancelablePromise<ApiErrorResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/AddPayoutWallet/{walletaddress}',
       path: {
         walletaddress: walletaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -45,17 +36,10 @@ export class CustomerService {
    * @returns GetPayoutWalletsResultClass Returns the GetPayoutWalletsResultClass
    * @throws ApiError
    */
-  public getV2GetPayoutWallets({
-    authorization,
-  }: {
-    authorization?: string;
-  }): CancelablePromise<Array<GetPayoutWalletsResultClass>> {
+  public getV2GetPayoutWallets(): CancelablePromise<Array<GetPayoutWalletsResultClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPayoutWallets',
-      headers: {
-        authorization: authorization,
-      },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
       },

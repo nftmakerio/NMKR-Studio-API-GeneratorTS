@@ -15,21 +15,12 @@ export class WhitelistsService {
    * @returns GetWhitelistEntriesClass Returns the complete whitelist and how much are already sold
    * @throws ApiError
    */
-  public getV2ManageWhitelist({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<GetWhitelistEntriesClass> {
+  public getV2ManageWhitelist({ projectuid }: { projectuid: string }): CancelablePromise<GetWhitelistEntriesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ManageWhitelist/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -49,12 +40,10 @@ export class WhitelistsService {
     projectuid,
     address,
     countofnfts,
-    authorization,
   }: {
     projectuid: string;
     address: string;
     countofnfts: number;
-    authorization?: string;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'POST',
@@ -63,9 +52,6 @@ export class WhitelistsService {
         projectuid: projectuid,
         address: address,
         countofnfts: countofnfts,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -84,11 +70,9 @@ export class WhitelistsService {
   public deleteV2ManageWhitelist({
     projectuid,
     address,
-    authorization,
   }: {
     projectuid: string;
     address: string;
-    authorization?: string;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'DELETE',
@@ -96,9 +80,6 @@ export class WhitelistsService {
       path: {
         projectuid: projectuid,
         address: address,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

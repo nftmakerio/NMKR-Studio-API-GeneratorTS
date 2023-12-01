@@ -23,24 +23,13 @@ export class NftService {
    * @returns any Returns the Nft Class
    * @throws ApiError
    */
-  public getV2BlockUnblockNft({
-    nftuid,
-    blockNft,
-    authorization,
-  }: {
-    nftuid: string;
-    blockNft: boolean;
-    authorization?: string;
-  }): CancelablePromise<any> {
+  public getV2BlockUnblockNft({ nftuid, blockNft }: { nftuid: string; blockNft: boolean }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/BlockUnblockNft/{nftuid}/{blockNft}',
       path: {
         nftuid: nftuid,
         blockNft: blockNft,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -57,11 +46,9 @@ export class NftService {
    */
   public postV2CheckMetadata({
     nftuid,
-    authorization,
     requestBody,
   }: {
     nftuid: string;
-    authorization?: string;
     requestBody?: UploadMetadataClass;
   }): CancelablePromise<ApiErrorResultClass> {
     return this.httpRequest.request({
@@ -69,9 +56,6 @@ export class NftService {
       url: '/v2/CheckMetadata/{nftuid}',
       path: {
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -92,19 +76,14 @@ export class NftService {
    */
   public getV2DeleteAllNftsFromProject({
     projectuid,
-    authorization,
   }: {
     projectuid: string;
-    authorization?: string;
   }): CancelablePromise<DeleteAllNftsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/DeleteAllNftsFromProject/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -120,15 +99,12 @@ export class NftService {
    * @returns any Returns the Nft Class
    * @throws ApiError
    */
-  public getV2DeleteNft({ nftuid, authorization }: { nftuid: string; authorization?: string }): CancelablePromise<any> {
+  public getV2DeleteNft({ nftuid }: { nftuid: string }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/DeleteNft/{nftuid}',
       path: {
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -145,11 +121,9 @@ export class NftService {
    */
   public postV2DuplicateNft({
     nftuid,
-    authorization,
     requestBody,
   }: {
     nftuid: string;
-    authorization?: string;
     requestBody?: DuplicateNftClass;
   }): CancelablePromise<NftProjectsDetails> {
     return this.httpRequest.request({
@@ -157,9 +131,6 @@ export class NftService {
       url: '/v2/DuplicateNft/{nftuid}',
       path: {
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -177,21 +148,12 @@ export class NftService {
    * @returns NftDetailsClass Returns the Nft Class
    * @throws ApiError
    */
-  public getV2GetNftDetailsById({
-    nftuid,
-    authorization,
-  }: {
-    nftuid: string;
-    authorization?: string;
-  }): CancelablePromise<NftDetailsClass> {
+  public getV2GetNftDetailsById({ nftuid }: { nftuid: string }): CancelablePromise<NftDetailsClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetNftDetailsById/{nftuid}',
       path: {
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -209,11 +171,9 @@ export class NftService {
   public getV2GetNftDetailsByTokenname({
     projectuid,
     nftname,
-    authorization,
   }: {
     projectuid: string;
     nftname: string;
-    authorization?: string;
   }): CancelablePromise<NftDetailsClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -221,9 +181,6 @@ export class NftService {
       path: {
         projectuid: projectuid,
         nftname: nftname,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -244,14 +201,12 @@ export class NftService {
     state,
     count,
     page,
-    authorization,
     orderby = 'id',
   }: {
     projectuid: string;
     state: string;
     count: number;
     page: number;
-    authorization?: string;
     /**
      * (Optional) The sort order of the result. Possible values are: id (default),id_desc (descending order), selldate (on sold nfts) and selldate_desc (descending order)
      */
@@ -265,9 +220,6 @@ export class NftService {
         state: state,
         count: count,
         page: page,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         orderby: orderby,
@@ -290,12 +242,10 @@ export class NftService {
   public postV2UpdateMetadata({
     projectuid,
     nftuid,
-    authorization,
     requestBody,
   }: {
     projectuid: string;
     nftuid: string;
-    authorization?: string;
     requestBody?: any;
   }): CancelablePromise<NftDetailsClass> {
     return this.httpRequest.request({
@@ -304,9 +254,6 @@ export class NftService {
       path: {
         projectuid: projectuid,
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -330,12 +277,10 @@ export class NftService {
    */
   public postV2UploadNft({
     projectuid,
-    authorization,
     uploadsource,
     requestBody,
   }: {
     projectuid: string;
-    authorization?: string;
     uploadsource?: string;
     requestBody?: UploadNftClassV2;
   }): CancelablePromise<UploadNftResultClass> {
@@ -344,9 +289,6 @@ export class NftService {
       url: '/v2/UploadNft/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         uploadsource: uploadsource,

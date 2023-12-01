@@ -18,11 +18,9 @@ export class SmartcontractsService {
   public getV2GetBuyOutSmartcontractAddress({
     customerid,
     txHashLockedinAssets,
-    authorization,
   }: {
     customerid: number;
     txHashLockedinAssets: string;
-    authorization?: string;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -30,9 +28,6 @@ export class SmartcontractsService {
       path: {
         customerid: customerid,
         txHashLockedinAssets: txHashLockedinAssets,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `Unauthorized`,
@@ -52,19 +47,14 @@ export class SmartcontractsService {
    */
   public getV2GetDatumInformationForSmartcontractDirectsaleTransaction({
     txhash,
-    authorization,
   }: {
     txhash: string;
-    authorization?: string;
   }): CancelablePromise<SmartcontractDirectsaleDatumInformationClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetDatumInformationForSmartcontractDirectsaleTransaction/{txhash}',
       path: {
         txhash: txhash,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong policyid etc.)`,
@@ -81,11 +71,9 @@ export class SmartcontractsService {
   public getV2GetListedAssetPaymentTransaction({
     policyid,
     assetnameinhex,
-    authorization,
   }: {
     policyid: string;
     assetnameinhex: string;
-    authorization?: string;
   }): CancelablePromise<PaymentTransactionResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -93,9 +81,6 @@ export class SmartcontractsService {
       path: {
         policyid: policyid,
         assetnameinhex: assetnameinhex,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `Unauthorized`,

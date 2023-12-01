@@ -19,12 +19,10 @@ export class MintService {
     projectuid,
     countnft,
     receiveraddress,
-    authorization,
   }: {
     projectuid: string;
     countnft: number;
     receiveraddress: string;
-    authorization?: string;
   }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -33,9 +31,6 @@ export class MintService {
         projectuid: projectuid,
         countnft: countnft,
         receiveraddress: receiveraddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -59,13 +54,11 @@ export class MintService {
     nftuid,
     tokencount,
     receiveraddress,
-    authorization,
   }: {
     projectuid: string;
     nftuid: string;
     tokencount: number;
     receiveraddress: string;
-    authorization?: string;
   }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -75,9 +68,6 @@ export class MintService {
         nftuid: nftuid,
         tokencount: tokencount,
         receiveraddress: receiveraddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -100,12 +90,10 @@ export class MintService {
     projectuid,
     royaltyaddress,
     percentage,
-    authorization,
   }: {
     projectuid: string;
     royaltyaddress: string;
     percentage: number;
-    authorization?: string;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
@@ -114,9 +102,6 @@ export class MintService {
         projectuid: projectuid,
         royaltyaddress: royaltyaddress,
         percentage: percentage,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -135,24 +120,13 @@ export class MintService {
    * @returns any Remint is scheduled
    * @throws ApiError
    */
-  public getV2RemintAndBurn({
-    projectuid,
-    nftuid,
-    authorization,
-  }: {
-    projectuid: string;
-    nftuid: string;
-    authorization?: string;
-  }): CancelablePromise<any> {
+  public getV2RemintAndBurn({ projectuid, nftuid }: { projectuid: string; nftuid: string }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/RemintAndBurn/{projectuid}/{nftuid}',
       path: {
         projectuid: projectuid,
         nftuid: nftuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,

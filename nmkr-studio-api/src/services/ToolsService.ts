@@ -25,11 +25,9 @@ export class ToolsService {
   public getV2CheckIfEglibleForDiscount({
     projectuid,
     address,
-    authorization,
   }: {
     projectuid: string;
     address: string;
-    authorization?: string;
   }): CancelablePromise<CheckDiscountsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -37,9 +35,6 @@ export class ToolsService {
       path: {
         projectuid: projectuid,
         address: address,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -60,12 +55,10 @@ export class ToolsService {
     projectuid,
     address,
     countnft,
-    authorization,
   }: {
     projectuid: string;
     address: string;
     countnft: number;
-    authorization?: string;
   }): CancelablePromise<CheckConditionsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -74,9 +67,6 @@ export class ToolsService {
         projectuid: projectuid,
         address: address,
         countnft: countnft,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -111,21 +101,12 @@ export class ToolsService {
    * @returns any Success
    * @throws ApiError
    */
-  public getV2GetActiveDirectsaleListings({
-    stakeaddress,
-    authorization,
-  }: {
-    stakeaddress: string;
-    authorization?: string;
-  }): CancelablePromise<any> {
+  public getV2GetActiveDirectsaleListings({ stakeaddress }: { stakeaddress: string }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetActiveDirectsaleListings/{stakeaddress}',
       path: {
         stakeaddress: stakeaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
     });
   }
@@ -135,13 +116,10 @@ export class ToolsService {
    * @returns AdaRatesClass Returns the AdaRatesClass
    * @throws ApiError
    */
-  public getV2GetAdaRates({ authorization }: { authorization?: string }): CancelablePromise<AdaRatesClass> {
+  public getV2GetAdaRates(): CancelablePromise<AdaRatesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAdaRates',
-      headers: {
-        authorization: authorization,
-      },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `Not Found`,
@@ -156,19 +134,14 @@ export class ToolsService {
    */
   public getV2GetAllAssetsInWallet({
     address,
-    authorization,
   }: {
     address: string;
-    authorization?: string;
   }): CancelablePromise<Array<AssetsAssociatedWithAccount>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAllAssetsInWallet/{address}',
       path: {
         address: address,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -187,12 +160,10 @@ export class ToolsService {
     address,
     policyid,
     tokenname,
-    authorization,
   }: {
     address: string;
     policyid: string;
     tokenname: string;
-    authorization?: string;
   }): CancelablePromise<AssetsAssociatedWithAccount> {
     return this.httpRequest.request({
       method: 'GET',
@@ -201,9 +172,6 @@ export class ToolsService {
         address: address,
         policyid: policyid,
         tokenname: tokenname,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -221,12 +189,10 @@ export class ToolsService {
   public postV2GetAmountOfSpecificTokenInWallet({
     policyid,
     tokenname,
-    authorization,
     requestBody,
   }: {
     policyid: string;
     tokenname: string;
-    authorization?: string;
     requestBody?: Array<string>;
   }): CancelablePromise<AssetsAssociatedWithAccount> {
     return this.httpRequest.request({
@@ -235,9 +201,6 @@ export class ToolsService {
       path: {
         policyid: policyid,
         tokenname: tokenname,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -257,14 +220,12 @@ export class ToolsService {
   public getV2GetCardanoTokenRegistryInformation({
     policyid,
     tokenname,
-    authorization,
   }: {
     policyid: string;
     /**
      * The Name of the Token (not HEX)
      */
     tokenname: string;
-    authorization?: string;
   }): CancelablePromise<TokenRegistryMetadata> {
     return this.httpRequest.request({
       method: 'GET',
@@ -272,9 +233,6 @@ export class ToolsService {
       path: {
         policyid: policyid,
         tokenname: tokenname,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -291,11 +249,9 @@ export class ToolsService {
    */
   public getV2GetPolicySnapshot({
     policyid,
-    authorization,
     cumulateStakeAddresses = true,
   }: {
     policyid: string;
-    authorization?: string;
     cumulateStakeAddresses?: boolean;
   }): CancelablePromise<Array<NmkrAssetAddress>> {
     return this.httpRequest.request({
@@ -304,9 +260,6 @@ export class ToolsService {
       path: {
         policyid: policyid,
         cumulateStakeAddresses: cumulateStakeAddresses,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -321,21 +274,12 @@ export class ToolsService {
    * @returns RoyaltyClass Returns an array of RoyaltyClass
    * @throws ApiError
    */
-  public getV2GetRoyaltyInformation({
-    policyid,
-    authorization,
-  }: {
-    policyid: string;
-    authorization?: string;
-  }): CancelablePromise<RoyaltyClass> {
+  public getV2GetRoyaltyInformation({ policyid }: { policyid: string }): CancelablePromise<RoyaltyClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetRoyaltyInformation/{policyid}',
       path: {
         policyid: policyid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong policyid etc.)`,

@@ -33,11 +33,9 @@ export class ProjectsService {
   public getV2CreateBurningAddress({
     projectuid,
     addressactiveinhours,
-    authorization,
   }: {
     projectuid: string;
     addressactiveinhours: number;
-    authorization?: string;
   }): CancelablePromise<CreateBurningEndpointClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -45,9 +43,6 @@ export class ProjectsService {
       path: {
         projectuid: projectuid,
         addressactiveinhours: addressactiveinhours,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -67,18 +62,13 @@ export class ProjectsService {
    * @throws ApiError
    */
   public postV2CreateProject({
-    authorization,
     requestBody,
   }: {
-    authorization?: string;
     requestBody?: CreateProjectClassV2;
   }): CancelablePromise<CreateNewProjectResultClass> {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/CreateProject',
-      headers: {
-        authorization: authorization,
-      },
       body: requestBody,
       mediaType: 'application/json',
       errors: {
@@ -97,21 +87,12 @@ export class ProjectsService {
    * @returns ApiErrorResultClass Returns the Apiresultclass with the information about the address incl. the assigned NFTs
    * @throws ApiError
    */
-  public getV2DeleteProject({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<ApiErrorResultClass> {
+  public getV2DeleteProject({ projectuid }: { projectuid: string }): CancelablePromise<ApiErrorResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/DeleteProject/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -126,21 +107,12 @@ export class ProjectsService {
    * @returns NftCountsClass Returns the NftCountsClass
    * @throws ApiError
    */
-  public getV2GetCounts({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<NftCountsClass> {
+  public getV2GetCounts({ projectuid }: { projectuid: string }): CancelablePromise<NftCountsClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetCounts/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -154,21 +126,12 @@ export class ProjectsService {
    * @returns GetDiscountsClass Returns an array of the GetDiscountsClass
    * @throws ApiError
    */
-  public getV2GetDiscounts({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<Array<GetDiscountsClass>> {
+  public getV2GetDiscounts({ projectuid }: { projectuid: string }): CancelablePromise<Array<GetDiscountsClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetDiscounts/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -183,21 +146,12 @@ export class ProjectsService {
    * @returns IdentityInformationClass Returns the Identities (if available)
    * @throws ApiError
    */
-  public getV2GetIdentityAccounts({
-    policyid,
-    authorization,
-  }: {
-    policyid: string;
-    authorization?: string;
-  }): CancelablePromise<IdentityInformationClass> {
+  public getV2GetIdentityAccounts({ policyid }: { policyid: string }): CancelablePromise<IdentityInformationClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetIdentityAccounts/{policyid}',
       path: {
         policyid: policyid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -213,19 +167,14 @@ export class ProjectsService {
    */
   public getV2GetNotifications({
     projectuid,
-    authorization,
   }: {
     projectuid: string;
-    authorization?: string;
   }): CancelablePromise<Array<GetNotificationsClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetNotifications/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -240,21 +189,12 @@ export class ProjectsService {
    * @returns PricelistClass Returns an array of the PricelistClass
    * @throws ApiError
    */
-  public getV2GetPricelist({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<Array<PricelistClass>> {
+  public getV2GetPricelist({ projectuid }: { projectuid: string }): CancelablePromise<Array<PricelistClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPricelist/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -269,21 +209,12 @@ export class ProjectsService {
    * @returns NftProjectsDetails Returns the NftProjectsDetails Class
    * @throws ApiError
    */
-  public getV2GetProjectDetails({
-    projectuid,
-    authorization,
-  }: {
-    projectuid: string;
-    authorization?: string;
-  }): CancelablePromise<NftProjectsDetails> {
+  public getV2GetProjectDetails({ projectuid }: { projectuid: string }): CancelablePromise<NftProjectsDetails> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetProjectDetails/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -300,19 +231,14 @@ export class ProjectsService {
    */
   public getV2GetSaleConditions({
     projectuid,
-    authorization,
   }: {
     projectuid: string;
-    authorization?: string;
   }): CancelablePromise<Array<GetSaleconditionsClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetSaleConditions/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -330,17 +256,10 @@ export class ProjectsService {
    * @returns NftProjectsDetails Returns the NftProjectsDetails Class
    * @throws ApiError
    */
-  public getV2ListProjects({
-    authorization,
-  }: {
-    authorization?: string;
-  }): CancelablePromise<Array<NftProjectsDetails>> {
+  public getV2ListProjects(): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ListProjects',
-      headers: {
-        authorization: authorization,
-      },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The apikey or the projects where not found`,
@@ -361,11 +280,9 @@ export class ProjectsService {
   public getV2ListProjects1({
     count,
     page,
-    authorization,
   }: {
     count: number;
     page: number;
-    authorization?: string;
   }): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({
       method: 'GET',
@@ -373,9 +290,6 @@ export class ProjectsService {
       path: {
         count: count,
         page: page,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -393,11 +307,9 @@ export class ProjectsService {
    */
   public putV2UpdateDiscounts({
     projectuid,
-    authorization,
     requestBody,
   }: {
     projectuid: string;
-    authorization?: string;
     requestBody?: Array<PriceDiscountClassV2>;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
@@ -405,9 +317,6 @@ export class ProjectsService {
       url: '/v2/UpdateDiscounts/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -428,11 +337,9 @@ export class ProjectsService {
    */
   public postV2UpdateNotifications({
     projectuid,
-    authorization,
     requestBody,
   }: {
     projectuid: string;
-    authorization?: string;
     requestBody?: Array<NotificationsClassV2>;
   }): CancelablePromise<Array<GetNotificationsClass>> {
     return this.httpRequest.request({
@@ -440,9 +347,6 @@ export class ProjectsService {
       url: '/v2/UpdateNotifications/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -463,11 +367,9 @@ export class ProjectsService {
    */
   public putV2UpdatePricelist({
     projectuid,
-    authorization,
     requestBody,
   }: {
     projectuid: string;
-    authorization?: string;
     requestBody?: Array<PricelistClassV2>;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
@@ -475,9 +377,6 @@ export class ProjectsService {
       url: '/v2/UpdatePricelist/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -498,11 +397,9 @@ export class ProjectsService {
    */
   public putV2UpdateSaleConditions({
     projectuid,
-    authorization,
     requestBody,
   }: {
     projectuid: string;
-    authorization?: string;
     requestBody?: Array<SaleconditionsClassV2>;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
@@ -510,9 +407,6 @@ export class ProjectsService {
       url: '/v2/UpdateSaleConditions/{projectuid}',
       path: {
         projectuid: projectuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',

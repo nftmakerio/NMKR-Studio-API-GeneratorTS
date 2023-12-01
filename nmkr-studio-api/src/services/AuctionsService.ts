@@ -16,19 +16,14 @@ export class AuctionsService {
    */
   public getV2GetAuctionState({
     auctionuid,
-    authorization,
   }: {
     auctionuid: string;
-    authorization?: string;
   }): CancelablePromise<Array<GetAuctionStateResultClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAuctionState/{auctionuid}',
       path: {
         auctionuid: auctionuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

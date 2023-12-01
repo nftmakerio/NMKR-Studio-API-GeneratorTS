@@ -24,13 +24,11 @@ export class ManagedWalletsService {
     customerid,
     walletpassword,
     enterpriseaddress,
-    authorization,
     walletname = '',
   }: {
     customerid: number;
     walletpassword: string;
     enterpriseaddress: boolean;
-    authorization?: string;
     walletname?: string;
   }): CancelablePromise<CreateWalletResultClass> {
     return this.httpRequest.request({
@@ -41,9 +39,6 @@ export class ManagedWalletsService {
         walletpassword: walletpassword,
         enterpriseaddress: enterpriseaddress,
         walletname: walletname,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -62,12 +57,10 @@ export class ManagedWalletsService {
     customerid,
     walletpassword,
     enterpriseaddress,
-    authorization,
   }: {
     customerid: number;
     walletpassword: string;
     enterpriseaddress: boolean;
-    authorization?: string;
   }): CancelablePromise<CreateWalletResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -76,9 +69,6 @@ export class ManagedWalletsService {
         customerid: customerid,
         walletpassword: walletpassword,
         enterpriseaddress: enterpriseaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -93,21 +83,12 @@ export class ManagedWalletsService {
    * @returns TxInAddressesClass Returns the CreateWalletResultClass Class
    * @throws ApiError
    */
-  public getV2GetWalletUtxo({
-    address,
-    authorization,
-  }: {
-    address: string;
-    authorization?: string;
-  }): CancelablePromise<TxInAddressesClass> {
+  public getV2GetWalletUtxo({ address }: { address: string }): CancelablePromise<TxInAddressesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetWalletUtxo/{address}',
       path: {
         address: address,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -124,11 +105,9 @@ export class ManagedWalletsService {
    */
   public postV2ImportWallet({
     customerid,
-    authorization,
     requestBody,
   }: {
     customerid: number;
-    authorization?: string;
     requestBody?: ImportManagedWalletClass;
   }): CancelablePromise<ImportWalletResultClass> {
     return this.httpRequest.request({
@@ -136,9 +115,6 @@ export class ManagedWalletsService {
       url: '/v2/ImportWallet/{customerid}',
       path: {
         customerid: customerid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -155,21 +131,12 @@ export class ManagedWalletsService {
    * @returns Wallets Returns the CreateWalletResultClass Class
    * @throws ApiError
    */
-  public getV2ListAllWallets({
-    customerid,
-    authorization,
-  }: {
-    customerid: number;
-    authorization?: string;
-  }): CancelablePromise<Array<Wallets>> {
+  public getV2ListAllWallets({ customerid }: { customerid: number }): CancelablePromise<Array<Wallets>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ListAllWallets/{customerid}',
       path: {
         customerid: customerid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -188,13 +155,11 @@ export class ManagedWalletsService {
     customerid,
     senderaddress,
     walletpassword,
-    authorization,
     requestBody,
   }: {
     customerid: number;
     senderaddress: string;
     walletpassword: string;
-    authorization?: string;
     requestBody?: CreateManagedWalletTransactionClass;
   }): CancelablePromise<MakeTransactionResultClass> {
     return this.httpRequest.request({
@@ -204,9 +169,6 @@ export class ManagedWalletsService {
         customerid: customerid,
         senderaddress: senderaddress,
         walletpassword: walletpassword,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',

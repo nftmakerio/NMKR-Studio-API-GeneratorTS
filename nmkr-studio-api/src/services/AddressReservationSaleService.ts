@@ -21,11 +21,9 @@ export class AddressReservationSaleService {
   public getV2CancelAddressReservation({
     projectuid,
     paymentaddress,
-    authorization,
   }: {
     projectuid: string;
     paymentaddress: string;
-    authorization?: string;
   }): CancelablePromise<any> {
     return this.httpRequest.request({
       method: 'GET',
@@ -33,9 +31,6 @@ export class AddressReservationSaleService {
       path: {
         projectuid: projectuid,
         paymentaddress: paymentaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -57,11 +52,9 @@ export class AddressReservationSaleService {
   public getV2CheckAddress({
     projectuid,
     address,
-    authorization,
   }: {
     projectuid: string;
     address: string;
-    authorization?: string;
   }): CancelablePromise<CheckAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -69,9 +62,6 @@ export class AddressReservationSaleService {
       path: {
         projectuid: projectuid,
         address: address,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -92,11 +82,9 @@ export class AddressReservationSaleService {
   public getV2CheckAddressWithCustomproperty({
     projectuid,
     customproperty,
-    authorization,
   }: {
     projectuid: string;
     customproperty: string;
-    authorization?: string;
   }): CancelablePromise<CheckAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -104,9 +92,6 @@ export class AddressReservationSaleService {
       path: {
         projectuid: projectuid,
         customproperty: customproperty,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -131,7 +116,6 @@ export class AddressReservationSaleService {
     countnft,
     lovelace,
     customeripaddress,
-    authorization,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -144,7 +128,6 @@ export class AddressReservationSaleService {
     countnft: number;
     lovelace: number;
     customeripaddress: string;
-    authorization?: string;
     /**
      * (Optional) A referer code
      */
@@ -167,9 +150,6 @@ export class AddressReservationSaleService {
         countnft: countnft,
         lovelace: lovelace,
         customeripaddress: customeripaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         referer: referer,
@@ -205,7 +185,6 @@ export class AddressReservationSaleService {
     projectuid,
     countnft,
     customeripaddress,
-    authorization,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -214,7 +193,6 @@ export class AddressReservationSaleService {
     projectuid: string;
     countnft: number;
     customeripaddress: string;
-    authorization?: string;
     /**
      * (Optional) A referer code
      */
@@ -233,9 +211,6 @@ export class AddressReservationSaleService {
         projectuid: projectuid,
         countnft: countnft,
         customeripaddress: customeripaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         referer: referer,
@@ -269,7 +244,6 @@ export class AddressReservationSaleService {
     tokencount,
     lovelace,
     customeripaddress,
-    authorization,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -282,7 +256,6 @@ export class AddressReservationSaleService {
     tokencount: number;
     lovelace: number;
     customeripaddress: string;
-    authorization?: string;
     /**
      * (Optional) A referer code
      */
@@ -305,9 +278,6 @@ export class AddressReservationSaleService {
         tokencount: tokencount,
         lovelace: lovelace,
         customeripaddress: customeripaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         referer: referer,
@@ -344,7 +314,6 @@ export class AddressReservationSaleService {
     nftuid,
     tokencount,
     customeripaddress,
-    authorization,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -353,7 +322,6 @@ export class AddressReservationSaleService {
     nftuid: string;
     tokencount: number;
     customeripaddress: string;
-    authorization?: string;
     /**
      * (Optional) A referer code
      */
@@ -372,9 +340,6 @@ export class AddressReservationSaleService {
         nftuid: nftuid,
         tokencount: tokencount,
         customeripaddress: customeripaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         referer: referer,
@@ -402,7 +367,6 @@ export class AddressReservationSaleService {
    */
   public postV2GetPaymentAddressForSpecificNftSale({
     customeripaddress,
-    authorization,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -410,7 +374,6 @@ export class AddressReservationSaleService {
     requestBody,
   }: {
     customeripaddress: string;
-    authorization?: string;
     /**
      * (Optional) A referer code
      */
@@ -428,9 +391,6 @@ export class AddressReservationSaleService {
       url: '/v2/GetPaymentAddressForSpecificNftSale/{customeripaddress}',
       path: {
         customeripaddress: customeripaddress,
-      },
-      headers: {
-        authorization: authorization,
       },
       query: {
         referer: referer,

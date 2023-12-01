@@ -17,11 +17,9 @@ export class IpfsService {
    */
   public postV2UploadToIpfs({
     customerid,
-    authorization,
     requestBody,
   }: {
     customerid: number;
-    authorization?: string;
     requestBody?: UploadToIpfsClass;
   }): CancelablePromise<string> {
     return this.httpRequest.request({
@@ -29,9 +27,6 @@ export class IpfsService {
       url: '/v2/UploadToIpfs/{customerid}',
       path: {
         customerid: customerid,
-      },
-      headers: {
-        authorization: authorization,
       },
       body: requestBody,
       mediaType: 'application/json',

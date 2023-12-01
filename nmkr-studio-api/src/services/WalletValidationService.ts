@@ -18,19 +18,14 @@ export class WalletValidationService {
    */
   public getV2CheckWalletValidation({
     validationuid,
-    authorization,
   }: {
     validationuid: string;
-    authorization?: string;
   }): CancelablePromise<CheckWalletValidationResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/CheckWalletValidation/{validationuid}',
       path: {
         validationuid: validationuid,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -48,10 +43,8 @@ export class WalletValidationService {
    * @throws ApiError
    */
   public getV2GetWalletValidationAddress({
-    authorization,
     validationname = '',
   }: {
-    authorization?: string;
     validationname?: string;
   }): CancelablePromise<GetWalletValidationAddressResultClass> {
     return this.httpRequest.request({
@@ -59,9 +52,6 @@ export class WalletValidationService {
       url: '/v2/GetWalletValidationAddress/{validationname}',
       path: {
         validationname: validationname,
-      },
-      headers: {
-        authorization: authorization,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -77,17 +67,10 @@ export class WalletValidationService {
    * @returns GetWalletValidationAddressResultClass Returns the GetWalletValidationAddressResultClass Class
    * @throws ApiError
    */
-  public getV2GetWalletValidationAddress1({
-    authorization,
-  }: {
-    authorization?: string;
-  }): CancelablePromise<GetWalletValidationAddressResultClass> {
+  public getV2GetWalletValidationAddress1(): CancelablePromise<GetWalletValidationAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetWalletValidationAddress',
-      headers: {
-        authorization: authorization,
-      },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         429: `Too Many Requests`,
