@@ -1,8 +1,15 @@
 # NMKR-STUDIO-API
 
-This is a typesafe API Client for interactions with the NMKR Studio V2 API.
+NMKR is a minting and cardano infrastructure solution. We have an extensive API with an open [Swagger documentation](https://studio-api.nmkr.io/swagger/index.html)
 
+In case you are completly new to NMKR please also see our [Docs](https://docs.nmkr.io/)
+
+This is a typesafe API Client wrapper for interactions with the NMKR Studio V2 API.
 It aims to simplify the development experience when building cNFT and Cardano blockchain projects. It gives you type safety and inteliSense by providing classes and interfaces.
+
+All methods from our [Swagger API](https://studio-api.nmkr.io/swagger/index.html) are mapped into easy reusable classes.
+
+
 
 Basic example usage
 ````
@@ -38,7 +45,7 @@ Basic example usage
     const deltedProject = await client.projects.getV2DeleteProject({ projectuid: newProject.uid! });
 ````
 
-Note:  You can overwrite the `BASE` URL parameter in `new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN",BASE:"https://studio-api.preprod.nmkr.io"}` if you want to change the default URL to preprod (WARNING the API might be slightly diffrent and this package is up-to-date with the production version only)
+Note:  You can overwrite the `BASE` URL parameter in `new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN",BASE:"https://studio-api.preprod.nmkr.io"}` if you want to change the default URL to preprod (WARNING the preprod API might be slightly diffrent and this package is up-to-date with the production version)
 
 ## Roadmap
 - [x] Initial typesafe client

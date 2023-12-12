@@ -5,5 +5,8 @@
 export type AssetsAssociatedWithAccount = {
   unit?: string | null;
   quantity?: number | null;
-  fingerprint?: string | null;
+  readonly fingerprint?: string | null;
+  readonly assetName?: string | null;
+  readonly policyId?: string | null;
+  readonly assetNameInHex?: string | null;
 };

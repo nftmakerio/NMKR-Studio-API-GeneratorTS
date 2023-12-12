@@ -33,6 +33,7 @@ export type { CreateProjectClassV2 } from './models/CreateProjectClassV2';
 export type { CreateRoyaltyTokenIfNotExistsClass } from './models/CreateRoyaltyTokenIfNotExistsClass';
 export type { CreateWalletResultClass } from './models/CreateWalletResultClass';
 export type { CurrencyTypes } from './models/CurrencyTypes';
+export type { Dataproviders } from './models/Dataproviders';
 export type { DecentralParametersClass } from './models/DecentralParametersClass';
 export type { DecentralParametersResultClass } from './models/DecentralParametersResultClass';
 export type { DeleteAllNftsDetail } from './models/DeleteAllNftsDetail';
