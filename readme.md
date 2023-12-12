@@ -35,7 +35,7 @@ In case you have access rights to the NPM-Account you can, after testing, deploy
 
 ## Mentions and further reading
 
-If you have any requests, problems or suggestions regarding this package, the best way to reach us is via this github repository. For general help please contact the [NMKR support](https://www.nmkr.io/#contact)
+If you have any requests, problems or suggestions regarding this package, the best way to reach us is via this [github repository](https://github.com/nftmakerio/NMKR-Studio-API-GeneratorTS). For general help please contact the [NMKR support](https://www.nmkr.io/#contact)
 
 If you make a PR, please use the provided linting before commiting your code.
 

@@ -47,6 +47,8 @@ Basic example usage
 
 Note:  You can overwrite the `BASE` URL parameter in `new NMKRClient({TOKEN:"NMKR-STUDIO-API-TOKEN",BASE:"https://studio-api.preprod.nmkr.io"}` if you want to change the default URL to preprod (WARNING the preprod API might be slightly diffrent and this package is up-to-date with the production version)
 
+If you have any questions or need support you can create an issue at [github repository](https://github.com/nftmakerio/NMKR-Studio-API-GeneratorTS) or reach out to our support at [NMKR support](https://www.nmkr.io/#contact)
+
 ## Roadmap
 - [x] Initial typesafe client
 - [ ] More examples and documentation
