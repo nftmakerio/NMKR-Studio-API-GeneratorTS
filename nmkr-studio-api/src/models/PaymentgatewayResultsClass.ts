@@ -11,4 +11,5 @@ export type PaymentgatewayResultsClass = {
   minUtxo?: number | null;
   mintNfts?: MintNftsResultClass;
   additionalPriceInTokens?: Array<Tokens> | null;
+  optionalReceiverAddress?: string | null;
 };

@@ -80,7 +80,7 @@ export class ManagedWalletsService {
 
   /**
    * Returns the utxo of an Managed Wallet
-   * @returns TxInAddressesClass Returns the CreateWalletResultClass Class
+   * @returns TxInAddressesClass Returns the TxInAddressesClass Class
    * @throws ApiError
    */
   public getV2GetWalletUtxo({ address }: { address: string }): CancelablePromise<TxInAddressesClass> {
