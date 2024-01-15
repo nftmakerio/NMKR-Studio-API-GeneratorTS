@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { CreateManagedWalletClass } from '../models/CreateManagedWalletClass';
 import type { CreateManagedWalletTransactionClass } from '../models/CreateManagedWalletTransactionClass';
 import type { CreateWalletResultClass } from '../models/CreateWalletResultClass';
 import type { ImportManagedWalletClass } from '../models/ImportManagedWalletClass';
@@ -20,56 +21,21 @@ export class ManagedWalletsService {
    * @returns CreateWalletResultClass Returns the CreateWalletResultClass Class
    * @throws ApiError
    */
-  public getV2CreateWallet({
+  public postV2CreateWallet({
     customerid,
-    walletpassword,
-    enterpriseaddress,
-    walletname = '',
+    requestBody,
   }: {
     customerid: number;
-    walletpassword: string;
-    enterpriseaddress: boolean;
-    walletname?: string;
+    requestBody?: CreateManagedWalletClass;
   }): CancelablePromise<CreateWalletResultClass> {
     return this.httpRequest.request({
-      method: 'GET',
-      url: '/v2/CreateWallet/{customerid}/{walletpassword}/{enterpriseaddress}/{walletname}',
+      method: 'POST',
+      url: '/v2/CreateWallet/{customerid}',
       path: {
         customerid: customerid,
-        walletpassword: walletpassword,
-        enterpriseaddress: enterpriseaddress,
-        walletname: walletname,
       },
-      errors: {
-        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
-        429: `Too Many Requests`,
-        500: `Internal server error - see the errormessage in the result`,
-      },
-    });
-  }
-
-  /**
-   * Creates an Managed Wallet
-   * @returns CreateWalletResultClass Returns the CreateWalletResultClass Class
-   * @throws ApiError
-   */
-  public getV2CreateWallet1({
-    customerid,
-    walletpassword,
-    enterpriseaddress,
-  }: {
-    customerid: number;
-    walletpassword: string;
-    enterpriseaddress: boolean;
-  }): CancelablePromise<CreateWalletResultClass> {
-    return this.httpRequest.request({
-      method: 'GET',
-      url: '/v2/CreateWallet/{customerid}/{walletpassword}/{enterpriseaddress}',
-      path: {
-        customerid: customerid,
-        walletpassword: walletpassword,
-        enterpriseaddress: enterpriseaddress,
-      },
+      body: requestBody,
+      mediaType: 'application/json',
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         429: `Too Many Requests`,
@@ -153,22 +119,16 @@ export class ManagedWalletsService {
    */
   public postV2MakeTransaction({
     customerid,
-    senderaddress,
-    walletpassword,
     requestBody,
   }: {
     customerid: number;
-    senderaddress: string;
-    walletpassword: string;
     requestBody?: CreateManagedWalletTransactionClass;
   }): CancelablePromise<MakeTransactionResultClass> {
     return this.httpRequest.request({
       method: 'POST',
-      url: '/v2/MakeTransaction/{customerid}/{senderaddress}/{walletpassword}',
+      url: '/v2/MakeTransaction/{customerid}',
       path: {
         customerid: customerid,
-        senderaddress: senderaddress,
-        walletpassword: walletpassword,
       },
       body: requestBody,
       mediaType: 'application/json',

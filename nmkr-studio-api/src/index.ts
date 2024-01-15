@@ -26,6 +26,7 @@ export type { CheckDiscountsResultClass } from './models/CheckDiscountsResultCla
 export type { CheckWalletValidationResultClass } from './models/CheckWalletValidationResultClass';
 export type { CountedWhitelistAddressesClass } from './models/CountedWhitelistAddressesClass';
 export type { CreateBurningEndpointClass } from './models/CreateBurningEndpointClass';
+export type { CreateManagedWalletClass } from './models/CreateManagedWalletClass';
 export type { CreateManagedWalletTransactionClass } from './models/CreateManagedWalletTransactionClass';
 export type { CreateNewProjectResultClass } from './models/CreateNewProjectResultClass';
 export type { CreatePaymentTransactionClass } from './models/CreatePaymentTransactionClass';

@@ -6,4 +6,6 @@ import type { TransactionReceiversClass } from './TransactionReceiversClass';
 
 export type CreateManagedWalletTransactionClass = {
   receivers?: Array<TransactionReceiversClass> | null;
+  senderaddress?: string | null;
+  walletpassword?: string | null;
 };
