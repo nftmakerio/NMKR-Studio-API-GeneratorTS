@@ -11,4 +11,5 @@ export type SaleConditionsTypes =
   | 'whitlistedaddresses'
   | 'blacklistedaddresses'
   | 'stakeonpool'
-  | 'countedwhitelistedaddresses';
+  | 'countedwhitelistedaddresses'
+  | 'onlyonesale';

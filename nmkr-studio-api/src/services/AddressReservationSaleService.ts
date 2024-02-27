@@ -102,11 +102,11 @@ export class AddressReservationSaleService {
 
   /**
    * Returns an address for a random nft sale (project id)
-   * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
+   * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it expired. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
    * If the buyer has send the amount of ada, the nfts will be minted and send to his senderaddress and the nfts state changes to sold.
    *
    * IMPORTANT:
-   * Please notice, that the call is limited to 300 addressreservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
+   * Please notice, that the call is limited to 300 address reservations per minute. You will get the error 429 if you call this routine more than 300 times a minute.
    * Please do not implement this function on your start page. And please prevent the call of this function from bots with a captcha.
    * @returns GetPaymentAddressResultClass Returns the GetPaymentAddressResultClass Class
    * @throws ApiError
@@ -122,6 +122,8 @@ export class AddressReservationSaleService {
     optionalpriceintokenpolicyid,
     optionalpriceintokenassetnameinhex,
     optionalpriceintokencount,
+    optionalrefundaddress,
+    acceptheigheramounts,
     paymentMethod,
   }: {
     projectuid: string;
@@ -140,6 +142,8 @@ export class AddressReservationSaleService {
     optionalpriceintokenpolicyid?: string;
     optionalpriceintokenassetnameinhex?: string;
     optionalpriceintokencount?: number;
+    optionalrefundaddress?: string;
+    acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -158,6 +162,8 @@ export class AddressReservationSaleService {
         optionalpriceintokenpolicyid: optionalpriceintokenpolicyid,
         optionalpriceintokenassetnameinhex: optionalpriceintokenassetnameinhex,
         optionalpriceintokencount: optionalpriceintokencount,
+        optionalrefundaddress: optionalrefundaddress,
+        acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
       },
       errors: {
@@ -188,6 +194,8 @@ export class AddressReservationSaleService {
     referer,
     customproperty,
     optionalreceiveraddress,
+    optionalrefundaddress,
+    acceptheigheramounts,
     paymentMethod,
   }: {
     projectuid: string;
@@ -202,6 +210,8 @@ export class AddressReservationSaleService {
      */
     customproperty?: string;
     optionalreceiveraddress?: string;
+    optionalrefundaddress?: string;
+    acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -216,6 +226,8 @@ export class AddressReservationSaleService {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
+        optionalrefundaddress: optionalrefundaddress,
+        acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
       },
       errors: {
@@ -250,6 +262,8 @@ export class AddressReservationSaleService {
     optionalpriceintokenpolicyid,
     optionalpriceintokenassetnameinhex,
     optionalpriceintokencount,
+    optionalrefundaddress,
+    acceptheigheramounts,
     paymentMethod,
   }: {
     nftuid: string;
@@ -268,6 +282,8 @@ export class AddressReservationSaleService {
     optionalpriceintokenpolicyid?: string;
     optionalpriceintokenassetnameinhex?: string;
     optionalpriceintokencount?: number;
+    optionalrefundaddress?: string;
+    acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -286,6 +302,8 @@ export class AddressReservationSaleService {
         optionalpriceintokenpolicyid: optionalpriceintokenpolicyid,
         optionalpriceintokenassetnameinhex: optionalpriceintokenassetnameinhex,
         optionalpriceintokencount: optionalpriceintokencount,
+        optionalrefundaddress: optionalrefundaddress,
+        acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
       },
       errors: {
@@ -317,6 +335,8 @@ export class AddressReservationSaleService {
     referer,
     customproperty,
     optionalreceiveraddress,
+    optionalrefundaddress,
+    acceptheigheramounts,
     paymentMethod,
   }: {
     nftuid: string;
@@ -331,6 +351,8 @@ export class AddressReservationSaleService {
      */
     customproperty?: string;
     optionalreceiveraddress?: string;
+    optionalrefundaddress?: string;
+    acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -345,6 +367,8 @@ export class AddressReservationSaleService {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
+        optionalrefundaddress: optionalrefundaddress,
+        acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
       },
       errors: {
@@ -370,6 +394,8 @@ export class AddressReservationSaleService {
     referer,
     customproperty,
     optionalreceiveraddress,
+    optionalrefundaddress,
+    acceptheigheramounts,
     paymentMethod,
     requestBody,
   }: {
@@ -383,6 +409,8 @@ export class AddressReservationSaleService {
      */
     customproperty?: string;
     optionalreceiveraddress?: string;
+    optionalrefundaddress?: string;
+    acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
     requestBody?: ReserveMultipleNftsClassV2;
   }): CancelablePromise<GetPaymentAddressResultClass> {
@@ -396,6 +424,8 @@ export class AddressReservationSaleService {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
+        optionalrefundaddress: optionalrefundaddress,
+        acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
       },
       body: requestBody,

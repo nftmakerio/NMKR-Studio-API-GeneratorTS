@@ -22,4 +22,5 @@ export type PriceDiscountClassV2 = {
   whitelistedAddresses?: Array<string> | null;
   policyProjectname?: string | null;
   operator?: string | null;
+  couponcode?: string | null;
 };

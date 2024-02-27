@@ -3,6 +3,8 @@
 /* eslint-disable */
 import type { ApiErrorResultClass } from '../models/ApiErrorResultClass';
 import type { GetPayoutWalletsResultClass } from '../models/GetPayoutWalletsResultClass';
+import type { GetTransactionsClass } from '../models/GetTransactionsClass';
+import type { TransactionsExportOptions } from '../models/TransactionsExportOptions';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -27,6 +29,41 @@ export class CustomerService {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The project was not found in our database or not assiged to your account`,
         406: `Some data are not correct - eg wrong wallet address`,
+      },
+    });
+  }
+
+  /**
+   * Returns all Transactions of a customer
+   * @returns GetTransactionsClass Returns the result as ZIP File
+   * @returns any Returns the results as CSV File
+   * @throws ApiError
+   */
+  public getV2GetCustomerTransactions({
+    customerid,
+    fromdate,
+    todate,
+    exportOptions,
+  }: {
+    customerid: number;
+    fromdate?: string;
+    todate?: string;
+    exportOptions?: TransactionsExportOptions;
+  }): CancelablePromise<Array<GetTransactionsClass> | any> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetCustomerTransactions/{customerid}',
+      path: {
+        customerid: customerid,
+      },
+      query: {
+        fromdate: fromdate,
+        todate: todate,
+        exportOptions: exportOptions,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `The project was not found in our database or not assiged to your account`,
       },
     });
   }

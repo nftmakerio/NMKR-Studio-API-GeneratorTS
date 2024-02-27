@@ -40,4 +40,5 @@ export type NftProjectsDetails = {
   twitterHandle?: string | null;
   nmkrAccountOptions?: NmkrAccountOptionsTypes;
   crossmintCollectiondId?: string | null;
+  created?: string;
 };

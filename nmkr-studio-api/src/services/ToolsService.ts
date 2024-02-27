@@ -22,19 +22,24 @@ export class ToolsService {
    * @returns CheckDiscountsResultClass Returns the CheckDiscountsResultClass Class
    * @throws ApiError
    */
-  public getV2CheckIfEglibleForDiscount({
+  public getV2CheckIfEligibleForDiscount({
     projectuid,
     address,
+    couponcode,
   }: {
     projectuid: string;
     address: string;
+    couponcode?: string;
   }): CancelablePromise<CheckDiscountsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/CheckIfEglibleForDiscount/{projectuid}/{address}',
+      url: '/v2/CheckIfEligibleForDiscount/{projectuid}/{address}',
       path: {
         projectuid: projectuid,
         address: address,
+      },
+      query: {
+        couponcode: couponcode,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -242,6 +247,34 @@ export class ToolsService {
   }
 
   /**
+   * Returns the Metadata for a specific token
+   * @returns string Returns the Metadata as String
+   * @throws ApiError
+   */
+  public getV2GetMetadataForToken({
+    policyid,
+    tokennamehex,
+  }: {
+    policyid: string;
+    tokennamehex: string;
+  }): CancelablePromise<string> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetMetadataForToken/{policyid}/{tokennamehex}',
+      path: {
+        policyid: policyid,
+        tokennamehex: tokennamehex,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `Not Found`,
+        429: `Too Many Requests`,
+        500: `Internal server error - see the errormessage in the result`,
+      },
+    });
+  }
+
+  /**
    * Returns a snapshot with all addresses and tokens for a specific policyid
    * You will receive all tokens and the holding addresses of a specific policyid
    * @returns NmkrAssetAddress Returns an array of NmkrAssetAddress
@@ -264,6 +297,34 @@ export class ToolsService {
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The policyid was not found`,
+      },
+    });
+  }
+
+  /**
+   * Returns the IPFS Hash of the preview image for a specific token
+   * @returns string Returns the IPFS/IAGON Link for the preview image
+   * @throws ApiError
+   */
+  public getV2GetPreviewImageForToken({
+    policyid,
+    tokennamehex,
+  }: {
+    policyid: string;
+    tokennamehex: string;
+  }): CancelablePromise<string> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetPreviewImageForToken/{policyid}/{tokennamehex}',
+      path: {
+        policyid: policyid,
+        tokennamehex: tokennamehex,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `Not Found`,
+        429: `Too Many Requests`,
+        500: `Internal server error - see the errormessage in the result`,
       },
     });
   }

@@ -7,7 +7,9 @@ import type { CreateNewProjectResultClass } from '../models/CreateNewProjectResu
 import type { CreateProjectClassV2 } from '../models/CreateProjectClassV2';
 import type { GetDiscountsClass } from '../models/GetDiscountsClass';
 import type { GetNotificationsClass } from '../models/GetNotificationsClass';
+import type { GetRefundsClass } from '../models/GetRefundsClass';
 import type { GetSaleconditionsClass } from '../models/GetSaleconditionsClass';
+import type { GetTransactionsClass } from '../models/GetTransactionsClass';
 import type { IdentityInformationClass } from '../models/IdentityInformationClass';
 import type { NftCountsClass } from '../models/NftCountsClass';
 import type { NftProjectsDetails } from '../models/NftProjectsDetails';
@@ -15,7 +17,9 @@ import type { NotificationsClassV2 } from '../models/NotificationsClassV2';
 import type { PriceDiscountClassV2 } from '../models/PriceDiscountClassV2';
 import type { PricelistClass } from '../models/PricelistClass';
 import type { PricelistClassV2 } from '../models/PricelistClassV2';
+import type { ProjectSortOptions } from '../models/ProjectSortOptions';
 import type { SaleconditionsClassV2 } from '../models/SaleconditionsClassV2';
+import type { TransactionsExportOptions } from '../models/TransactionsExportOptions';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -224,6 +228,76 @@ export class ProjectsService {
   }
 
   /**
+   * Returns all Transactions of a project
+   * @returns GetTransactionsClass Returns the result as ZIP File
+   * @returns any Returns the results as CSV File
+   * @throws ApiError
+   */
+  public getV2GetProjectTransactions({
+    projectuid,
+    fromdate,
+    todate,
+    exportOptions,
+  }: {
+    projectuid: string;
+    fromdate?: string;
+    todate?: string;
+    exportOptions?: TransactionsExportOptions;
+  }): CancelablePromise<Array<GetTransactionsClass> | any> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetProjectTransactions/{projectuid}',
+      path: {
+        projectuid: projectuid,
+      },
+      query: {
+        fromdate: fromdate,
+        todate: todate,
+        exportOptions: exportOptions,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `The project was not found in our database or not assiged to your account`,
+      },
+    });
+  }
+
+  /**
+   * Returns all Refunds of a project
+   * @returns GetRefundsClass Returns the result as ZIP File
+   * @returns any Returns the results as CSV File
+   * @throws ApiError
+   */
+  public getV2GetRefunds({
+    projectuid,
+    fromdate,
+    todate,
+    exportOptions,
+  }: {
+    projectuid: string;
+    fromdate?: string;
+    todate?: string;
+    exportOptions?: TransactionsExportOptions;
+  }): CancelablePromise<Array<GetRefundsClass> | any> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetRefunds/{projectuid}',
+      path: {
+        projectuid: projectuid,
+      },
+      query: {
+        fromdate: fromdate,
+        todate: todate,
+        exportOptions: exportOptions,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `The project was not found in our database or not assiged to your account`,
+      },
+    });
+  }
+
+  /**
    * Returns the saleconditions for this project (project uid)
    * If you call this funtion, you will get all active saleconditions for this project
    * @returns GetSaleconditionsClass Returns an array of the GetSaleconditionsClass
@@ -256,10 +330,17 @@ export class ProjectsService {
    * @returns NftProjectsDetails Returns the NftProjectsDetails Class
    * @throws ApiError
    */
-  public getV2ListProjects(): CancelablePromise<Array<NftProjectsDetails>> {
+  public getV2ListProjects({
+    optionalSortOrder,
+  }: {
+    optionalSortOrder?: ProjectSortOptions;
+  }): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ListProjects',
+      query: {
+        optionalSortOrder: optionalSortOrder,
+      },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The apikey or the projects where not found`,
@@ -280,9 +361,11 @@ export class ProjectsService {
   public getV2ListProjects1({
     count,
     page,
+    optionalSortOrder,
   }: {
     count: number;
     page: number;
+    optionalSortOrder?: ProjectSortOptions;
   }): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({
       method: 'GET',
@@ -290,6 +373,9 @@ export class ProjectsService {
       path: {
         count: count,
         page: page,
+      },
+      query: {
+        optionalSortOrder: optionalSortOrder,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

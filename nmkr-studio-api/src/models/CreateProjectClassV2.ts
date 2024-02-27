@@ -33,4 +33,5 @@ export type CreateProjectClassV2 = {
   enableCrossSaleOnPaymentgateway?: boolean | null;
   activatePayinAddress?: boolean | null;
   paymentgatewaysalestart?: string | null;
+  storageProvider?: string | null;
 };

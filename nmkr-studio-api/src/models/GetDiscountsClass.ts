@@ -20,4 +20,5 @@ export type GetDiscountsClass = {
   minValue4?: number | null;
   minValue5?: number | null;
   operator?: string | null;
+  couponcode?: string | null;
 };

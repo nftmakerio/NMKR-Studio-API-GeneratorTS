@@ -4,6 +4,7 @@
 import type { CreateManagedWalletClass } from '../models/CreateManagedWalletClass';
 import type { CreateManagedWalletTransactionClass } from '../models/CreateManagedWalletTransactionClass';
 import type { CreateWalletResultClass } from '../models/CreateWalletResultClass';
+import type { GetKeyHashClass } from '../models/GetKeyHashClass';
 import type { ImportManagedWalletClass } from '../models/ImportManagedWalletClass';
 import type { ImportWalletResultClass } from '../models/ImportWalletResultClass';
 import type { MakeTransactionResultClass } from '../models/MakeTransactionResultClass';
@@ -45,7 +46,35 @@ export class ManagedWalletsService {
   }
 
   /**
-   * Returns the utxo of an Managed Wallet
+   * Returns the key hash of a Managed Wallet
+   * @returns string Returns the CreateWalletResultClass Class
+   * @throws ApiError
+   */
+  public postV2GetKeyHash({
+    customerid,
+    requestBody,
+  }: {
+    customerid: number;
+    requestBody?: GetKeyHashClass;
+  }): CancelablePromise<string> {
+    return this.httpRequest.request({
+      method: 'POST',
+      url: '/v2/GetKeyHash/{customerid}',
+      path: {
+        customerid: customerid,
+      },
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        429: `Too Many Requests`,
+        500: `Internal server error - see the errormessage in the result`,
+      },
+    });
+  }
+
+  /**
+   * Returns the utxo of a managed Wallet
    * @returns TxInAddressesClass Returns the TxInAddressesClass Class
    * @throws ApiError
    */
@@ -93,7 +122,7 @@ export class ManagedWalletsService {
   }
 
   /**
-   * Returns the utxo of an Managed Wallet
+   * Lists all managed Wallets
    * @returns Wallets Returns the CreateWalletResultClass Class
    * @throws ApiError
    */

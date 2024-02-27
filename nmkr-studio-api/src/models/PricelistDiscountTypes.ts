@@ -2,4 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type PricelistDiscountTypes = 'walletcontainsminofpolicyid' | 'whitlistedaddresses' | 'stakeonpool';
+export type PricelistDiscountTypes =
+  | 'walletcontainsminofpolicyid'
+  | 'whitlistedaddresses'
+  | 'stakeonpool'
+  | 'couponcode';

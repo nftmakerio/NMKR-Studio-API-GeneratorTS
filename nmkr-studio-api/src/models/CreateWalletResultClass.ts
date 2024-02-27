@@ -8,4 +8,5 @@ export type CreateWalletResultClass = {
   network?: string | null;
   walletName?: string | null;
   seedPhrase?: string | null;
+  pkh?: string | null;
 };
