@@ -289,9 +289,11 @@ export class ToolsService {
   }): CancelablePromise<Array<NmkrAssetAddress>> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPolicySnapshot/{policyid}/{cumulateStakeAddresses}',
+      url: '/v2/GetPolicySnapshot/{policyid}',
       path: {
         policyid: policyid,
+      },
+      query: {
         cumulateStakeAddresses: cumulateStakeAddresses,
       },
       errors: {

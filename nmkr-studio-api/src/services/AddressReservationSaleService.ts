@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AddressType } from '../models/AddressType';
 import type { CheckAddressResultClass } from '../models/CheckAddressResultClass';
 import type { GetPaymentAddressResultClass } from '../models/GetPaymentAddressResultClass';
 import type { PaymentMethodTypes } from '../models/PaymentMethodTypes';
@@ -125,6 +126,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress,
     acceptheigheramounts,
     paymentMethod,
+    addresstype,
   }: {
     projectuid: string;
     countnft: number;
@@ -145,6 +147,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
+    addresstype?: AddressType;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -165,6 +168,7 @@ export class AddressReservationSaleService {
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
+        addresstype: addresstype,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -197,6 +201,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress,
     acceptheigheramounts,
     paymentMethod,
+    addresstype,
   }: {
     projectuid: string;
     countnft: number;
@@ -213,6 +218,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
+    addresstype?: AddressType;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -229,6 +235,7 @@ export class AddressReservationSaleService {
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
+        addresstype: addresstype,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -265,6 +272,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress,
     acceptheigheramounts,
     paymentMethod,
+    addresstype,
   }: {
     nftuid: string;
     tokencount: number;
@@ -285,6 +293,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
+    addresstype?: AddressType;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -305,6 +314,7 @@ export class AddressReservationSaleService {
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
+        addresstype: addresstype,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -338,6 +348,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress,
     acceptheigheramounts,
     paymentMethod,
+    addresstype,
   }: {
     nftuid: string;
     tokencount: number;
@@ -354,6 +365,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
+    addresstype?: AddressType;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -370,6 +382,7 @@ export class AddressReservationSaleService {
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
+        addresstype: addresstype,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -397,6 +410,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress,
     acceptheigheramounts,
     paymentMethod,
+    addresstype,
     requestBody,
   }: {
     customeripaddress: string;
@@ -412,6 +426,7 @@ export class AddressReservationSaleService {
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
     paymentMethod?: PaymentMethodTypes;
+    addresstype?: AddressType;
     requestBody?: ReserveMultipleNftsClassV2;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -427,6 +442,7 @@ export class AddressReservationSaleService {
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
         paymentMethod: paymentMethod,
+        addresstype: addresstype,
       },
       body: requestBody,
       mediaType: 'application/json',

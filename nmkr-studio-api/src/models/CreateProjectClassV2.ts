@@ -34,4 +34,6 @@ export type CreateProjectClassV2 = {
   activatePayinAddress?: boolean | null;
   paymentgatewaysalestart?: string | null;
   storageProvider?: string | null;
+  metadataStandard?: string | null;
+  cip68ReferenceAddress?: string | null;
 };

@@ -14,6 +14,7 @@ export type UploadNftClassV2 = {
   subfiles?: Array<NftSubfileFileV2> | null;
   metadataPlaceholder?: Array<MetadataPlaceholderClass> | null;
   metadataOverride?: string | null;
+  metadataOverrideCip68?: string | null;
   priceInLovelace?: number | null;
   isBlocked?: boolean | null;
 };

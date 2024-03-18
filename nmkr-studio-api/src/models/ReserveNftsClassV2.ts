@@ -9,5 +9,5 @@ export type ReserveNftsClassV2 = {
    * @deprecated
    */
   nftId?: number | null;
-  tokencount?: number;
+  tokencount?: number | null;
 };
