@@ -20,4 +20,6 @@ export type PricelistClass = {
   readonly sendBackCentralPaymentInAda?: string | null;
   priceInLovelaceCentralPayments?: number;
   readonly adaToSendCentralPayments?: string | null;
+  priceInLamport?: number;
+  readonly solToSend?: string | null;
 };

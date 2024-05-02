@@ -3,8 +3,8 @@
 /* eslint-disable */
 import type { AddressType } from '../models/AddressType';
 import type { CheckAddressResultClass } from '../models/CheckAddressResultClass';
+import type { Coin } from '../models/Coin';
 import type { GetPaymentAddressResultClass } from '../models/GetPaymentAddressResultClass';
-import type { PaymentMethodTypes } from '../models/PaymentMethodTypes';
 import type { ReserveMultipleNftsClassV2 } from '../models/ReserveMultipleNftsClassV2';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -116,7 +116,6 @@ export class AddressReservationSaleService {
     projectuid,
     countnft,
     lovelace,
-    customeripaddress,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -125,13 +124,12 @@ export class AddressReservationSaleService {
     optionalpriceintokencount,
     optionalrefundaddress,
     acceptheigheramounts,
-    paymentMethod,
     addresstype,
+    coin,
   }: {
     projectuid: string;
     countnft: number;
     lovelace: number;
-    customeripaddress: string;
     /**
      * (Optional) A referer code
      */
@@ -146,17 +144,16 @@ export class AddressReservationSaleService {
     optionalpriceintokencount?: number;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
-    paymentMethod?: PaymentMethodTypes;
     addresstype?: AddressType;
+    coin?: Coin;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{lovelace}/{customeripaddress}',
+      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{lovelace}',
       path: {
         projectuid: projectuid,
         countnft: countnft,
         lovelace: lovelace,
-        customeripaddress: customeripaddress,
       },
       query: {
         referer: referer,
@@ -167,8 +164,8 @@ export class AddressReservationSaleService {
         optionalpriceintokencount: optionalpriceintokencount,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
-        paymentMethod: paymentMethod,
         addresstype: addresstype,
+        coin: coin,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -194,18 +191,16 @@ export class AddressReservationSaleService {
   public getV2GetPaymentAddressForRandomNftSale1({
     projectuid,
     countnft,
-    customeripaddress,
     referer,
     customproperty,
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
-    paymentMethod,
     addresstype,
+    coin,
   }: {
     projectuid: string;
     countnft: number;
-    customeripaddress: string;
     /**
      * (Optional) A referer code
      */
@@ -217,16 +212,15 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
-    paymentMethod?: PaymentMethodTypes;
     addresstype?: AddressType;
+    coin?: Coin;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{customeripaddress}',
+      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}',
       path: {
         projectuid: projectuid,
         countnft: countnft,
-        customeripaddress: customeripaddress,
       },
       query: {
         referer: referer,
@@ -234,8 +228,8 @@ export class AddressReservationSaleService {
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
-        paymentMethod: paymentMethod,
         addresstype: addresstype,
+        coin: coin,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -262,7 +256,6 @@ export class AddressReservationSaleService {
     nftuid,
     tokencount,
     lovelace,
-    customeripaddress,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -271,13 +264,12 @@ export class AddressReservationSaleService {
     optionalpriceintokencount,
     optionalrefundaddress,
     acceptheigheramounts,
-    paymentMethod,
     addresstype,
+    coin,
   }: {
     nftuid: string;
     tokencount: number;
     lovelace: number;
-    customeripaddress: string;
     /**
      * (Optional) A referer code
      */
@@ -292,17 +284,16 @@ export class AddressReservationSaleService {
     optionalpriceintokencount?: number;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
-    paymentMethod?: PaymentMethodTypes;
     addresstype?: AddressType;
+    coin?: Coin;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{lovelace}/{customeripaddress}',
+      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{lovelace}',
       path: {
         nftuid: nftuid,
         tokencount: tokencount,
         lovelace: lovelace,
-        customeripaddress: customeripaddress,
       },
       query: {
         referer: referer,
@@ -313,8 +304,8 @@ export class AddressReservationSaleService {
         optionalpriceintokencount: optionalpriceintokencount,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
-        paymentMethod: paymentMethod,
         addresstype: addresstype,
+        coin: coin,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -341,18 +332,16 @@ export class AddressReservationSaleService {
   public getV2GetPaymentAddressForSpecificNftSale1({
     nftuid,
     tokencount,
-    customeripaddress,
     referer,
     customproperty,
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
-    paymentMethod,
     addresstype,
+    coin,
   }: {
     nftuid: string;
     tokencount: number;
-    customeripaddress: string;
     /**
      * (Optional) A referer code
      */
@@ -364,16 +353,15 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
-    paymentMethod?: PaymentMethodTypes;
     addresstype?: AddressType;
+    coin?: Coin;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{customeripaddress}',
+      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}',
       path: {
         nftuid: nftuid,
         tokencount: tokencount,
-        customeripaddress: customeripaddress,
       },
       query: {
         referer: referer,
@@ -381,8 +369,8 @@ export class AddressReservationSaleService {
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
-        paymentMethod: paymentMethod,
         addresstype: addresstype,
+        coin: coin,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -403,17 +391,15 @@ export class AddressReservationSaleService {
    * @throws ApiError
    */
   public postV2GetPaymentAddressForSpecificNftSale({
-    customeripaddress,
     referer,
     customproperty,
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
-    paymentMethod,
     addresstype,
+    coin,
     requestBody,
   }: {
-    customeripaddress: string;
     /**
      * (Optional) A referer code
      */
@@ -425,24 +411,21 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
-    paymentMethod?: PaymentMethodTypes;
     addresstype?: AddressType;
+    coin?: Coin;
     requestBody?: ReserveMultipleNftsClassV2;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'POST',
-      url: '/v2/GetPaymentAddressForSpecificNftSale/{customeripaddress}',
-      path: {
-        customeripaddress: customeripaddress,
-      },
+      url: '/v2/GetPaymentAddressForSpecificNftSale',
       query: {
         referer: referer,
         customproperty: customproperty,
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
-        paymentMethod: paymentMethod,
         addresstype: addresstype,
+        coin: coin,
       },
       body: requestBody,
       mediaType: 'application/json',

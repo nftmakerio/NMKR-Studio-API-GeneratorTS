@@ -9,6 +9,7 @@ export type GetPaymentAddressResultClass = {
   paymentAddressId?: number;
   expires?: string;
   readonly adaToSend?: string | null;
+  readonly solToSend?: string | null;
   debug?: string | null;
   priceInEur?: number;
   priceInUsd?: number;
@@ -19,4 +20,6 @@ export type GetPaymentAddressResultClass = {
   additionalPriceInTokens?: Array<Tokens> | null;
   sendbackToUser?: number;
   revervationtype?: string | null;
+  currency?: string | null;
+  priceInLamport?: number;
 };

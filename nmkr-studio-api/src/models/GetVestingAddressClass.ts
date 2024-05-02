@@ -6,8 +6,9 @@ export type GetVestingAddressClass = {
   address?: string | null;
   lockedUntil?: string;
   lockedUntilSlot?: number;
-  addressFromWhichTheAssetsAreSent?: string | null;
+  unlockAddress?: string | null;
   pkh?: string | null;
   description?: string | null;
+  actualSlot?: number;
   created?: string;
 };

@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export type CreateVestingAddressClass = {
-  addressFromWhichTheAssetsAreSent?: string | null;
+  unlockAddress?: string | null;
   lockedUntil?: string;
   description?: string | null;
 };

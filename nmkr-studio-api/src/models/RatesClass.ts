@@ -2,7 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type AdaRatesClass = {
+export type RatesClass = {
   usdRate?: number;
   eurRate?: number;
   jpyRate?: number;

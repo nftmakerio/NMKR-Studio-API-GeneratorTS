@@ -1,11 +1,11 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AdaRatesClass } from '../models/AdaRatesClass';
 import type { AssetsAssociatedWithAccount } from '../models/AssetsAssociatedWithAccount';
 import type { CheckConditionsResultClass } from '../models/CheckConditionsResultClass';
 import type { CheckDiscountsResultClass } from '../models/CheckDiscountsResultClass';
 import type { NmkrAssetAddress } from '../models/NmkrAssetAddress';
+import type { RatesClass } from '../models/RatesClass';
 import type { RoyaltyClass } from '../models/RoyaltyClass';
 import type { TokenRegistryMetadata } from '../models/TokenRegistryMetadata';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
@@ -56,7 +56,7 @@ export class ToolsService {
    * @returns CheckConditionsResultClass Returns the CheckConditionsResultClass Class
    * @throws ApiError
    */
-  public getV2CheckIfSaleCondtionsMet({
+  public getV2CheckIfSaleConditionsMet({
     projectuid,
     address,
     countnft,
@@ -67,7 +67,7 @@ export class ToolsService {
   }): CancelablePromise<CheckConditionsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/CheckIfSaleCondtionsMet/{projectuid}/{address}/{countnft}',
+      url: '/v2/CheckIfSaleConditionsMet/{projectuid}/{address}/{countnft}',
       path: {
         projectuid: projectuid,
         address: address,
@@ -118,10 +118,10 @@ export class ToolsService {
 
   /**
    * Returns the actual price in EUR and USD for ADA
-   * @returns AdaRatesClass Returns the AdaRatesClass
+   * @returns RatesClass Returns the RatesClass
    * @throws ApiError
    */
-  public getV2GetAdaRates(): CancelablePromise<AdaRatesClass> {
+  public getV2GetAdaRates(): CancelablePromise<RatesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAdaRates',
@@ -283,9 +283,11 @@ export class ToolsService {
   public getV2GetPolicySnapshot({
     policyid,
     cumulateStakeAddresses = true,
+    withMintingInformation = false,
   }: {
     policyid: string;
     cumulateStakeAddresses?: boolean;
+    withMintingInformation?: boolean;
   }): CancelablePromise<Array<NmkrAssetAddress>> {
     return this.httpRequest.request({
       method: 'GET',
@@ -295,6 +297,7 @@ export class ToolsService {
       },
       query: {
         cumulateStakeAddresses: cumulateStakeAddresses,
+        withMintingInformation: withMintingInformation,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -348,6 +351,22 @@ export class ToolsService {
         401: `The access was denied. (Wrong or expired APIKEY, wrong policyid etc.)`,
         404: `There are no royalty informations for this policyid`,
         406: `The policyid is not valid`,
+      },
+    });
+  }
+
+  /**
+   * Returns the actual price in EUR and USD for ADA
+   * @returns RatesClass Returns the RatesClass
+   * @throws ApiError
+   */
+  public getV2GetSolanaRates(): CancelablePromise<RatesClass> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetSolanaRates',
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `Not Found`,
       },
     });
   }

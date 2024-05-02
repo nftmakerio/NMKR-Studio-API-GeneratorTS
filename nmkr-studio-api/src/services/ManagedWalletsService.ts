@@ -8,6 +8,7 @@ import type { GetKeyHashClass } from '../models/GetKeyHashClass';
 import type { ImportManagedWalletClass } from '../models/ImportManagedWalletClass';
 import type { ImportWalletResultClass } from '../models/ImportWalletResultClass';
 import type { MakeTransactionResultClass } from '../models/MakeTransactionResultClass';
+import type { SendAllAssetsTransactionClass } from '../models/SendAllAssetsTransactionClass';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
 import type { Wallets } from '../models/Wallets';
 
@@ -156,6 +157,34 @@ export class ManagedWalletsService {
     return this.httpRequest.request({
       method: 'POST',
       url: '/v2/MakeTransaction/{customerid}',
+      path: {
+        customerid: customerid,
+      },
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        429: `Too Many Requests`,
+        500: `Internal server error - see the errormessage in the result`,
+      },
+    });
+  }
+
+  /**
+   * Send all ADA and all Tokens from a managed wallet to a receiver address
+   * @returns MakeTransactionResultClass Returns the MakeTransactionResult Class
+   * @throws ApiError
+   */
+  public postV2SendAllAssets({
+    customerid,
+    requestBody,
+  }: {
+    customerid: number;
+    requestBody?: SendAllAssetsTransactionClass;
+  }): CancelablePromise<MakeTransactionResultClass> {
+    return this.httpRequest.request({
+      method: 'POST',
+      url: '/v2/SendAllAssets/{customerid}',
       path: {
         customerid: customerid,
       },

@@ -36,4 +36,5 @@ export type CreateProjectClassV2 = {
   storageProvider?: string | null;
   metadataStandard?: string | null;
   cip68ReferenceAddress?: string | null;
+  cip68ExtraField?: string | null;
 };
