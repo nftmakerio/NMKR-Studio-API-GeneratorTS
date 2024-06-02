@@ -2,8 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AddressType } from '../models/AddressType';
+import type { Blockchain } from '../models/Blockchain';
 import type { CheckAddressResultClass } from '../models/CheckAddressResultClass';
-import type { Coin } from '../models/Coin';
 import type { GetPaymentAddressResultClass } from '../models/GetPaymentAddressResultClass';
 import type { ReserveMultipleNftsClassV2 } from '../models/ReserveMultipleNftsClassV2';
 
@@ -124,8 +124,9 @@ export class AddressReservationSaleService {
     optionalpriceintokencount,
     optionalrefundaddress,
     acceptheigheramounts,
+    revervationtimeinminutes,
     addresstype,
-    coin,
+    blockchain,
   }: {
     projectuid: string;
     countnft: number;
@@ -144,8 +145,9 @@ export class AddressReservationSaleService {
     optionalpriceintokencount?: number;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
+    revervationtimeinminutes?: number;
     addresstype?: AddressType;
-    coin?: Coin;
+    blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -164,8 +166,9 @@ export class AddressReservationSaleService {
         optionalpriceintokencount: optionalpriceintokencount,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
+        revervationtimeinminutes: revervationtimeinminutes,
         addresstype: addresstype,
-        coin: coin,
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -196,8 +199,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
+    revervationtimeinminutes,
     addresstype,
-    coin,
+    blockchain,
   }: {
     projectuid: string;
     countnft: number;
@@ -212,8 +216,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
+    revervationtimeinminutes?: number;
     addresstype?: AddressType;
-    coin?: Coin;
+    blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -228,8 +233,9 @@ export class AddressReservationSaleService {
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
+        revervationtimeinminutes: revervationtimeinminutes,
         addresstype: addresstype,
-        coin: coin,
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -264,8 +270,9 @@ export class AddressReservationSaleService {
     optionalpriceintokencount,
     optionalrefundaddress,
     acceptheigheramounts,
+    revervationtimeinminutes,
     addresstype,
-    coin,
+    blockchain,
   }: {
     nftuid: string;
     tokencount: number;
@@ -284,8 +291,9 @@ export class AddressReservationSaleService {
     optionalpriceintokencount?: number;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
+    revervationtimeinminutes?: number;
     addresstype?: AddressType;
-    coin?: Coin;
+    blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -304,8 +312,9 @@ export class AddressReservationSaleService {
         optionalpriceintokencount: optionalpriceintokencount,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
+        revervationtimeinminutes: revervationtimeinminutes,
         addresstype: addresstype,
-        coin: coin,
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -337,8 +346,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
+    revervationtimeinminutes,
     addresstype,
-    coin,
+    blockchain,
   }: {
     nftuid: string;
     tokencount: number;
@@ -353,8 +363,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
+    revervationtimeinminutes?: number;
     addresstype?: AddressType;
-    coin?: Coin;
+    blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -369,8 +380,9 @@ export class AddressReservationSaleService {
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
+        revervationtimeinminutes: revervationtimeinminutes,
         addresstype: addresstype,
-        coin: coin,
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -396,8 +408,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress,
     optionalrefundaddress,
     acceptheigheramounts,
+    revervationtimeinminutes,
     addresstype,
-    coin,
+    blockchain,
     requestBody,
   }: {
     /**
@@ -411,8 +424,9 @@ export class AddressReservationSaleService {
     optionalreceiveraddress?: string;
     optionalrefundaddress?: string;
     acceptheigheramounts?: boolean;
+    revervationtimeinminutes?: number;
     addresstype?: AddressType;
-    coin?: Coin;
+    blockchain?: Blockchain;
     requestBody?: ReserveMultipleNftsClassV2;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -424,8 +438,9 @@ export class AddressReservationSaleService {
         optionalreceiveraddress: optionalreceiveraddress,
         optionalrefundaddress: optionalrefundaddress,
         acceptheigheramounts: acceptheigheramounts,
+        revervationtimeinminutes: revervationtimeinminutes,
         addresstype: addresstype,
-        coin: coin,
+        blockchain: blockchain,
       },
       body: requestBody,
       mediaType: 'application/json',

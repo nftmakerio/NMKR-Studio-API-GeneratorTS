@@ -2,4 +2,4 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type Coin = 'ADA' | 'SOL';
+export type Blockchain = 'Cardano' | 'Solana';
