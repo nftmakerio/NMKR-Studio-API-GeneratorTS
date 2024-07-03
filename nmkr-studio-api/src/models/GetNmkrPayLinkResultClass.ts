@@ -20,8 +20,8 @@ export type GetNmkrPayLinkResultClass = {
   txHash?: string | null;
   expires?: string | null;
   nmkrPayUrl?: string | null;
-  paymentgatewayParameters?: PaymentgatewayParametersClass;
-  paymentgatewayResults?: DecentralParametersResultClass;
+  paymentgatewayParameters?: PaymentgatewayParametersClass | null;
+  paymentgatewayResults?: DecentralParametersResultClass | null;
   transactionType?: NmkrPayTransactionTypes;
   paymentTransactionSubstate?: PaymentTransactionSubstates;
   paymentGatewayType?: PaymentTransactionTypes;

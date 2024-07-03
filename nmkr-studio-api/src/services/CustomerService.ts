@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { ApiErrorResultClass } from '../models/ApiErrorResultClass';
+import type { GetMintCouponBalanceResultClass } from '../models/GetMintCouponBalanceResultClass';
 import type { GetPayoutWalletsResultClass } from '../models/GetPayoutWalletsResultClass';
 import type { GetTransactionsClass } from '../models/GetTransactionsClass';
 import type { TransactionsExportOptions } from '../models/TransactionsExportOptions';
@@ -64,6 +65,21 @@ export class CustomerService {
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
         404: `The project was not found in our database or not assiged to your account`,
+      },
+    });
+  }
+
+  /**
+   * Returns the count of mint coupons in your account
+   * @returns GetMintCouponBalanceResultClass Returns the GetMintCouponBalanceResultClass
+   * @throws ApiError
+   */
+  public getV2GetMintCouponBalance(): CancelablePromise<GetMintCouponBalanceResultClass> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetMintCouponBalance',
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
       },
     });
   }

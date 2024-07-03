@@ -5,6 +5,6 @@
 import type { MintNftsClass } from './MintNftsClass';
 
 export type PaymentgatewayParametersClass = {
-  mintNfts?: MintNftsClass;
+  mintNfts?: MintNftsClass | null;
   optionalRecevierAddress?: string | null;
 };

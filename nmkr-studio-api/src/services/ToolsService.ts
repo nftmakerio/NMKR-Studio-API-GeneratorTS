@@ -4,6 +4,7 @@
 import type { AssetsAssociatedWithAccount } from '../models/AssetsAssociatedWithAccount';
 import type { CheckConditionsResultClass } from '../models/CheckConditionsResultClass';
 import type { CheckDiscountsResultClass } from '../models/CheckDiscountsResultClass';
+import type { Dataproviders } from '../models/Dataproviders';
 import type { NmkrAssetAddress } from '../models/NmkrAssetAddress';
 import type { RatesClass } from '../models/RatesClass';
 import type { RoyaltyClass } from '../models/RoyaltyClass';
@@ -87,12 +88,21 @@ export class ToolsService {
    * @returns TxInAddressesClass Returns the AssetsAssociatedWithAccount Class
    * @throws ApiError
    */
-  public getV2CheckUtxo({ address }: { address: string }): CancelablePromise<TxInAddressesClass> {
+  public getV2CheckUtxo({
+    address,
+    dataprovider,
+  }: {
+    address: string;
+    dataprovider?: Dataproviders;
+  }): CancelablePromise<TxInAddressesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/CheckUtxo/{address}',
       path: {
         address: address,
+      },
+      query: {
+        dataprovider: dataprovider,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

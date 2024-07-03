@@ -40,7 +40,28 @@ export class NftService {
   }
 
   /**
-   * Checks if the metadata are valid
+   * Checks if the metadata is valid
+   * @returns ApiErrorResultClass Returns OK if the metadata are valid
+   * @throws ApiError
+   */
+  public getV2CheckMetadata({ nftuid }: { nftuid: string }): CancelablePromise<ApiErrorResultClass> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/CheckMetadata/{nftuid}',
+      path: {
+        nftuid: nftuid,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `The NFT was not found`,
+        406: `See the errormessage in the resultset for further information`,
+        500: `Internal server error - see the errormessage in the resultset`,
+      },
+    });
+  }
+
+  /**
+   * Checks if the metadata is valid
    * @returns ApiErrorResultClass Returns OK if the metadata are valid
    * @throws ApiError
    */

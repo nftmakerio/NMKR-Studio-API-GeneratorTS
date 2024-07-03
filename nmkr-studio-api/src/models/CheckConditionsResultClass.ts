@@ -9,7 +9,7 @@ export type CheckConditionsResultClass = {
   conditionsMet?: boolean;
   rejectReason?: string | null;
   rejectParameter?: string | null;
-  sendBackAddress?: FrankenAddressProtectionClass;
+  sendBackAddress?: FrankenAddressProtectionClass | null;
   assetsAssociatedWithAccount?: Array<AssetsAssociatedWithAccount> | null;
   stakeAddress?: string | null;
 };

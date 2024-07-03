@@ -6,7 +6,7 @@ import type { MintNftsResultClass } from './MintNftsResultClass';
 import type { Tokens } from './Tokens';
 
 export type DecentralParametersResultClass = {
-  mintNfts?: MintNftsResultClass;
+  mintNfts?: MintNftsResultClass | null;
   priceInLovelace?: number | null;
   additionalPriceInTokens?: Array<Tokens> | null;
   stakeRewards?: number | null;

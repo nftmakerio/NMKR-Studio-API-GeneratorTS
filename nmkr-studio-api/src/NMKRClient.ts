@@ -11,6 +11,7 @@ import { CustomerService } from './services/CustomerService';
 import { IpfsService } from './services/IpfsService';
 import { ManagedWalletsService } from './services/ManagedWalletsService';
 import { MintService } from './services/MintService';
+import { MiscService } from './services/MiscService';
 import { NftService } from './services/NftService';
 import { NmkrPayService } from './services/NmkrPayService';
 import { ProjectsService } from './services/ProjectsService';
@@ -29,6 +30,7 @@ export class NMKRClient {
   public readonly ipfs: IpfsService;
   public readonly managedWallets: ManagedWalletsService;
   public readonly mint: MintService;
+  public readonly misc: MiscService;
   public readonly nft: NftService;
   public readonly nmkrPay: NmkrPayService;
   public readonly projects: ProjectsService;
@@ -59,6 +61,7 @@ export class NMKRClient {
     this.ipfs = new IpfsService(this.request);
     this.managedWallets = new ManagedWalletsService(this.request);
     this.mint = new MintService(this.request);
+    this.misc = new MiscService(this.request);
     this.nft = new NftService(this.request);
     this.nmkrPay = new NmkrPayService(this.request);
     this.projects = new ProjectsService(this.request);

@@ -10,7 +10,7 @@ export type UploadNftClassV2 = {
   tokenname?: string | null;
   displayname?: string | null;
   description?: string | null;
-  previewImageNft?: NftFileV2;
+  previewImageNft?: NftFileV2 | null;
   subfiles?: Array<NftSubfileFileV2> | null;
   metadataPlaceholder?: Array<MetadataPlaceholderClass> | null;
   metadataOverride?: string | null;

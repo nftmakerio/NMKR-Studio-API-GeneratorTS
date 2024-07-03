@@ -13,5 +13,5 @@ export type GetNmkrPayLinkClass = {
   customProperties?: Record<string, string | null> | null;
   paymentTransactionNotifications?: Array<PaymentTransactionNotificationsClass> | null;
   paymentTransactionType?: NmkrPayTransactionTypes;
-  paymentgatewayParameters?: NmkrPayPaymentgatewayParamatersClass;
+  paymentgatewayParameters?: NmkrPayPaymentgatewayParamatersClass | null;
 };

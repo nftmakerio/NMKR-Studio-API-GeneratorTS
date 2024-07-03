@@ -2,7 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { Blockchain } from './Blockchain';
 import type { NmkrAccountOptionsTypes } from './NmkrAccountOptionsTypes';
+import type { SolanaProjectDetails } from './SolanaProjectDetails';
 
 export type NftProjectsDetails = {
   id?: number;
@@ -41,4 +43,6 @@ export type NftProjectsDetails = {
   nmkrAccountOptions?: NmkrAccountOptionsTypes;
   crossmintCollectiondId?: string | null;
   created?: string;
+  blockchains?: Array<Blockchain> | null;
+  solanaProjectDetails?: SolanaProjectDetails | null;
 };

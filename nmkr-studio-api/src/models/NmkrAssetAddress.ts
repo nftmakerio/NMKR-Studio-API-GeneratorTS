@@ -16,5 +16,5 @@ export type NmkrAssetAddress = {
   decimals?: number;
   creationTime?: number | null;
   mintingTxHash?: string | null;
-  mintingTransactionInformation?: MintingTransactionInformation;
+  mintingTransactionInformation?: MintingTransactionInformation | null;
 };

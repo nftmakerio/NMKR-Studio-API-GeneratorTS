@@ -20,7 +20,7 @@ export type CreateProjectClassV2 = {
   payoutWalletaddress?: string | null;
   payoutWalletaddressUsdc?: string | null;
   maxNftSupply?: number;
-  policy?: PolicyClass;
+  policy?: PolicyClass | null;
   metadataTemplate?: string | null;
   addressExpiretime?: number;
   pricelist?: Array<PricelistClassV2> | null;
