@@ -22,4 +22,5 @@ export type NFT = {
   price?: number | null;
   selldate?: string | null;
   paymentGatewayLinkForSpecificSale?: string | null;
+  priceSolana?: number | null;
 };

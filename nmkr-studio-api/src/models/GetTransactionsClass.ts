@@ -2,6 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { Blockchain } from './Blockchain';
+import type { GetTransactionNftsClass } from './GetTransactionNftsClass';
+
 export type GetTransactionsClass = {
   created?: string;
   state?: string | null;
@@ -30,4 +33,7 @@ export type GetTransactionsClass = {
   priceintokensmultiplier?: number;
   nmkrcosts?: number;
   discount?: number;
+  customerProperty?: string | null;
+  blockchain?: Blockchain;
+  transactionNfts?: Array<GetTransactionNftsClass> | null;
 };

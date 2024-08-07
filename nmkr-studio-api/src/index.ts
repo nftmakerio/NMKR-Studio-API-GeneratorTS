@@ -51,6 +51,7 @@ export type { GetRefundsClass } from './models/GetRefundsClass';
 export type { GetSaleconditionsClass } from './models/GetSaleconditionsClass';
 export type { GetSplitAddressClass } from './models/GetSplitAddressClass';
 export type { GetSplits } from './models/GetSplits';
+export type { GetTransactionNftsClass } from './models/GetTransactionNftsClass';
 export type { GetTransactionsClass } from './models/GetTransactionsClass';
 export type { GetVestingAddressClass } from './models/GetVestingAddressClass';
 export type { GetWalletValidationAddressResultClass } from './models/GetWalletValidationAddressResultClass';

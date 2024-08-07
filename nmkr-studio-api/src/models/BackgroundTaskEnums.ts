@@ -31,4 +31,5 @@ export type BackgroundTaskEnums =
   | 'checkcustomerchargeaddresses'
   | 'checkpaymentaddressessolana'
   | 'mintandsendsolana'
-  | 'checkpoliciessolana';
+  | 'checkpoliciessolana'
+  | 'checkcustomeraddressessolana';

@@ -139,14 +139,41 @@ export class AddressReservationSaleService {
      * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
      */
     customproperty?: string;
+    /**
+     * (Optional) You can specify a different receiver of the nft
+     */
     optionalreceiveraddress?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (policyid)
+     */
     optionalpriceintokenpolicyid?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (tokenname in hex)
+     */
     optionalpriceintokenassetnameinhex?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (count)
+     */
     optionalpriceintokencount?: number;
+    /**
+     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     */
     optionalrefundaddress?: string;
+    /**
+     * (Optional) The address accepts the correct or a higher amount for minting. If false or null the exact amount must be received
+     */
     acceptheigheramounts?: boolean;
+    /**
+     * (Optional) The time in minutes the address will be reserved
+     */
     revervationtimeinminutes?: number;
+    /**
+     * The Base Addresses are with Stakekeys, the Enterprise Addresses without - only available in the cardano network
+     */
     addresstype?: AddressType;
+    /**
+     * The blockchain where the address should be created
+     */
     blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -213,11 +240,29 @@ export class AddressReservationSaleService {
      * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
      */
     customproperty?: string;
+    /**
+     * (Optional) You can specify a different receiver of the nft
+     */
     optionalreceiveraddress?: string;
+    /**
+     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     */
     optionalrefundaddress?: string;
+    /**
+     * (Optional) The address accepts the correct or a higher amount for minting. If false or null the exact amount must be received
+     */
     acceptheigheramounts?: boolean;
+    /**
+     * (Optional) The time in minutes the address will be reserved
+     */
     revervationtimeinminutes?: number;
+    /**
+     * The Base Addresses are with Stakekeys, the Enterprise Addresses without - only available in the cardano network
+     */
     addresstype?: AddressType;
+    /**
+     * The blockchain where the address should be created
+     */
     blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -285,14 +330,41 @@ export class AddressReservationSaleService {
      * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
      */
     customproperty?: string;
+    /**
+     * (Optional) You can specify a different receiver of the nft
+     */
     optionalreceiveraddress?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (policyid)
+     */
     optionalpriceintokenpolicyid?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (tokenname in hex)
+     */
     optionalpriceintokenassetnameinhex?: string;
+    /**
+     * (Optional) You can specify an additional price in tokens (count)
+     */
     optionalpriceintokencount?: number;
+    /**
+     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     */
     optionalrefundaddress?: string;
+    /**
+     * (Optional) The address accepts the correct or a higher amount for minting. If false or null the exact amount must be received
+     */
     acceptheigheramounts?: boolean;
+    /**
+     * (Optional) The time in minutes the address will be reserved
+     */
     revervationtimeinminutes?: number;
+    /**
+     * The Base Addresses are with Stakekeys, the Enterprise Addresses without - only available in the cardano network
+     */
     addresstype?: AddressType;
+    /**
+     * The blockchain where the address should be created
+     */
     blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -360,11 +432,29 @@ export class AddressReservationSaleService {
      * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
      */
     customproperty?: string;
+    /**
+     * (Optional) You can specify a different receiver of the nft
+     */
     optionalreceiveraddress?: string;
+    /**
+     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     */
     optionalrefundaddress?: string;
+    /**
+     * (Optional) The address accepts the correct or a higher amount for minting. If false or null the exact amount must be received
+     */
     acceptheigheramounts?: boolean;
+    /**
+     * (Optional) The time in minutes the address will be reserved
+     */
     revervationtimeinminutes?: number;
+    /**
+     * The Base Addresses are with Stakekeys, the Enterprise Addresses without - only available in the cardano network
+     */
     addresstype?: AddressType;
+    /**
+     * The blockchain where the address should be created
+     */
     blockchain?: Blockchain;
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
@@ -421,11 +511,29 @@ export class AddressReservationSaleService {
      * (Optional) A custom property which can be set. Will be returned at webhooks or checkaddress
      */
     customproperty?: string;
+    /**
+     * (Optional) You can specify a different receiver of the nft
+     */
     optionalreceiveraddress?: string;
+    /**
+     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     */
     optionalrefundaddress?: string;
+    /**
+     * (Optional) The address accepts the correct or a higher amount for minting. If false or null the exact amount must be received
+     */
     acceptheigheramounts?: boolean;
+    /**
+     * (Optional) The time in minutes the address will be reserved
+     */
     revervationtimeinminutes?: number;
+    /**
+     * (Optional) The Base Addresses are with Stakekeys, the Enterprise Addresses without - only available in the cardano network - Default Enterprise
+     */
     addresstype?: AddressType;
+    /**
+     * (Optional) The blockchain where the address should be created - Default Cardano
+     */
     blockchain?: Blockchain;
     requestBody?: ReserveMultipleNftsClassV2;
   }): CancelablePromise<GetPaymentAddressResultClass> {

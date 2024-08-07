@@ -37,4 +37,15 @@ export type CreateProjectClassV2 = {
   metadataStandard?: string | null;
   cip68ReferenceAddress?: string | null;
   cip68ExtraField?: string | null;
+  enableCardano?: boolean;
+  enableSolana?: boolean;
+  solanaSymbol?: string | null;
+  solanaCollectionFamily?: string | null;
+  payoutWalletaddressSolana?: string | null;
+  addCardanoPolicyIdToSolanaMetadata?: boolean | null;
+  addSolanaCollectionAddressToCardanoMetadata?: boolean | null;
+  solanaCreateVerifiedCollection?: boolean | null;
+  solanaCollectionImageUrl?: string | null;
+  solanaCollectionImageMimetype?: string | null;
+  solanaSellerFeeBasisPoints?: number | null;
 };

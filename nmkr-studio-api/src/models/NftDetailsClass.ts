@@ -26,7 +26,10 @@ export type NftDetailsClass = {
   singlePrice?: number | null;
   uid?: string | null;
   paymentGatewayLinkForSpecificSale?: string | null;
-  sendBackCentralPaymentInLovelace?: number;
-  priceInLovelaceCentralPayments?: number;
+  sendBackCentralPaymentInLovelace?: number | null;
+  sendBackCentralPaymentInLamport?: number | null;
+  priceInLovelaceCentralPayments?: number | null;
   uploadSource?: string | null;
+  priceInLamportCentralPayments?: number | null;
+  singlePriceSolana?: number | null;
 };
