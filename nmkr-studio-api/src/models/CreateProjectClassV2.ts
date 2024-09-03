@@ -46,6 +46,6 @@ export type CreateProjectClassV2 = {
   addSolanaCollectionAddressToCardanoMetadata?: boolean | null;
   solanaCreateVerifiedCollection?: boolean | null;
   solanaCollectionImageUrl?: string | null;
-  solanaCollectionImageMimetype?: string | null;
+  solanaCollectionImageMimeType?: string | null;
   solanaSellerFeeBasisPoints?: number | null;
 };
