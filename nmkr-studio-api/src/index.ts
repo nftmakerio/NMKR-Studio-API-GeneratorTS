@@ -21,6 +21,7 @@ export type { CheckConditionsResultClass } from './models/CheckConditionsResultC
 export type { CheckDiscountsResultClass } from './models/CheckDiscountsResultClass';
 export type { CheckWalletValidationResultClass } from './models/CheckWalletValidationResultClass';
 export type { CountedWhitelistAddressesClass } from './models/CountedWhitelistAddressesClass';
+export type { CreateAuctionClass } from './models/CreateAuctionClass';
 export type { CreateBurningEndpointClass } from './models/CreateBurningEndpointClass';
 export type { CreateManagedWalletClass } from './models/CreateManagedWalletClass';
 export type { CreateManagedWalletTransactionClass } from './models/CreateManagedWalletTransactionClass';
@@ -38,6 +39,7 @@ export type { DeleteAllNftsDetail } from './models/DeleteAllNftsDetail';
 export type { DeleteAllNftsResultClass } from './models/DeleteAllNftsResultClass';
 export type { DuplicateNftClass } from './models/DuplicateNftClass';
 export type { FrankenAddressProtectionClass } from './models/FrankenAddressProtectionClass';
+export type { GetAuctionsClass } from './models/GetAuctionsClass';
 export type { GetAuctionStateResultClass } from './models/GetAuctionStateResultClass';
 export type { GetDiscountsClass } from './models/GetDiscountsClass';
 export type { GetKeyHashClass } from './models/GetKeyHashClass';

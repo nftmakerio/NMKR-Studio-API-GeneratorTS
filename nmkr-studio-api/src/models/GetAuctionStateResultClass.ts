@@ -21,4 +21,5 @@ export type GetAuctionStateResultClass = {
   marketplacefeepercent?: number | null;
   auctionsNfts?: Array<AuctionsNft> | null;
   auctionshistories?: Array<AuctionsHistory> | null;
+  uid?: string | null;
 };
