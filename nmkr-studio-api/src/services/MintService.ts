@@ -1,7 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Blockchain } from '../models/Blockchain';
 import type { MintAndSendResultClass } from '../models/MintAndSendResultClass';
+import type { ReserveMultipleNftsClassV2 } from '../models/ReserveMultipleNftsClassV2';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -19,10 +21,12 @@ export class MintService {
     projectuid,
     countnft,
     receiveraddress,
+    blockchain,
   }: {
     projectuid: string;
     countnft: number;
     receiveraddress: string;
+    blockchain?: Blockchain;
   }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -31,6 +35,9 @@ export class MintService {
         projectuid: projectuid,
         countnft: countnft,
         receiveraddress: receiveraddress,
+      },
+      query: {
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -54,11 +61,13 @@ export class MintService {
     nftuid,
     tokencount,
     receiveraddress,
+    blockchain,
   }: {
     projectuid: string;
     nftuid: string;
     tokencount: number;
     receiveraddress: string;
+    blockchain?: Blockchain;
   }): CancelablePromise<MintAndSendResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -69,6 +78,49 @@ export class MintService {
         tokencount: tokencount,
         receiveraddress: receiveraddress,
       },
+      query: {
+        blockchain: blockchain,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
+        402: `Too less ADA in your account. Fill up ADA first before try to mint and send`,
+        404: `NFT no more available (already sold)`,
+        406: `The receiveraddress is not a valid cardano address or a valid ada handle`,
+        409: `There are pending transactions on the sender address (your account address). Please wait a second`,
+        500: `Internal server error - see the errormessage in the result`,
+      },
+    });
+  }
+
+  /**
+   * Mints one or more specific Nft and sends it to an Address
+   * When you call this API, one or more specific NFTs will be minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
+   * @returns MintAndSendResultClass Returns the Nft Class
+   * @throws ApiError
+   */
+  public postV2MintAndSendSpecific({
+    projectuid,
+    receiveraddress,
+    blockchain,
+    requestBody,
+  }: {
+    projectuid: string;
+    receiveraddress: string;
+    blockchain?: Blockchain;
+    requestBody?: ReserveMultipleNftsClassV2;
+  }): CancelablePromise<MintAndSendResultClass> {
+    return this.httpRequest.request({
+      method: 'POST',
+      url: '/v2/MintAndSendSpecific/{projectuid}/{receiveraddress}',
+      path: {
+        projectuid: projectuid,
+        receiveraddress: receiveraddress,
+      },
+      query: {
+        blockchain: blockchain,
+      },
+      body: requestBody,
+      mediaType: 'application/json',
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
         402: `Too less ADA in your account. Fill up ADA first before try to mint and send`,

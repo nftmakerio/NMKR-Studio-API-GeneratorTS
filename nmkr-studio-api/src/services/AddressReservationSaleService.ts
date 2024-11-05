@@ -156,7 +156,7 @@ export class AddressReservationSaleService {
      */
     optionalpriceintokencount?: number;
     /**
-     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     * (Optional) If there was refund because of minting error or saleconditions you can specify the receiver of the ada/sol
      */
     optionalrefundaddress?: string;
     /**
@@ -245,7 +245,7 @@ export class AddressReservationSaleService {
      */
     optionalreceiveraddress?: string;
     /**
-     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     * (Optional) If there was refund because of minting error or saleconditions you can specify the receiver of the ada/sol
      */
     optionalrefundaddress?: string;
     /**
@@ -347,7 +347,7 @@ export class AddressReservationSaleService {
      */
     optionalpriceintokencount?: number;
     /**
-     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     * (Optional) If there was refund because of minting error or saleconditions you can specify the receiver of the ada/sol
      */
     optionalrefundaddress?: string;
     /**
@@ -437,7 +437,7 @@ export class AddressReservationSaleService {
      */
     optionalreceiveraddress?: string;
     /**
-     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     * (Optional) If there was refund because of minting error or saleconditions you can specify the receiver of the ada/sol
      */
     optionalrefundaddress?: string;
     /**
@@ -516,7 +516,7 @@ export class AddressReservationSaleService {
      */
     optionalreceiveraddress?: string;
     /**
-     * (Optional) If there was refund because of minting error or salecondtions you can specify the receiver of the ada/sol
+     * (Optional) If there was refund because of minting error or saleconditions you can specify the receiver of the ada/sol
      */
     optionalrefundaddress?: string;
     /**

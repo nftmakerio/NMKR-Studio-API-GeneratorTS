@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { ApiErrorResultClass } from '../models/ApiErrorResultClass';
+import type { Blockchain } from '../models/Blockchain';
 import type { CreateBurningEndpointClass } from '../models/CreateBurningEndpointClass';
 import type { CreateNewProjectResultClass } from '../models/CreateNewProjectResultClass';
 import type { CreateProjectClassV2 } from '../models/CreateProjectClassV2';
@@ -37,9 +38,11 @@ export class ProjectsService {
   public getV2CreateBurningAddress({
     projectuid,
     addressactiveinhours,
+    blockchain,
   }: {
     projectuid: string;
     addressactiveinhours: number;
+    blockchain?: Blockchain;
   }): CancelablePromise<CreateBurningEndpointClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -47,6 +50,9 @@ export class ProjectsService {
       path: {
         projectuid: projectuid,
         addressactiveinhours: addressactiveinhours,
+      },
+      query: {
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
@@ -193,12 +199,21 @@ export class ProjectsService {
    * @returns PricelistClass Returns an array of the PricelistClass
    * @throws ApiError
    */
-  public getV2GetPricelist({ projectuid }: { projectuid: string }): CancelablePromise<Array<PricelistClass>> {
+  public getV2GetPricelist({
+    projectuid,
+    returnAllPrices = false,
+  }: {
+    projectuid: string;
+    returnAllPrices?: boolean;
+  }): CancelablePromise<Array<PricelistClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetPricelist/{projectuid}',
       path: {
         projectuid: projectuid,
+      },
+      query: {
+        returnAllPrices: returnAllPrices,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

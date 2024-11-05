@@ -15,7 +15,11 @@ export class WhitelistsService {
    * @returns GetWhitelistEntriesClass Returns the complete whitelist and how much are already sold
    * @throws ApiError
    */
-  public getV2ManageWhitelist({ projectuid }: { projectuid: string }): CancelablePromise<GetWhitelistEntriesClass> {
+  public getV2ManageWhitelist({
+    projectuid,
+  }: {
+    projectuid: string;
+  }): CancelablePromise<Array<GetWhitelistEntriesClass>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/ManageWhitelist/{projectuid}',

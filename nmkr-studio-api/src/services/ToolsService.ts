@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AssetsAssociatedWithAccount } from '../models/AssetsAssociatedWithAccount';
+import type { Blockchain } from '../models/Blockchain';
 import type { CheckConditionsResultClass } from '../models/CheckConditionsResultClass';
 import type { CheckDiscountsResultClass } from '../models/CheckDiscountsResultClass';
 import type { Dataproviders } from '../models/Dataproviders';
@@ -52,8 +53,8 @@ export class ToolsService {
   }
 
   /**
-   * Checks, if an address matches the sale condtions
-   * Checks, if an address matches the sale condtions of a project
+   * Checks, if an address matches the sale conditions
+   * Checks, if an address matches the sale conditions of a project
    * @returns CheckConditionsResultClass Returns the CheckConditionsResultClass Class
    * @throws ApiError
    */
@@ -61,10 +62,12 @@ export class ToolsService {
     projectuid,
     address,
     countnft,
+    blockchain,
   }: {
     projectuid: string;
     address: string;
     countnft: number;
+    blockchain?: Blockchain;
   }): CancelablePromise<CheckConditionsResultClass> {
     return this.httpRequest.request({
       method: 'GET',
@@ -73,6 +76,9 @@ export class ToolsService {
         projectuid: projectuid,
         address: address,
         countnft: countnft,
+      },
+      query: {
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -149,14 +155,19 @@ export class ToolsService {
    */
   public getV2GetAllAssetsInWallet({
     address,
+    blockchain,
   }: {
     address: string;
+    blockchain?: Blockchain;
   }): CancelablePromise<Array<AssetsAssociatedWithAccount>> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAllAssetsInWallet/{address}',
       path: {
         address: address,
+      },
+      query: {
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
@@ -294,10 +305,12 @@ export class ToolsService {
     policyid,
     cumulateStakeAddresses = true,
     withMintingInformation = false,
+    blockchain,
   }: {
     policyid: string;
     cumulateStakeAddresses?: boolean;
     withMintingInformation?: boolean;
+    blockchain?: Blockchain;
   }): CancelablePromise<Array<NmkrAssetAddress>> {
     return this.httpRequest.request({
       method: 'GET',
@@ -308,6 +321,7 @@ export class ToolsService {
       query: {
         cumulateStakeAddresses: cumulateStakeAddresses,
         withMintingInformation: withMintingInformation,
+        blockchain: blockchain,
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,

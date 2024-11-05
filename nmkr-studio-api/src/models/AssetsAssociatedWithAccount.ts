@@ -5,6 +5,8 @@
 import type { Blockchain } from './Blockchain';
 
 export type AssetsAssociatedWithAccount = {
+  solanaSymbol?: string | null;
+  address?: string | null;
   unit?: string | null;
   quantity?: number | null;
   blockchain?: Blockchain;

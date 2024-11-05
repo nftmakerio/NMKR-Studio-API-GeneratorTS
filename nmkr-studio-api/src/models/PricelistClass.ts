@@ -22,4 +22,6 @@ export type PricelistClass = {
   readonly adaToSendCentralPayments?: string | null;
   priceInLamport?: number;
   readonly solToSend?: string | null;
+  validFrom?: string | null;
+  validTo?: string | null;
 };

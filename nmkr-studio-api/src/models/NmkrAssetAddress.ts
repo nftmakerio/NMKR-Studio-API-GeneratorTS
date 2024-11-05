@@ -17,4 +17,7 @@ export type NmkrAssetAddress = {
   creationTime?: number | null;
   mintingTxHash?: string | null;
   mintingTransactionInformation?: MintingTransactionInformation | null;
+  readonly solanaSymbol?: string | null;
+  readonly solanaDescription?: string | null;
+  readonly solanaTokenStandard?: string | null;
 };
