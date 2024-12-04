@@ -12,6 +12,16 @@ export type GetSaleconditionsClass = {
   policyId3?: string | null;
   policyId4?: string | null;
   policyId5?: string | null;
+  policyId6?: string | null;
+  policyId7?: string | null;
+  policyId8?: string | null;
+  policyId9?: string | null;
+  policyId10?: string | null;
+  policyId11?: string | null;
+  policyId12?: string | null;
+  policyId13?: string | null;
+  policyId14?: string | null;
+  policyId15?: string | null;
   minOrMaxValue?: number | null;
   description?: string | null;
   policyProjectname?: string | null;

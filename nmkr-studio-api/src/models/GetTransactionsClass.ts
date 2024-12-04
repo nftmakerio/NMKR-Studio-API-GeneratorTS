@@ -36,4 +36,5 @@ export type GetTransactionsClass = {
   customerProperty?: string | null;
   blockchain?: Blockchain;
   transactionNfts?: Array<GetTransactionNftsClass> | null;
+  coin?: string | null;
 };
