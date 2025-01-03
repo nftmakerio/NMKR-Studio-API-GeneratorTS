@@ -36,6 +36,7 @@ export type { CreateSubcustomerResultClass } from './models/CreateSubcustomerRes
 export type { CreateVestingAddressClass } from './models/CreateVestingAddressClass';
 export type { CreateVestingAddressResultClass } from './models/CreateVestingAddressResultClass';
 export type { CreateWalletResultClass } from './models/CreateWalletResultClass';
+export type { CryptoCoin } from './models/CryptoCoin';
 export type { CurrencyTypes } from './models/CurrencyTypes';
 export type { Dataproviders } from './models/Dataproviders';
 export type { DecentralParametersResultClass } from './models/DecentralParametersResultClass';

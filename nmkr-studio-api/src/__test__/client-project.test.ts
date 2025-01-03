@@ -20,7 +20,8 @@ test('CreateDeleteProject', async () => {
         enableDecentralPayments: false,
         enableCrossSaleOnPaymentgateway: true,
         activatePayinAddress: true,
-        payoutWalletaddress: 'addr1ThisIsOurTeamsWallet',
+        payoutWalletaddress:
+          'addr1q98qjgkvv6ul6p5tlxvq9zxklnj87y0lf4s0lta4km4s0scktx0qwk39jnq9a3krt20xa07fgkpf23q4wl3sqcgmrwps79n8u9',
       },
     });
     expect(project.uid).not.toBeNull();

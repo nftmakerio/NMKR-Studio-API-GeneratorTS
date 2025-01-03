@@ -5,6 +5,7 @@ import type { AssetsAssociatedWithAccount } from '../models/AssetsAssociatedWith
 import type { Blockchain } from '../models/Blockchain';
 import type { CheckConditionsResultClass } from '../models/CheckConditionsResultClass';
 import type { CheckDiscountsResultClass } from '../models/CheckDiscountsResultClass';
+import type { CryptoCoin } from '../models/CryptoCoin';
 import type { Dataproviders } from '../models/Dataproviders';
 import type { NmkrAssetAddress } from '../models/NmkrAssetAddress';
 import type { RatesClass } from '../models/RatesClass';
@@ -133,6 +134,7 @@ export class ToolsService {
   }
 
   /**
+   * @deprecated
    * Returns the actual price in EUR and USD for ADA
    * @returns RatesClass Returns the RatesClass
    * @throws ApiError
@@ -359,6 +361,25 @@ export class ToolsService {
   }
 
   /**
+   * Returns the actual price in EUR and USD for ADA,APT,SOL,ETH, etc.
+   * @returns RatesClass Returns the RatesClass
+   * @throws ApiError
+   */
+  public getV2GetRates({ coin }: { coin?: CryptoCoin }): CancelablePromise<RatesClass> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetRates',
+      query: {
+        coin: coin,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `Not Found`,
+      },
+    });
+  }
+
+  /**
    * Returns the royalty information for a specific policyid
    * You will receive the rate in percent and the wallet address for the royalties (if applicable) of a specific policyid
    * @returns RoyaltyClass Returns an array of RoyaltyClass
@@ -380,6 +401,7 @@ export class ToolsService {
   }
 
   /**
+   * @deprecated
    * Returns the actual price in EUR and USD for ADA
    * @returns RatesClass Returns the RatesClass
    * @throws ApiError
