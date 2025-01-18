@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Blockchain } from './Blockchain';
 import type { GetTransactionNftsClass } from './GetTransactionNftsClass';
-
 export type GetTransactionsClass = {
   created?: string;
   state?: string | null;

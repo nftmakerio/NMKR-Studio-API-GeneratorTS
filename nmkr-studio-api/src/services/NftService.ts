@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -10,13 +11,10 @@ import type { NftProjectsDetails } from '../models/NftProjectsDetails';
 import type { UploadMetadataClass } from '../models/UploadMetadataClass';
 import type { UploadNftClassV2 } from '../models/UploadNftClassV2';
 import type { UploadNftResultClass } from '../models/UploadNftResultClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class NftService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Blocks/Unblocks an nft  (nft uid)
    * You can block an nft, if it is not already sold or reserved and you can unblock blocked nfts
@@ -38,7 +36,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Checks if the metadata is valid
    * @returns ApiErrorResultClass Returns OK if the metadata are valid
@@ -59,7 +56,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Checks if the metadata is valid
    * @returns ApiErrorResultClass Returns OK if the metadata are valid
@@ -88,7 +84,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Deletes all nfts from the database
    * This function deletes all NFTs from a project. You can delete a nft, if it is not in sold or reserved state. All other nfts will be deleted.
@@ -113,7 +108,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Deletes a nft from the database (nft uid)
    * You can delete a nft, if it is not in sold or reserved state
@@ -134,7 +128,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Duplicates a nft/token inside a project. If a token already exists, it will be skipped
    * @returns NftProjectsDetails Duplicate was successful. Returns the NtProjectDetails Class
@@ -162,7 +155,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Returns detail information about one nft specified by Id (nft uid)
    * You will receive all information (fingerprint, ipfshash, etc.) about one nfts with the submitted id
@@ -182,7 +174,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Returns detail information about one nft specified by its name
    * You will receive all information (fingerprint, ipfshash, etc.) about one nft with the submitted name
@@ -209,7 +200,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Returns detail information about nfts with a specific state with Pagination support. (project uid)
    * You will receive all information (fingerprint, ipfshash, etc.) about the nfts within a specific state.
@@ -252,7 +242,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Updates the Metadata for one specific NFT
    * With this API you can update the Metadata Override for one specific NFT
@@ -286,7 +275,6 @@ export class NftService {
       },
     });
   }
-
   /**
    * Upload a File to a project and pin it to IPFS
    * With this API you can upload a file to IPFS and add it to a project. You can upload the file as BASE64 Content or as URL Link or as IPFS Hash.

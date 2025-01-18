@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { MetadataPlaceholderClass } from './MetadataPlaceholderClass';
 import type { NftFileV2 } from './NftFileV2';
 import type { NftSubfileFileV2 } from './NftSubfileFileV2';
-
 export type UploadNftClassV2 = {
   tokenname?: string | null;
   displayname?: string | null;

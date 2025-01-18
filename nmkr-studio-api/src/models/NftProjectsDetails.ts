@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Blockchain } from './Blockchain';
 import type { NmkrAccountOptionsTypes } from './NmkrAccountOptionsTypes';
 import type { SolanaProjectDetails } from './SolanaProjectDetails';
-
 export type NftProjectsDetails = {
   id?: number;
   projectname?: string | null;
@@ -45,4 +44,5 @@ export type NftProjectsDetails = {
   created?: string;
   blockchains?: Array<Blockchain> | null;
   solanaProjectDetails?: SolanaProjectDetails | null;
+  solanaPayoutWalletAddress?: string | null;
 };

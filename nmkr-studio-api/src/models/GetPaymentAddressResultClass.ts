@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Tokens } from './Tokens';
-
 export type GetPaymentAddressResultClass = {
   paymentAddress?: string | null;
   paymentAddressId?: number;

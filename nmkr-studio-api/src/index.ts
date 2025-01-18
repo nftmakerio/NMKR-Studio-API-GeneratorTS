@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -9,6 +10,7 @@ export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
+export type { AdditionalPayoutWalletsClass } from './models/AdditionalPayoutWalletsClass';
 export type { AddressType } from './models/AddressType';
 export type { ApiErrorResultClass } from './models/ApiErrorResultClass';
 export type { AssetsAssociatedWithAccount } from './models/AssetsAssociatedWithAccount';

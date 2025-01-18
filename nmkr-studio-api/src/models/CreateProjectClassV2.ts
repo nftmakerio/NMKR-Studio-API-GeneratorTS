@@ -1,14 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { NotificationsClassV2 } from './NotificationsClassV2';
 import type { PayoutWalletsClassV2 } from './PayoutWalletsClassV2';
 import type { PolicyClass } from './PolicyClass';
 import type { PriceDiscountClassV2 } from './PriceDiscountClassV2';
 import type { PricelistClassV2 } from './PricelistClassV2';
 import type { SaleconditionsClassV2 } from './SaleconditionsClassV2';
-
 export type CreateProjectClassV2 = {
   projectname?: string | null;
   description?: string | null;

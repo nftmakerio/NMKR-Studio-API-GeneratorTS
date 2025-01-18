@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -6,13 +7,10 @@ import type { Blockchain } from '../models/Blockchain';
 import type { CheckAddressResultClass } from '../models/CheckAddressResultClass';
 import type { GetPaymentAddressResultClass } from '../models/GetPaymentAddressResultClass';
 import type { ReserveMultipleNftsClassV2 } from '../models/ReserveMultipleNftsClassV2';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class AddressReservationSaleService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Cancels a address reservation (project uid)
    * When you call this API, the reservation of all nfts dedicated to this address will released to free state. This function can be called, when a user closes his browser or when he hit on a "Cancel Reservation" Button
@@ -40,7 +38,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Checks an address for state changes (project uid)
    * You can call this api to check if a user has paid to this particular address or if the address has expired. The reserved/sold NFTs will only filled after the amount was fully paid. This is for security reasons. In the reserved state, only the nft ids and tokenamount are submitted
@@ -70,7 +67,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Checks an custom property for state changes (project uid)
    * You can call this api to check if a user has paid to a particular address with a custom property or if the address has expired. The reserved/sold NFTs will only filled after the amount was fully paid. This is for security reasons. In the reserved state, only the nft ids and tokenamount are submitted
@@ -100,7 +96,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Returns an address for a random nft sale (project id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it expired. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
@@ -206,7 +201,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Returns an address for a random nft sale (price from pricelist) (project id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
@@ -291,7 +285,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Returns an address for a specific nft sale (no random distribution) (project and nft id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
@@ -398,7 +391,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Returns an address for a specific nft sale (no random distribution) - price from pricelist or specific nft price (project and nft id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.
@@ -484,7 +476,6 @@ export class AddressReservationSaleService {
       },
     });
   }
-
   /**
    * Returns an address for a multiple specific nfts sale (no random distribution) (project id)
    * When you call this API, you will receive an address where the buyer has to pay the amount of ada you define. The address will be monitored until it exipred. The count of nft will be reserved until it expires or the buyer has send the ada to this address.

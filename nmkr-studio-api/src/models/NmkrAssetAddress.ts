@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { MintingTransactionInformation } from './MintingTransactionInformation';
-
 export type NmkrAssetAddress = {
   policyId?: string | null;
   assetName?: string | null;

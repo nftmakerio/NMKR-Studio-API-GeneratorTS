@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { CheckWalletValidationResultClass } from '../models/CheckWalletValidationResultClass';
 import type { GetWalletValidationAddressResultClass } from '../models/GetWalletValidationAddressResultClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class WalletValidationService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Returns the result of a wallet validation
    * Here you can check the result of a wallet validation. The result are "notvalidated", "validated","expired"
@@ -35,7 +33,6 @@ export class WalletValidationService {
       },
     });
   }
-
   /**
    * Returns an address for wallet validation
    * When you call this API, you will receive an address for a wallet validation. The user can send any ada to this address and the ada (and tokens) will sent back to the sender. With the function CheckWalletValidation you can check the state of the address
@@ -60,7 +57,6 @@ export class WalletValidationService {
       },
     });
   }
-
   /**
    * Returns an address for wallet validation
    * When you call this API, you will receive an address for a wallet validation. The user can send any ada to this address and the ada (and tokens) will sent back to the sender. With the function CheckWalletValidation you can check the state of the address

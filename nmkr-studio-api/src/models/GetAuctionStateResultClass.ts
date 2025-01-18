@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { AuctionsHistory } from './AuctionsHistory';
 import type { AuctionsNft } from './AuctionsNft';
-
 export type GetAuctionStateResultClass = {
   auctionname?: string | null;
   auctionType?: string | null;

@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { GetNmkrPayLinkClass } from '../models/GetNmkrPayLinkClass';
 import type { GetNmkrPayLinkResultClass } from '../models/GetNmkrPayLinkResultClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class NmkrPayService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Returns a payment link for NMKR Pay
    * @returns GetNmkrPayLinkResultClass Returns the PaymentTransactionResultClass Class
@@ -33,7 +31,6 @@ export class NmkrPayService {
       },
     });
   }
-
   /**
    * Returns the state of a payment link for NMKR Pay
    * @returns GetNmkrPayLinkResultClass Returns the PaymentTransactionResultClass Class

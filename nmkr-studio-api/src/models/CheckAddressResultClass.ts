@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { NFT } from './NFT';
 import type { Tokens } from './Tokens';
-
 export type CheckAddressResultClass = {
   state?: string | null;
   lovelace?: number;

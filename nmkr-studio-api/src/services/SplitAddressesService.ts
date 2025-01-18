@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { CreateSplitAddressClass } from '../models/CreateSplitAddressClass';
 import type { GetSplitAddressClass } from '../models/GetSplitAddressClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class SplitAddressesService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Creates a split address
    * @returns GetSplitAddressClass
@@ -37,7 +35,6 @@ export class SplitAddressesService {
       },
     });
   }
-
   /**
    * Returns all split addresses from a customer account
    * Returns all split addresses from a customer account
@@ -62,7 +59,6 @@ export class SplitAddressesService {
       },
     });
   }
-
   /**
    * Updates a split address
    * @returns GetSplitAddressClass

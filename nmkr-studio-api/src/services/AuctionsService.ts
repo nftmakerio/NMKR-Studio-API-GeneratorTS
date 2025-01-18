@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { CreateAuctionClass } from '../models/CreateAuctionClass';
 import type { GetAuctionsClass } from '../models/GetAuctionsClass';
 import type { GetAuctionStateResultClass } from '../models/GetAuctionStateResultClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class AuctionsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Creates a new legacy auction in the cardano network
    * @returns GetAuctionStateResultClass Returns an array of the GetAuctionStateResultClass
@@ -37,7 +35,6 @@ export class AuctionsService {
       },
     });
   }
-
   /**
    * Deletes an auction - if the auction is not already started
    * @returns any Returns an array of the GetAuctionStateResultClass
@@ -56,7 +53,6 @@ export class AuctionsService {
       },
     });
   }
-
   /**
    * Returns all auctions of the customer
    * @returns GetAuctionsClass Returns an array of the GetAuctionStateResultClass
@@ -75,7 +71,6 @@ export class AuctionsService {
       },
     });
   }
-
   /**
    * Returns the state - and the last bids of a auction project
    * @returns GetAuctionStateResultClass Returns an array of the GetAuctionStateResultClass

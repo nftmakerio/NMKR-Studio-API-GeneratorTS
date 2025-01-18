@@ -1,10 +1,9 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { SaleConditionsTypes } from './SaleConditionsTypes';
 import type { WhitelistetedCountClass } from './WhitelistetedCountClass';
-
 export type GetSaleconditionsClass = {
   condition?: SaleConditionsTypes;
   policyId1?: string | null;

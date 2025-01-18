@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { CurrencyTypes } from './CurrencyTypes';
-
 export type PricelistClassV2 = {
   countNft?: number;
   /**

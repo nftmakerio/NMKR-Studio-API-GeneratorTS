@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { BackgroundTaskEnums } from './BackgroundTaskEnums';
-
 export type ServerStateClass = {
   serverId?: number;
   serverName?: string | null;

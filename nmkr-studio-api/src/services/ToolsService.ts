@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -12,13 +13,10 @@ import type { RatesClass } from '../models/RatesClass';
 import type { RoyaltyClass } from '../models/RoyaltyClass';
 import type { TokenRegistryMetadata } from '../models/TokenRegistryMetadata';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class ToolsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Checks if there applies a discount for an address
    * Checks if there applies a discount for an address
@@ -52,7 +50,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Checks, if an address matches the sale conditions
    * Checks, if an address matches the sale conditions of a project
@@ -89,7 +86,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the utxo of an address
    * @returns TxInAddressesClass Returns the AssetsAssociatedWithAccount Class
@@ -118,7 +114,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * @returns any Success
    * @throws ApiError
@@ -132,7 +127,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * @deprecated
    * Returns the actual price in EUR and USD for ADA
@@ -149,7 +143,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns all assets that are in a wallet
    * @returns AssetsAssociatedWithAccount Returns the AssetsAssociatedWithAccount Class
@@ -178,7 +171,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the quantity of a specific token in a wallet
    * @returns AssetsAssociatedWithAccount Returns the AssetsAssociatedWithAccount Class
@@ -208,7 +200,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the quantity of a specific token in a wallet
    * @returns AssetsAssociatedWithAccount Returns the AssetsAssociatedWithAccount Class
@@ -239,7 +230,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the Token Registry Information for a specific token (if available)
    * @returns TokenRegistryMetadata Returns TokenRegistryMetadata
@@ -268,7 +258,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the Metadata for a specific token
    * @returns string Returns the Metadata as String
@@ -296,7 +285,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns a snapshot with all addresses and tokens for a specific policyid
    * You will receive all tokens and the holding addresses of a specific policyid
@@ -331,7 +319,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the IPFS Hash of the preview image for a specific token
    * @returns string Returns the IPFS/IAGON Link for the preview image
@@ -359,7 +346,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the actual price in EUR and USD for ADA,APT,SOL,ETH, etc.
    * @returns RatesClass Returns the RatesClass
@@ -378,7 +364,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * Returns the royalty information for a specific policyid
    * You will receive the rate in percent and the wallet address for the royalties (if applicable) of a specific policyid
@@ -399,7 +384,6 @@ export class ToolsService {
       },
     });
   }
-
   /**
    * @deprecated
    * Returns the actual price in EUR and USD for ADA

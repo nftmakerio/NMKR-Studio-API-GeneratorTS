@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { PublicMintsClass } from '../models/PublicMintsClass';
 import type { ServerStateClass } from '../models/ServerStateClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class MiscService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Returns a list of current or upcoming mints
    * @returns PublicMintsClass Returns an array of PublicMintsClass
@@ -25,7 +23,6 @@ export class MiscService {
       },
     });
   }
-
   /**
    * Returns a the State of the Servers
    * @returns ServerStateClass Returns an array of ServerStateClass

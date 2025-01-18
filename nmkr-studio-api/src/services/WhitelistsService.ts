@@ -1,14 +1,12 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { GetWhitelistEntriesClass } from '../models/GetWhitelistEntriesClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class WhitelistsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Gets all entries of a projects whitelist
    * With this call you can retrieve all entries of a whitelist of a project (if the project has one)
@@ -33,7 +31,6 @@ export class WhitelistsService {
       },
     });
   }
-
   /**
    * Adds an entry to a projects whitelist
    * With this call you can add an entry to a whitelist of a project (if the project has one)
@@ -64,7 +61,6 @@ export class WhitelistsService {
       },
     });
   }
-
   /**
    * Deletes an entry from a projects whitelist
    * With this call you can delete an entry from a whitelist of a project (if the project has one)

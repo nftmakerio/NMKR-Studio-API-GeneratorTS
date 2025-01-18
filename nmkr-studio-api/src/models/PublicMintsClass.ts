@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { Blockchain } from './Blockchain';
 import type { PricelistClass } from './PricelistClass';
 import type { PublicMintState } from './PublicMintState';
-
 export type PublicMintsClass = {
   projectName?: string | null;
   projectDescription?: string | null;

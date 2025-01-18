@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -11,13 +12,10 @@ import type { MakeTransactionResultClass } from '../models/MakeTransactionResult
 import type { SendAllAssetsTransactionClass } from '../models/SendAllAssetsTransactionClass';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
 import type { Wallets } from '../models/Wallets';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class ManagedWalletsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Creates an Managed Wallet
    * @returns CreateWalletResultClass Returns the CreateWalletResultClass Class
@@ -45,7 +43,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Returns the key hash of a Managed Wallet
    * @returns string Returns the CreateWalletResultClass Class
@@ -73,7 +70,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Returns the utxo of a managed Wallet
    * @returns TxInAddressesClass Returns the TxInAddressesClass Class
@@ -93,7 +89,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Imports an Wallet
    * @returns ImportWalletResultClass Returns the CreateWalletResultClass Class
@@ -121,7 +116,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Lists all managed Wallets
    * @returns Wallets Returns the CreateWalletResultClass Class
@@ -141,7 +135,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Makes a transaction on a managed Wallet
    * @returns MakeTransactionResultClass Returns the MakeTransactionResult Class
@@ -169,7 +162,6 @@ export class ManagedWalletsService {
       },
     });
   }
-
   /**
    * Send all ADA and all Tokens from a managed wallet to a receiver address
    * @returns MakeTransactionResultClass Returns the MakeTransactionResult Class

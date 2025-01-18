@@ -4,10 +4,11 @@
 /* eslint-disable */
 import type { Blockchain } from './Blockchain';
 import type { Coin } from './Coin';
-export type SubcustomerMintcouponPayinAddresses = {
-  blockchain?: Blockchain;
-  address?: string | null;
-  network?: string | null;
+export type AdditionalPayoutWalletsClass = {
+  walletAddress?: string | null;
+  valuepercent?: number | null;
+  valuetotal?: number | null;
+  custompropertycondition?: string | null;
   coin?: Coin;
-  pricePerMintCoupon?: number;
+  blockchain?: Blockchain;
 };

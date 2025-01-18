@@ -1,15 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { GetAllUploadedFilesResultClass } from '../models/GetAllUploadedFilesResultClass';
 import type { UploadToIpfsClass } from '../models/UploadToIpfsClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class IpfsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Returns a list with all uploaded files to IPFS. The files/NFTs that are in a project are not returned
    * @returns GetAllUploadedFilesResultClass Returns the GetAllUploadedFilesResult Class
@@ -43,7 +41,6 @@ export class IpfsService {
       },
     });
   }
-
   /**
    * Upload a File pin it to IPFS
    * With this API you can upload a file to IPFS. You can upload the file as BASE64 Content or as URL Link.

@@ -1,9 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { PayoutWalletState } from './PayoutWalletState';
-
 export type GetPayoutWalletsResultClass = {
   walletAddress?: string | null;
   created?: string;

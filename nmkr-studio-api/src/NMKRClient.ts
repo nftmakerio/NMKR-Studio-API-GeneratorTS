@@ -1,10 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { BaseHttpRequest } from './core/BaseHttpRequest';
 import type { OpenAPIConfig } from './core/OpenAPI';
 import { AxiosHttpRequest } from './core/AxiosHttpRequest';
-
 import { AddressReservationSaleService } from './services/AddressReservationSaleService';
 import { AuctionsService } from './services/AuctionsService';
 import { CustomerService } from './services/CustomerService';
@@ -20,9 +20,7 @@ import { ToolsService } from './services/ToolsService';
 import { VestingAddressesService } from './services/VestingAddressesService';
 import { WalletValidationService } from './services/WalletValidationService';
 import { WhitelistsService } from './services/WhitelistsService';
-
 type HttpRequestConstructor = new (config: OpenAPIConfig) => BaseHttpRequest;
-
 export class NMKRClient {
   public readonly addressReservationSale: AddressReservationSaleService;
   public readonly auctions: AuctionsService;
@@ -39,9 +37,7 @@ export class NMKRClient {
   public readonly vestingAddresses: VestingAddressesService;
   public readonly walletValidation: WalletValidationService;
   public readonly whitelists: WhitelistsService;
-
   public readonly request: BaseHttpRequest;
-
   constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = AxiosHttpRequest) {
     this.request = new HttpRequest({
       BASE: config?.BASE ?? 'https://studio-api.nmkr.io',
@@ -54,7 +50,6 @@ export class NMKRClient {
       HEADERS: config?.HEADERS,
       ENCODE_PATH: config?.ENCODE_PATH,
     });
-
     this.addressReservationSale = new AddressReservationSaleService(this.request);
     this.auctions = new AuctionsService(this.request);
     this.customer = new CustomerService(this.request);

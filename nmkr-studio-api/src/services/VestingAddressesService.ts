@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -5,13 +6,10 @@ import type { CreateVestingAddressClass } from '../models/CreateVestingAddressCl
 import type { CreateVestingAddressResultClass } from '../models/CreateVestingAddressResultClass';
 import type { GetVestingAddressClass } from '../models/GetVestingAddressClass';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class VestingAddressesService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Creates a vesting/staking address. Assets can be locked on a vesting address for a certain period of time.
    * @returns CreateVestingAddressResultClass
@@ -39,7 +37,6 @@ export class VestingAddressesService {
       },
     });
   }
-
   /**
    * Returns all vesting addresses from a customer account
    * @returns TxInAddressesClass Returns the vesting/locking addresses
@@ -66,7 +63,6 @@ export class VestingAddressesService {
       },
     });
   }
-
   /**
    * Returns all vesting addresses from a customer account
    * @returns GetVestingAddressClass Returns the vesting/locking addresses

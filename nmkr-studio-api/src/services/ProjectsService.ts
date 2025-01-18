@@ -1,6 +1,8 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AdditionalPayoutWalletsClass } from '../models/AdditionalPayoutWalletsClass';
 import type { ApiErrorResultClass } from '../models/ApiErrorResultClass';
 import type { Blockchain } from '../models/Blockchain';
 import type { CreateBurningEndpointClass } from '../models/CreateBurningEndpointClass';
@@ -21,13 +23,10 @@ import type { PricelistClassV2 } from '../models/PricelistClassV2';
 import type { ProjectSortOptions } from '../models/ProjectSortOptions';
 import type { SaleconditionsClassV2 } from '../models/SaleconditionsClassV2';
 import type { TransactionsExportOptions } from '../models/TransactionsExportOptions';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class ProjectsService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Creates a burning endpoint for a specific address
    * When you call this endpoint, a Burning Address is created for this project. All NFTs associated with this project (same policyid) that are sent to this endpoint will be deleted (burned). All other NFTs will be sent back.
@@ -64,7 +63,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Creates a new Project
    * WIth this Controller you can create a new project
@@ -90,7 +88,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Deletes a project
    * With this call you can delete a project
@@ -110,7 +107,28 @@ export class ProjectsService {
       },
     });
   }
-
+  /**
+   * Returns the additional payout wallets for a project (project uid)
+   * @returns AdditionalPayoutWalletsClass Returns an array of the PayoutWalletsClass
+   * @throws ApiError
+   */
+  public getV2GetAdditionalPayoutWallets({
+    projectuid,
+  }: {
+    projectuid: string;
+  }): CancelablePromise<Array<AdditionalPayoutWalletsClass>> {
+    return this.httpRequest.request({
+      method: 'GET',
+      url: '/v2/GetAdditionalPayoutWallets/{projectuid}',
+      path: {
+        projectuid: projectuid,
+      },
+      errors: {
+        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
+        404: `Not Found`,
+      },
+    });
+  }
   /**
    * Returns the count of the sold, reserved and free nfts (project uid)
    * You will get the count of all sold, reserved and free nfts of a particular project
@@ -129,7 +147,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns the discounts for this project (project uid)
    * If you call this function, you will get all active discounts for this project
@@ -149,7 +166,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns information about the identities (if the identity token was created) of a project
    * You will receive all identities which are connected to this project
@@ -169,7 +185,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns the notifications for this project (project uid)
    * @returns GetNotificationsClass Returns an array of the GetNotificationsClass
@@ -192,7 +207,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns the actual valid pricelist for this project (project uid)
    * You will get the predefined prices for one or more NFTs
@@ -221,7 +235,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns detail information about a project
    * You will receive all information about this project
@@ -241,7 +254,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns all Transactions of a project
    * @returns GetTransactionsClass Returns the result as ZIP File
@@ -276,7 +288,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns all Refunds of a project
    * @returns GetRefundsClass Returns the result as ZIP File
@@ -311,7 +322,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Returns the saleconditions for this project (project uid)
    * If you call this funtion, you will get all active saleconditions for this project
@@ -335,7 +345,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Lists all your projects
    * You will receive a list with all of your projects
@@ -363,7 +372,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Lists all your projects with pagination
    * You will receive a list with all of your projects
@@ -399,7 +407,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Updates the discounts of a project
    * WIth this Controller you can update the discounts of a project. All old entries will be deleted. If you want to clear the discounts, just send an empty array
@@ -429,7 +436,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Updates the notifications of a project
    * WIth this Controller you can update the notifications. All old entries will be deleted. If you want to clear the notifications, just send an empty array
@@ -459,7 +465,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Updates a pricelist of a project
    * WIth this Controller you can update a pricelist of a project. All old entries will be deleted. If you want to clear the pricelist, just send an empty array
@@ -489,7 +494,6 @@ export class ProjectsService {
       },
     });
   }
-
   /**
    * Updates the saleconditions of a project
    * WIth this Controller you can update the saleconditions of a project. All old entries will be deleted. If you want to clear the saleconditions, just send an empty array

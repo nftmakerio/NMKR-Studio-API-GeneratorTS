@@ -1,14 +1,13 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { DecentralParametersResultClass } from './DecentralParametersResultClass';
 import type { NmkrPayTransactionTypes } from './NmkrPayTransactionTypes';
 import type { PaymentgatewayParametersClass } from './PaymentgatewayParametersClass';
 import type { PaymentTransactionsStates } from './PaymentTransactionsStates';
 import type { PaymentTransactionSubstates } from './PaymentTransactionSubstates';
 import type { PaymentTransactionTypes } from './PaymentTransactionTypes';
-
 export type GetNmkrPayLinkResultClass = {
   paymentTransactionUid?: string | null;
   projectUid?: string | null;

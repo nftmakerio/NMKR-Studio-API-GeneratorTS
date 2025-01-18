@@ -1,16 +1,14 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
 import type { Blockchain } from '../models/Blockchain';
 import type { MintAndSendResultClass } from '../models/MintAndSendResultClass';
 import type { ReserveMultipleNftsClassV2 } from '../models/ReserveMultipleNftsClassV2';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class MintService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Mints random Nfts and sends it to an Address
    * When you call this API, random NFTs will be selected, minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
@@ -49,7 +47,6 @@ export class MintService {
       },
     });
   }
-
   /**
    * Mints a specific Nft and sends it to an Address
    * When you call this API, a specific NFT will be minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
@@ -91,7 +88,6 @@ export class MintService {
       },
     });
   }
-
   /**
    * Mints one or more specific Nft and sends it to an Address
    * When you call this API, one or more specific NFTs will be minted and send to an ada address. You will need ADA in your Account for the transaction and minting costs.
@@ -131,7 +127,6 @@ export class MintService {
       },
     });
   }
-
   /**
    * Mints the royalty token
    * When you call this API, the royalty token for this project will be minted and send to a burning address. You have to specify the address for the royalties and the percentage of royalties. You need mint credits in your account. Only one royalty token can be minted for each project
@@ -165,7 +160,6 @@ export class MintService {
       },
     });
   }
-
   /**
    * ReMints a specific Nft and sends it to a burn address
    * When you call this API, you can update metadata of an already sold nft. The nft will be minted and send to a burning address

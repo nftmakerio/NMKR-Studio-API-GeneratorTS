@@ -1,3 +1,4 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
@@ -10,13 +11,10 @@ import type { GetPayoutWalletsResultClass } from '../models/GetPayoutWalletsResu
 import type { GetTransactionsClass } from '../models/GetTransactionsClass';
 import type { SubcustomerClass } from '../models/SubcustomerClass';
 import type { TransactionsExportOptions } from '../models/TransactionsExportOptions';
-
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
-
 export class CustomerService {
   constructor(public readonly httpRequest: BaseHttpRequest) {}
-
   /**
    * Adds a payout wallet to your account
    * With this call you can add a payout wallet in your account. You have to confirm the wallet by clicking the link in the email
@@ -37,7 +35,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Creates a subcustomer
    * @returns CreateSubcustomerResultClass Returns the result as ZIP File
@@ -65,7 +62,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Creates a subcustomer
    * @returns CreateSubcustomerResultClass Returns the result as ZIP File
@@ -93,7 +89,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Returns all Transactions of a customer
    * @returns GetTransactionsClass Returns the result as ZIP File
@@ -128,7 +123,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Returns the count of mint coupons in your account
    * @returns GetMintCouponBalanceResultClass Returns the GetMintCouponBalanceResultClass
@@ -143,7 +137,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Returns all payout wallets in your account
    * @returns GetPayoutWalletsResultClass Returns the GetPayoutWalletsResultClass
@@ -158,7 +151,6 @@ export class CustomerService {
       },
     });
   }
-
   /**
    * Returns a list with all subcustomers
    * @returns SubcustomerClass Returns the result as ZIP File

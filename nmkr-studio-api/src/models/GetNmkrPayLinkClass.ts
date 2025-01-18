@@ -1,11 +1,10 @@
+/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-
 import type { NmkrPayPaymentgatewayParamatersClass } from './NmkrPayPaymentgatewayParamatersClass';
 import type { NmkrPayTransactionTypes } from './NmkrPayTransactionTypes';
 import type { PaymentTransactionNotificationsClass } from './PaymentTransactionNotificationsClass';
-
 export type GetNmkrPayLinkClass = {
   projectUid?: string | null;
   referer?: string | null;
