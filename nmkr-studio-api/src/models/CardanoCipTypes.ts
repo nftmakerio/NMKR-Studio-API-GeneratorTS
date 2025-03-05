@@ -2,4 +2,4 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type Blockchain = 'Cardano' | 'Solana' | 'Aptos' | 'Hedara' | 'Polygon' | 'Ethereum';
+export type CardanoCipTypes = 'None' | 'Cip25' | 'Cip68NftUserToken' | 'Cip68ReferenceToken' | 'Cip68FtUserToken';

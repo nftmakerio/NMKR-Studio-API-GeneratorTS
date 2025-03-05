@@ -47,4 +47,8 @@ export type CreateProjectClassV2 = {
   solanaCollectionImageUrl?: string | null;
   solanaCollectionImageMimeType?: string | null;
   solanaSellerFeeBasisPoints?: number | null;
+  enableAptos?: boolean;
+  aptosCollectionImageUrl?: string | null;
+  aptosCollectionImageMimeType?: string | null;
+  payoutWalletaddressAptos?: string | null;
 };

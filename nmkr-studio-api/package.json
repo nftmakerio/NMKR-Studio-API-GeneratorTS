@@ -1,6 +1,6 @@
 {
   "name": "nmkr-studio-api",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "Typesafe API Client to work with the NMKR Studio V2 API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

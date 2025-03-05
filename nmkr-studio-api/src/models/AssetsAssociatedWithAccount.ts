@@ -3,14 +3,16 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { Blockchain } from './Blockchain';
+import type { CardanoCipTypes } from './CardanoCipTypes';
 export type AssetsAssociatedWithAccount = {
+  readonly cardanoCipType?: CardanoCipTypes;
   solanaSymbol?: string | null;
   address?: string | null;
   unit?: string | null;
-  quantity?: number | null;
+  quantity?: number;
   blockchain?: Blockchain;
   readonly fingerprint?: string | null;
   readonly assetName?: string | null;
-  policyId?: string | null;
+  policyIdOrCollection?: string | null;
   assetNameInHex?: string | null;
 };

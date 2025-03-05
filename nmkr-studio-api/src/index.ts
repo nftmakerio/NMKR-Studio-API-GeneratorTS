@@ -18,6 +18,7 @@ export type { AuctionsHistory } from './models/AuctionsHistory';
 export type { AuctionsNft } from './models/AuctionsNft';
 export type { BackgroundTaskEnums } from './models/BackgroundTaskEnums';
 export type { Blockchain } from './models/Blockchain';
+export type { CardanoCipTypes } from './models/CardanoCipTypes';
 export type { CheckAddressResultClass } from './models/CheckAddressResultClass';
 export type { CheckConditionsResultClass } from './models/CheckConditionsResultClass';
 export type { CheckDiscountsResultClass } from './models/CheckDiscountsResultClass';
