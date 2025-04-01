@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Blockchain } from './Blockchain';
 export type NftDetailsClass = {
   id?: number;
   ipfshash?: string | null;
@@ -27,9 +28,11 @@ export type NftDetailsClass = {
   uid?: string | null;
   paymentGatewayLinkForSpecificSale?: string | null;
   sendBackCentralPaymentInLovelace?: number | null;
-  sendBackCentralPaymentInLamport?: number | null;
   priceInLovelaceCentralPayments?: number | null;
   uploadSource?: string | null;
   priceInLamportCentralPayments?: number | null;
   singlePriceSolana?: number | null;
+  priceInOctsCentralPayments?: number | null;
+  mintedOnBlockchain?: Blockchain;
+  mintingfees?: number | null;
 };

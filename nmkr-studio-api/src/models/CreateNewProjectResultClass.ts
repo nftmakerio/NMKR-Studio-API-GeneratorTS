@@ -9,4 +9,10 @@ export type CreateNewProjectResultClass = {
   policyScript?: string | null;
   policyExpiration?: string | null;
   uid?: string | null;
+  metadataTemplateAptos?: string | null;
+  metadataTemplateSolana?: string | null;
+  enabledCoins?: string | null;
+  solanaUpdateAuthority?: string | null;
+  aptosCollectionAddress?: string | null;
+  created?: string | null;
 };

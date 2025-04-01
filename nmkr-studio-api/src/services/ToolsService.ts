@@ -6,10 +6,10 @@ import type { AssetsAssociatedWithAccount } from '../models/AssetsAssociatedWith
 import type { Blockchain } from '../models/Blockchain';
 import type { CheckConditionsResultClass } from '../models/CheckConditionsResultClass';
 import type { CheckDiscountsResultClass } from '../models/CheckDiscountsResultClass';
-import type { CryptoCoin } from '../models/CryptoCoin';
+import type { Coin } from '../models/Coin';
 import type { Dataproviders } from '../models/Dataproviders';
+import type { NewRatesClass } from '../models/NewRatesClass';
 import type { NmkrAssetAddress } from '../models/NmkrAssetAddress';
-import type { RatesClass } from '../models/RatesClass';
 import type { RoyaltyClass } from '../models/RoyaltyClass';
 import type { TokenRegistryMetadata } from '../models/TokenRegistryMetadata';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
@@ -130,10 +130,10 @@ export class ToolsService {
   /**
    * @deprecated
    * Returns the actual price in EUR and USD for ADA
-   * @returns RatesClass Returns the RatesClass
+   * @returns NewRatesClass Returns the RatesClass
    * @throws ApiError
    */
-  public getV2GetAdaRates(): CancelablePromise<RatesClass> {
+  public getV2GetAdaRates(): CancelablePromise<NewRatesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetAdaRates',
@@ -348,10 +348,10 @@ export class ToolsService {
   }
   /**
    * Returns the actual price in EUR and USD for ADA,APT,SOL,ETH, etc.
-   * @returns RatesClass Returns the RatesClass
+   * @returns NewRatesClass Returns the NewRatesClass
    * @throws ApiError
    */
-  public getV2GetRates({ coin }: { coin?: CryptoCoin }): CancelablePromise<RatesClass> {
+  public getV2GetRates({ coin }: { coin?: Coin }): CancelablePromise<NewRatesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetRates',
@@ -387,10 +387,10 @@ export class ToolsService {
   /**
    * @deprecated
    * Returns the actual price in EUR and USD for ADA
-   * @returns RatesClass Returns the RatesClass
+   * @returns NewRatesClass Returns the NewRatesClass
    * @throws ApiError
    */
-  public getV2GetSolanaRates(): CancelablePromise<RatesClass> {
+  public getV2GetSolanaRates(): CancelablePromise<NewRatesClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetSolanaRates',

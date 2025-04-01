@@ -2,11 +2,19 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Coin } from './Coin';
 import type { NFT } from './NFT';
 import type { Tokens } from './Tokens';
 export type CheckAddressResultClass = {
   state?: string | null;
+  /**
+   * @deprecated
+   */
   lovelace?: number;
+  receivedAptosOctas?: number;
+  receivedSolanaLamports?: number;
+  receivedCardanoLovelace?: number;
+  coin?: Coin;
   hasToPay?: number;
   additionalPriceInTokens?: Array<Tokens> | null;
   payDateTime?: string | null;

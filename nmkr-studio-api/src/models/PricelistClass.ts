@@ -23,4 +23,6 @@ export type PricelistClass = {
   readonly solToSend?: string | null;
   validFrom?: string | null;
   validTo?: string | null;
+  priceInOctas?: number;
+  readonly aptToSend?: string | null;
 };

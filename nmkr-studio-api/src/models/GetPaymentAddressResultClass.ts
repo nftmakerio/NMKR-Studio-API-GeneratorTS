@@ -9,6 +9,7 @@ export type GetPaymentAddressResultClass = {
   expires?: string;
   readonly adaToSend?: string | null;
   readonly solToSend?: string | null;
+  readonly aptToSend?: string | null;
   debug?: string | null;
   priceInEur?: number;
   priceInUsd?: number;
@@ -21,4 +22,5 @@ export type GetPaymentAddressResultClass = {
   revervationtype?: string | null;
   currency?: string | null;
   priceInLamport?: number;
+  priceInOcta?: number;
 };

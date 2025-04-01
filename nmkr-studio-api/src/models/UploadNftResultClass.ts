@@ -9,4 +9,6 @@ export type UploadNftResultClass = {
   ipfsHashSubfiles?: Array<string> | null;
   metadata?: string | null;
   assetId?: string | null;
+  metadataAptos?: string | null;
+  metadataSolana?: string | null;
 };

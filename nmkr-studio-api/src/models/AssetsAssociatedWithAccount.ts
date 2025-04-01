@@ -10,7 +10,7 @@ export type AssetsAssociatedWithAccount = {
   address?: string | null;
   unit?: string | null;
   quantity?: number;
-  blockchain?: Blockchain;
+  readonly blockchain?: Blockchain;
   readonly fingerprint?: string | null;
   readonly assetName?: string | null;
   policyIdOrCollection?: string | null;

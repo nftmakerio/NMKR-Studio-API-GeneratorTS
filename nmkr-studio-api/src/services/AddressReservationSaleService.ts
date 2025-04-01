@@ -110,7 +110,7 @@ export class AddressReservationSaleService {
   public getV2GetPaymentAddressForRandomNftSale({
     projectuid,
     countnft,
-    lovelace,
+    price,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -125,7 +125,7 @@ export class AddressReservationSaleService {
   }: {
     projectuid: string;
     countnft: number;
-    lovelace: number;
+    price: number;
     /**
      * (Optional) A referer code
      */
@@ -173,11 +173,11 @@ export class AddressReservationSaleService {
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{lovelace}',
+      url: '/v2/GetPaymentAddressForRandomNftSale/{projectuid}/{countnft}/{price}',
       path: {
         projectuid: projectuid,
         countnft: countnft,
-        lovelace: lovelace,
+        price: price,
       },
       query: {
         referer: referer,
@@ -299,7 +299,7 @@ export class AddressReservationSaleService {
   public getV2GetPaymentAddressForSpecificNftSale({
     nftuid,
     tokencount,
-    lovelace,
+    price,
     referer,
     customproperty,
     optionalreceiveraddress,
@@ -314,7 +314,7 @@ export class AddressReservationSaleService {
   }: {
     nftuid: string;
     tokencount: number;
-    lovelace: number;
+    price: number;
     /**
      * (Optional) A referer code
      */
@@ -362,11 +362,11 @@ export class AddressReservationSaleService {
   }): CancelablePromise<GetPaymentAddressResultClass> {
     return this.httpRequest.request({
       method: 'GET',
-      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{lovelace}',
+      url: '/v2/GetPaymentAddressForSpecificNftSale/{nftuid}/{tokencount}/{price}',
       path: {
         nftuid: nftuid,
         tokencount: tokencount,
-        lovelace: lovelace,
+        price: price,
       },
       query: {
         referer: referer,

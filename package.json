@@ -4,7 +4,8 @@
   "description": "The commands below are used to generate/regenerate the API client from either the latest swagger file or the one saved locally",
   "scripts": {
     "generate-latest": "openapi --input https://studio-api.nmkr.io/swagger/v2/swagger.json --output ./nmkr-studio-api/src --useUnionTypes --client axios --name NMKRClient --useOptions",
-    "generate-local": "openapi --input ./swagger.json --output ./nmkr-studio-api/src --client axios --useUnionTypes --name NMKRClient --useOptions"
+    "generate-local": "openapi --input ./swagger.json --output ./nmkr-studio-api/src --client axios --useUnionTypes --name NMKRClient --useOptions",
+    "publish-all": "npm run generate-latest && cd nmkr-studio-api && npm run test && npm run lint && npm run format && npm run build && npm version patch && npm publish"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

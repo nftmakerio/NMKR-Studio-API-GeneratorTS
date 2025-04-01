@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { MinUtxoTypes } from './MinUtxoTypes';
 import type { NotificationsClassV2 } from './NotificationsClassV2';
 import type { PayoutWalletsClassV2 } from './PayoutWalletsClassV2';
 import type { PolicyClass } from './PolicyClass';
@@ -38,6 +39,7 @@ export type CreateProjectClassV2 = {
   cip68ExtraField?: string | null;
   enableCardano?: boolean;
   enableSolana?: boolean;
+  enableAptos?: boolean;
   solanaSymbol?: string | null;
   solanaCollectionFamily?: string | null;
   payoutWalletaddressSolana?: string | null;
@@ -47,8 +49,9 @@ export type CreateProjectClassV2 = {
   solanaCollectionImageUrl?: string | null;
   solanaCollectionImageMimeType?: string | null;
   solanaSellerFeeBasisPoints?: number | null;
-  enableAptos?: boolean;
   aptosCollectionImageUrl?: string | null;
   aptosCollectionImageMimeType?: string | null;
   payoutWalletaddressAptos?: string | null;
+  cardanoSendbackToCustomer?: MinUtxoTypes;
+  aptosCollectionName?: string | null;
 };
