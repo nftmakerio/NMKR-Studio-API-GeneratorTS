@@ -2,11 +2,13 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type TokenRegistryMetadata = {
-  name?: string | null;
-  description?: string | null;
+export type TokenInformationClass = {
+  policyId?: string | null;
+  assetName?: string | null;
+  assetNameAscii?: string | null;
   ticker?: string | null;
+  description?: string | null;
   url?: string | null;
-  logo?: string | null;
   decimals?: number | null;
+  logo?: string | null;
 };

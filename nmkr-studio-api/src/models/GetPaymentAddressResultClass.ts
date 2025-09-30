@@ -14,7 +14,6 @@ export type GetPaymentAddressResultClass = {
   priceInEur?: number;
   priceInUsd?: number;
   priceInJpy?: number;
-  priceInBtc?: number;
   effectivedate?: string;
   priceInLovelace?: number;
   additionalPriceInTokens?: Array<Tokens> | null;
@@ -23,4 +22,5 @@ export type GetPaymentAddressResultClass = {
   currency?: string | null;
   priceInLamport?: number;
   priceInOcta?: number;
+  priceInSatoshi?: number;
 };

@@ -11,4 +11,6 @@ export type TxInClass = {
   readonly txHashId?: string | null;
   txTimestamp?: string | null;
   readonly tokenSum?: number;
+  scriptPubKey?: string | null;
+  confirmations?: number | null;
 };

@@ -2,6 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { AptosProjectDetails } from './AptosProjectDetails';
 import type { Blockchain } from './Blockchain';
 import type { NmkrAccountOptionsTypes } from './NmkrAccountOptionsTypes';
 import type { SolanaProjectDetails } from './SolanaProjectDetails';
@@ -44,5 +45,6 @@ export type NftProjectsDetails = {
   created?: string;
   blockchains?: Array<Blockchain> | null;
   solanaProjectDetails?: SolanaProjectDetails | null;
+  aptosProjectDetails?: AptosProjectDetails | null;
   solanaPayoutWalletAddress?: string | null;
 };

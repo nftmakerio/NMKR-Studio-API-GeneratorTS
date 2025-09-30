@@ -19,7 +19,7 @@ export class MiscService {
       url: '/v2/GetPublicMints',
       errors: {
         429: `Too Many Requests`,
-        500: `Server Error`,
+        500: `Internal Server Error`,
       },
     });
   }
@@ -34,7 +34,7 @@ export class MiscService {
       url: '/v2/GetServerState',
       errors: {
         429: `Too Many Requests`,
-        500: `Server Error`,
+        500: `Internal Server Error`,
       },
     });
   }

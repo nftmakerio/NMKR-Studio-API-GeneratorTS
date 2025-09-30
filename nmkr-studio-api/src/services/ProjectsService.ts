@@ -55,7 +55,7 @@ export class ProjectsService {
       },
       errors: {
         401: `The access was denied. (Wrong or expired APIKEY, wrong projectuid etc.)`,
-        402: `Client Error`,
+        402: `Payment Required`,
         404: `Not Found`,
         406: `Some parameters where not correct or the project already has 10 or more burning addresses`,
         409: `Conflict`,
@@ -357,6 +357,9 @@ export class ProjectsService {
   public getV2ListProjects({
     optionalSortOrder,
   }: {
+    /**
+     * The Order options for the project list
+     */
     optionalSortOrder?: ProjectSortOptions;
   }): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({
@@ -388,6 +391,9 @@ export class ProjectsService {
   }: {
     count: number;
     page: number;
+    /**
+     * The Order options for the project list
+     */
     optionalSortOrder?: ProjectSortOptions;
   }): CancelablePromise<Array<NftProjectsDetails>> {
     return this.httpRequest.request({

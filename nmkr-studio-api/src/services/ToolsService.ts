@@ -11,7 +11,7 @@ import type { Dataproviders } from '../models/Dataproviders';
 import type { NewRatesClass } from '../models/NewRatesClass';
 import type { NmkrAssetAddress } from '../models/NmkrAssetAddress';
 import type { RoyaltyClass } from '../models/RoyaltyClass';
-import type { TokenRegistryMetadata } from '../models/TokenRegistryMetadata';
+import type { TokenInformationClass } from '../models/TokenInformationClass';
 import type { TxInAddressesClass } from '../models/TxInAddressesClass';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import type { BaseHttpRequest } from '../core/BaseHttpRequest';
@@ -115,7 +115,7 @@ export class ToolsService {
     });
   }
   /**
-   * @returns any Success
+   * @returns any OK
    * @throws ApiError
    */
   public getV2GetActiveDirectsaleListings({ stakeaddress }: { stakeaddress: string }): CancelablePromise<any> {
@@ -124,22 +124,6 @@ export class ToolsService {
       url: '/v2/GetActiveDirectsaleListings/{stakeaddress}',
       path: {
         stakeaddress: stakeaddress,
-      },
-    });
-  }
-  /**
-   * @deprecated
-   * Returns the actual price in EUR and USD for ADA
-   * @returns NewRatesClass Returns the RatesClass
-   * @throws ApiError
-   */
-  public getV2GetAdaRates(): CancelablePromise<NewRatesClass> {
-    return this.httpRequest.request({
-      method: 'GET',
-      url: '/v2/GetAdaRates',
-      errors: {
-        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
-        404: `Not Found`,
       },
     });
   }
@@ -232,7 +216,7 @@ export class ToolsService {
   }
   /**
    * Returns the Token Registry Information for a specific token (if available)
-   * @returns TokenRegistryMetadata Returns TokenRegistryMetadata
+   * @returns TokenInformationClass Returns TokenInformationClass
    * @throws ApiError
    */
   public getV2GetCardanoTokenRegistryInformation({
@@ -244,7 +228,7 @@ export class ToolsService {
      * The Name of the Token (not HEX)
      */
     tokenname: string;
-  }): CancelablePromise<TokenRegistryMetadata> {
+  }): CancelablePromise<TokenInformationClass> {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetCardanoTokenRegistryInformation/{policyid}/{tokenname}',
@@ -381,22 +365,6 @@ export class ToolsService {
         401: `The access was denied. (Wrong or expired APIKEY, wrong policyid etc.)`,
         404: `There are no royalty informations for this policyid`,
         406: `The policyid is not valid`,
-      },
-    });
-  }
-  /**
-   * @deprecated
-   * Returns the actual price in EUR and USD for ADA
-   * @returns NewRatesClass Returns the NewRatesClass
-   * @throws ApiError
-   */
-  public getV2GetSolanaRates(): CancelablePromise<NewRatesClass> {
-    return this.httpRequest.request({
-      method: 'GET',
-      url: '/v2/GetSolanaRates',
-      errors: {
-        401: `The access was denied. (Wrong or expired APIKEY, wrong projectid etc.)`,
-        404: `Not Found`,
       },
     });
   }

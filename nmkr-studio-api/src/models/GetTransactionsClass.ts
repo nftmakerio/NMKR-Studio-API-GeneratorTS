@@ -36,4 +36,6 @@ export type GetTransactionsClass = {
   blockchain?: Blockchain;
   transactionNfts?: Array<GetTransactionNftsClass> | null;
   coin?: string | null;
+  projectname?: string | null;
+  nftProjectUid?: string | null;
 };

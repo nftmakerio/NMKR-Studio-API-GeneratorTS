@@ -2,4 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type Blockchain = 'Cardano' | 'Solana' | 'Aptos' | 'Hedara' | 'Polygon' | 'Ethereum' | 'Bitcoin' | 'Unknown';
+export type AptosProjectDetails = {
+  collectionImage?: string | null;
+  collectionName?: string | null;
+};

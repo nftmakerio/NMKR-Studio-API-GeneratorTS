@@ -40,6 +40,7 @@ export type CreateProjectClassV2 = {
   enableCardano?: boolean;
   enableSolana?: boolean;
   enableAptos?: boolean;
+  enableBitcoin?: boolean;
   solanaSymbol?: string | null;
   solanaCollectionFamily?: string | null;
   payoutWalletaddressSolana?: string | null;
@@ -52,6 +53,7 @@ export type CreateProjectClassV2 = {
   aptosCollectionImageUrl?: string | null;
   aptosCollectionImageMimeType?: string | null;
   payoutWalletaddressAptos?: string | null;
+  payoutWalletaddressBitcoin?: string | null;
   cardanoSendbackToCustomer?: MinUtxoTypes;
   aptosCollectionName?: string | null;
 };

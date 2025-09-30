@@ -10,7 +10,6 @@ export type PricelistClass = {
   priceInEur?: number;
   priceInUsd?: number;
   priceInJpy?: number;
-  priceInBtc?: number;
   effectivedate?: string;
   additionalPriceInTokens?: Array<Tokens> | null;
   paymentGatewayLinkForRandomNftSale?: string | null;
@@ -24,5 +23,8 @@ export type PricelistClass = {
   validFrom?: string | null;
   validTo?: string | null;
   priceInOctas?: number;
+  priceInSatoshis?: number;
   readonly aptToSend?: string | null;
+  readonly btcToSend?: string | null;
+  freeMint?: boolean;
 };
