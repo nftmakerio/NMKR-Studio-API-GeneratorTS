@@ -47,4 +47,6 @@ export type NftProjectsDetails = {
   solanaProjectDetails?: SolanaProjectDetails | null;
   aptosProjectDetails?: AptosProjectDetails | null;
   solanaPayoutWalletAddress?: string | null;
+  bitcoinPayoutWalletAddress?: string | null;
+  aptosPayoutWalletAddress?: string | null;
 };
