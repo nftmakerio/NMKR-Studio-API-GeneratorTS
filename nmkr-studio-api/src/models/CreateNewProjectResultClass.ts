@@ -10,9 +10,11 @@ export type CreateNewProjectResultClass = {
   policyExpiration?: string | null;
   uid?: string | null;
   metadataTemplateAptos?: string | null;
+  metadataTemplateMidnight?: string | null;
   metadataTemplateSolana?: string | null;
   enabledCoins?: string | null;
   solanaUpdateAuthority?: string | null;
   aptosCollectionAddress?: string | null;
+  midnightCollectionAddress?: string | null;
   created?: string | null;
 };

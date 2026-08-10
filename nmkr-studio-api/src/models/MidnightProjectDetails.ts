@@ -2,5 +2,6 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type PricelistDiscountTypes =
-  'walletcontainsminofpolicyid' | 'whitlistedaddresses' | 'stakeonpool' | 'couponcode';
+export type MidnightProjectDetails = {
+  collectionName?: string | null;
+};

@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { AptosProjectDetails } from './AptosProjectDetails';
 import type { Blockchain } from './Blockchain';
+import type { MidnightProjectDetails } from './MidnightProjectDetails';
 import type { NmkrAccountOptionsTypes } from './NmkrAccountOptionsTypes';
 import type { SolanaProjectDetails } from './SolanaProjectDetails';
 export type NftProjectsDetails = {
@@ -46,7 +47,9 @@ export type NftProjectsDetails = {
   blockchains?: Array<Blockchain> | null;
   solanaProjectDetails?: SolanaProjectDetails | null;
   aptosProjectDetails?: AptosProjectDetails | null;
+  midnightProjectDetails?: MidnightProjectDetails | null;
   solanaPayoutWalletAddress?: string | null;
   bitcoinPayoutWalletAddress?: string | null;
   aptosPayoutWalletAddress?: string | null;
+  midnightPayoutWalletAddress?: string | null;
 };

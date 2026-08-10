@@ -33,6 +33,7 @@ export type NftDetailsClass = {
   priceInLamportCentralPayments?: number | null;
   singlePriceSolana?: number | null;
   priceInOctsCentralPayments?: number | null;
+  priceInNightCentralPayments?: number | null;
   mintedOnBlockchain?: Blockchain;
   mintingfees?: number | null;
 };

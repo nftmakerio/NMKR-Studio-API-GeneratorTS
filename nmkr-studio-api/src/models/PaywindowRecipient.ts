@@ -2,5 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type PricelistDiscountTypes =
-  'walletcontainsminofpolicyid' | 'whitlistedaddresses' | 'stakeonpool' | 'couponcode';
+export type PaywindowRecipient = {
+  address?: string | null;
+  amountRaw?: number;
+};

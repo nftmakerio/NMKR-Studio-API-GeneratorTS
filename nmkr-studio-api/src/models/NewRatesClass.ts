@@ -10,4 +10,5 @@ export type NewRatesClass = {
   eurRate?: number;
   jpyRate?: number;
   effectiveDate?: string;
+  convertedBy?: string | null;
 };

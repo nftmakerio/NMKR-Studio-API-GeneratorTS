@@ -10,6 +10,7 @@ export type GetPaymentAddressResultClass = {
   readonly adaToSend?: string | null;
   readonly solToSend?: string | null;
   readonly aptToSend?: string | null;
+  readonly nightToSend?: string | null;
   debug?: string | null;
   priceInEur?: number;
   priceInUsd?: number;
@@ -22,5 +23,6 @@ export type GetPaymentAddressResultClass = {
   currency?: string | null;
   priceInLamport?: number;
   priceInOcta?: number;
+  priceInNight?: number;
   priceInSatoshi?: number;
 };

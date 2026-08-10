@@ -24,7 +24,9 @@ export type PricelistClass = {
   validTo?: string | null;
   priceInOctas?: number;
   priceInSatoshis?: number;
+  priceInNight?: number;
   readonly aptToSend?: string | null;
+  readonly nightToSend?: string | null;
   readonly btcToSend?: string | null;
   freeMint?: boolean;
 };

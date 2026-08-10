@@ -24,4 +24,5 @@ export type NFT = {
   paymentGatewayLinkForSpecificSale?: string | null;
   priceSolana?: number | null;
   priceAptos?: number | null;
+  priceMidnight?: number | null;
 };

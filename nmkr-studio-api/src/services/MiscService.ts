@@ -2,6 +2,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { MidnightPaywindowClass } from '../models/MidnightPaywindowClass';
+import type { MidnightPaywindowUpdateClass } from '../models/MidnightPaywindowUpdateClass';
 import type { PublicMintsClass } from '../models/PublicMintsClass';
 import type { ServerStateClass } from '../models/ServerStateClass';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -32,6 +34,31 @@ export class MiscService {
     return this.httpRequest.request({
       method: 'GET',
       url: '/v2/GetServerState',
+      errors: {
+        429: `Too Many Requests`,
+        500: `Internal Server Error`,
+      },
+    });
+  }
+  /**
+   * @returns MidnightPaywindowClass OK
+   * @throws ApiError
+   */
+  public postV2UpdateMidnightPaywindowDetails({
+    reservationid,
+    requestBody,
+  }: {
+    reservationid?: number;
+    requestBody?: MidnightPaywindowUpdateClass;
+  }): CancelablePromise<MidnightPaywindowClass> {
+    return this.httpRequest.request({
+      method: 'POST',
+      url: '/v2/UpdateMidnightPaywindowDetails',
+      query: {
+        reservationid: reservationid,
+      },
+      body: requestBody,
+      mediaType: 'application/json',
       errors: {
         429: `Too Many Requests`,
         500: `Internal Server Error`,
