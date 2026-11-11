@@ -8,9 +8,6 @@
     "publish-all": "npm run generate-latest && cd nmkr-studio-api && npm run test && npm run lint && npm run format && npm run build && npm version patch && npm publish"
   },
   "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "jest": "^30.4.2",
-    "openapi-typescript-codegen": "^0.31.0",
-    "ts-jest": "^29.4.12"
+    "openapi-typescript-codegen": "^0.31.0"
   }
 }
