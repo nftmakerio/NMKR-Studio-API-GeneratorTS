@@ -10,4 +10,9 @@ export type MidnightPaywindowClass = {
   contractAddress?: string | null;
   nft?: PaywindowNft | null;
   recipients?: Array<PaywindowRecipient> | null;
+  enableDecentralPayments?: boolean;
+  cardanoAddress?: string | null;
+  priceRaw?: number;
+  status?: string | null;
+  mintTxHash?: string | null;
 };

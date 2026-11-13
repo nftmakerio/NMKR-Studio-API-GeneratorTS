@@ -25,4 +25,5 @@ export type GetPaymentAddressResultClass = {
   priceInOcta?: number;
   priceInNight?: number;
   priceInSatoshi?: number;
+  alternateCardanoAddress?: string | null;
 };
